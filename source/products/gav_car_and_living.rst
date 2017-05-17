@@ -13,7 +13,6 @@ Product Information
    "Language", "DE"
    "Region", "DE"
 
-
 Preload Data
 ------------
 This data should be prefilled in the KASKO JS to preload the insurance widget with data.
