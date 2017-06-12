@@ -55,7 +55,7 @@ Upon successful customer payment the `onSuccess` callback function is called wit
 
 Callback arguments
 ~~~~~~~~~~~~~~~~~~
-The `onSuccess` parameter function has only one argument - the polciy details object. Please note that `price` is the price in cents (i.e. 9900 is 99.00 EUR).
+The `onSuccess` parameter function has only one argument - the policy details object. Please note that `price` is the price in cents (i.e. 9900 is 99.00 EUR).
 
 .. code:: json
    
