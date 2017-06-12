@@ -49,6 +49,24 @@ Parameters
    "hsn", "string", "car HSN", "5"
    "tsn", "string", "car TSN", "BGX"
 
+OnSuccess callback
+------------------
+Upon successful customer payment the `onSuccess` callback function is called with the policy details. This is an optional paramater.
+
+Callback arguments
+~~~~~~~~~~~~~~~~~~
+The `onSuccess` parameter function has only one argument - the polciy details object. Please note that `price` is the price in cents (i.e. 9900 is 99.00 EUR).
+
+.. code:: json
+   
+   {
+      "id": "unique_policy_id",
+      "currency": "eur",
+      "price": 9900,
+      "policy_name": "Car & Living",
+      "policy_details": "Die Reparaturkostenversicherung der GAV"
+   }
+
 
 KASKO JS Setup object example
 ------------------------------------
@@ -60,16 +78,19 @@ KASKO JS Setup object example
         key: "TEST OR LIVE CLIENT KEY of distributor",
         product : 'LJROpwloaQ8ZBmMAewM7W5PyE4qvAb31',
         overlay_color: "#FFFFFF",
-          data: {
-              car: {
-                  make: 'BMW',
-                  model: 'x1',
-                  first_reg_year: '2010',
-                  first_reg_month: '7',
-                  mileage: '7500',
-                  hsn: '5',
-                  tsn: 'BGX'
-              }
-          }
+        onSuccess: function (data) {
+            console.log(data);
+        },
+        data: {
+            car: {
+                make: 'BMW',
+                model: 'x1',
+                first_reg_year: '2010',
+                first_reg_month: '7',
+                mileage: '7500',
+                hsn: '5',
+                tsn: 'BGX'
+            }
+        }
       });
 
