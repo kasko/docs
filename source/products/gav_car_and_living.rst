@@ -31,7 +31,8 @@ Example data object
                   first_reg_month: '7',
                   mileage: '7500',
                   hsn: '5',
-                  tsn: 'BGX'
+                  tsn: 'BGX',
+                  article_id: '1ab123'
               }
           }
 
@@ -48,6 +49,7 @@ Parameters
    "mileage", "string", "car mileage", "7500"
    "hsn", "string", "car HSN", "5"
    "tsn", "string", "car TSN", "BGX"
+   "article_id", "string", "article identifier", "1ab123"
 
 OnSuccess callback
 ------------------
@@ -89,7 +91,8 @@ KASKO JS Setup object example
                 first_reg_month: '7',
                 mileage: '7500',
                 hsn: '5',
-                tsn: 'BGX'
+                tsn: 'BGX',
+                article_id: '1ab123'
             }
         }
       });
