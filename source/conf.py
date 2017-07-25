@@ -50,7 +50,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Kasko Docs'
-copyright = '2016, Kasko LTD'
+copyright = '2016 - 2017, Kasko LTD'
 author = 'Kasko LTD'
 
 # The version info for the project you're documenting, acts as replacement for
