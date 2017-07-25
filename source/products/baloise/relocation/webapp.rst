@@ -1,4 +1,4 @@
-Relocation
+Relocation Web App
 ===================
 
 Product Information
