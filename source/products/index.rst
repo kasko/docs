@@ -15,3 +15,4 @@ List of KASKO insurance products with required data to quote and purchase a poli
    barmenia_yearly_car_de
    ATI_travel
    gav_car_and_living
+   oBike/index
