@@ -11,12 +11,20 @@ Product Information
 
    "Name", "oBike New customer"
    "Insurer", "Baloise"
-   "ID DE", "9znERVLG5Wwk3dXdkBDBPyJ4vQrpAb0e"
-   "ID FR", "d2va8Owp4WRnkbMpqkDAmVoN1JejB5GE"
-   "ID IT", "pJeQgLmKblzBR6x5PKX5vdqEkV3wP7an"
-   "ID EN", "VW9AmkbvRBqZN4xoroXlLgEOry13djnK"
    "Language", "DE|FR|IT|EN"
    "Region", "Switzerland"
+
+Product IDs
+-----------
+
+.. csv-table::
+   :widths: 20, 40, 40
+   :header: "Language", "Product ID", "Variant ID"
+
+   "``DE``", "``9znERVLG5Wwk3dXdkBDBPyJ4vQrpAb0e``", "``2ekYGz8ProWy1BMV6lMjAd6nVp9NL5vb``"
+   "``FR``", "``d2va8Owp4WRnkbMpqkDAmVoN1JejB5GE``", "``VW9AmkbvRBqZN4xoqnDlLgEOry13djnK``"
+   "``IT``", "``pJeQgLmKblzBR6x5PKX5vdqEkV3wP7an``", "``9znERVLG5Wwk3dXdLPXBPyJ4vQrpAb0e``"
+   "``EN``", "``VW9AmkbvRBqZN4xoroXlLgEOry13djnK``", "``4AzgY2WZk1eNaRM82aX98r5vP6Jlj0oQ``"
 
 Policy Data
 -----------
