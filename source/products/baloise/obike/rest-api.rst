@@ -6,16 +6,7 @@ REST API
 Get Quote Request
 -----------------
 
-Data fields
-~~~~~~~~~~~
-
-Query string data appended to the quote request
-
-.. csv-table::
-   :header: "Parameter", "Required", "Type", "Description"
-   :widths: 20, 20, 20, 80
-
-   "dummy", "yes", "``string``", "Dummy description."
+``data`` attribute of the quote request must be empty.
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -25,7 +16,7 @@ Example Request
     curl https://api.kasko.io/quotes \
         -u <YOUR SECRET API KEY>: \
         -d variant_id=4AzgY2WZk1eNaRM82aX98r5vP6Jlj0oQ \
-        -d data='{"dummt":"1"}'
+        -d data='{}'
 
 Policy Data Fields
 ------------------
@@ -40,7 +31,9 @@ Data fields
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "dummy", "yes", "``string``", "Dummy description."
+   "phone", "yes", "``string``", "Phone number. Free text string up to 255 characters."
+   "domicile", "yes", "``string``", "Place of residence. Free text string up to 255 characters."
+   "dob", "yes", "``string``", "Date of birth in ISO date format (YYYY-MM-DD)."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -57,7 +50,9 @@ Example Request
             "last_name": "LastName",
             "email": "test@kasko.io",
             "data": {
-                "dummy": "value"
+                "phone": "2222222222"
+                "domicile": "Switzerland"
+                "dob": "1988-08-22"
             }
         }'
 

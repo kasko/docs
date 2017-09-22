@@ -10,7 +10,7 @@ Product Information
    "Name",      "Baloise oBike"
    "Insurer",   "Baloise Switzerland"
    "Region",    "Switzerland"
-   "Languages", "``DE``, ``FR``, ``EN``"
+   "Languages", "``DE``, ``FR``, ``IT``, ``EN``"
 
 Product IDs
 ^^^^^^^^^^^
