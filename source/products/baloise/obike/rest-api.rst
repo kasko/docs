@@ -1,12 +1,15 @@
 REST API
 ========
 
-**Please remember to use the specific variant of a product (new customer vs renewal).**
+**The language of the policy docs & email is set with ``variant_id``. For first time customers use "New Customer (XX)" ``variant_id``. If the customer has purchased insurance before, please use the variant ID's from "renewal". No additional data will have to be appended to the quote request.**
 
 Get Quote Request
 -----------------
 
-``data`` attribute of the quote request must be empty.
+Data fields
+~~~~~~~~~~~
+
+For this product ``data`` attribute of the quote request has not fields and must be empty.
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -18,9 +21,6 @@ Example Request
         -d variant_id=4AzgY2WZk1eNaRM82aX98r5vP6Jlj0oQ \
         -d data='{}'
 
-Policy Data Fields
-------------------
-
 Create Unpaid Policy Request
 ----------------------------
 
@@ -31,9 +31,9 @@ Data fields
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "phone", "yes", "``string``", "Phone number. Free text string up to 255 characters."
-   "domicile", "yes", "``string``", "Place of residence. Free text string up to 255 characters."
-   "dob", "yes", "``string``", "Date of birth in ISO date format (YYYY-MM-DD)."
+   "phone",    "yes", "``string``", "The mobile phone number of the customer."
+   "domicile", "yes", "``string``", "The country where the customer is currently domiciled."
+   "dob",      "yes", "``string``", "Customers date of birth in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD)."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -50,8 +50,8 @@ Example Request
             "last_name": "LastName",
             "email": "test@kasko.io",
             "data": {
-                "phone": "2222222222"
-                "domicile": "Switzerland"
+                "phone": "0123456789",
+                "domicile": "Germany",
                 "dob": "1988-08-22"
             }
         }'
