@@ -1,7 +1,7 @@
 REST API
 ========
 
-.. info::
+.. note::
   The language of the policy docs & email is set with ``variant_id``.
   For first time customers use "New Customer (XX)" ``variant_id``.
   If the customer has purchased insurance before, please use the variant ID's from "renewal".
