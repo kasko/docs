@@ -18,7 +18,7 @@ Example Kasko JS embed code
       Kasko.Setup({
         container: "kasko-widget-container",
         key: "KEY",
-        product : "zG13lWZ8KQykqaXwZPDNPAb6w7VOYdve",
+        product : "LJROpwloaQ8ZBmMA93M7W5PyE4qvAb31",
         mode: "fullscreen",
         metadata: {
           salesagentid: 123456789
