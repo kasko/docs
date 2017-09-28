@@ -28,4 +28,5 @@ Integration methods
    :maxdepth: 1
 
    webapp
+   claims
    rest-api
