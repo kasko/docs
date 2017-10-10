@@ -43,7 +43,7 @@ Example Kasko JS embed code
       Kasko.Setup({
         container: "kasko-widget-container",
         key: "KEY",
-        product : "zG13lWZ8KQykqaXwZPDNPAb6w7VOYdve",
+        product : "VW9AmkbvRBqZN4xoqnDlLgEOry13djnK",
         mode: "fullscreen",
         data: {
           salutation: "mr",
