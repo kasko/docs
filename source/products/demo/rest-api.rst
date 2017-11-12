@@ -10,7 +10,7 @@ Query string data appended to the quote request
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "duration",  "yes", "``integer``", "Number of days for the cover, accepted values are ``1``, ``2``, ``3``, ``7``, ``14``, ``21``."
+   "duration",  "yes", "``string``", "Number of days for the cover, accepted values are ``1``, ``2``, ``3``, ``7``, ``14``, ``21``."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -20,7 +20,7 @@ Example Request
     curl https://api.kasko.io/quotes \
         -u <YOUR SECRET API KEY>: \
         -d variant_id=2ekYGz8ProWy1BMVgaDjAd6nVp9NL5vb \
-        -d data='{"duration": 1}'
+        -d data='{"duration": "1"}'
 
 
 Create Unpaid Policy Request
