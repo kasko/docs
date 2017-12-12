@@ -9,6 +9,7 @@ Optional data that can be put in the "data" tag of the kasko embed object
    :header: "Name", "Description", "Example Value"
 
    "cover", "Allowed values: 100000,500000,1000000", "100000"
+   "theme", "Optional parameter. Allowed values: barmenia-direkt"
 
 Example Kasko JS embed code
 ---------------------------
@@ -21,6 +22,7 @@ Example Kasko JS embed code
         key: "KEY",
         product : "kY1R5y98qPZJK7xRk7MWmrgvz6dpBLEN",
         mode: "fullscreen",
+        theme: "barmenia-direkt",
         data: {
           cover: 100000,
         }
