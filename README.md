@@ -3,18 +3,18 @@
 
 ### Pre-requisites:
 
-```
-$ sudo pip install Sphinx sphinx-autobuild --ignore-installed six
-$ sudo pip install sphinx_rtd_theme --ignore-installed six
+```sh
+sudo pip install Sphinx sphinx-autobuild --ignore-installed six
+sudo pip install sphinx_rtd_theme --ignore-installed six
 ```
 
 ### Build:
 
 All source files are located in `source` folder.
-To auto build whenever source files are changes use the following command (You should run this command from teh project root).
+To auto build whenever source files are changes use the following command (You should run this command from the project root).
 
-```
-$ sphinx-autobuild source/ _build_html/
+```sh
+sphinx-autobuild source/ _build_html/
 ```
 
 
