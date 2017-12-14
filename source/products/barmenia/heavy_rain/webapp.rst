@@ -27,7 +27,7 @@ Example Kasko JS embed code
           cover: 100000,
         },
         metadata: {
-          salesagentid: "123456789"
+          agent_id: "123456789"
         }
       });
     </script>
