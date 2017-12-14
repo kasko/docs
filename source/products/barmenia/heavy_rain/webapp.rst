@@ -25,6 +25,9 @@ Example Kasko JS embed code
         theme: "barmenia-direkt",
         data: {
           cover: 100000,
+        },
+        metadata: {
+          salesagentid: "123456789"
         }
       });
     </script>
