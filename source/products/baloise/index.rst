@@ -15,6 +15,7 @@ List of Baloise insurance products.
    cyber/index
    furniture/index
    holiday/index
+   multi-item/index
    obike/index
    relocation/index
    smart-device/index
