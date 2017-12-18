@@ -25,7 +25,7 @@ Item IDs
 ^^^^^^^^
 
 .. csv-table::
-   :widths: 40, 60
+   :widths: 30, 40, 30
    :header: "Item Title", "Item ID", "Tags"
 
    "Bicycle", "``item_e59f5e50ee75af5ef9395088eb1``", "``bicycle``"
