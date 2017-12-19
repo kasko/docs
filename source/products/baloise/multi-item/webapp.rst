@@ -5,11 +5,15 @@ Kasko JS Optional parameters
 -------------------------------------
 Optional data that can be put in the kasko embed object
 
-.. csv-table::
-   :header: "Name", "Description", "Example Value"
+.. list-table::
+  :header-rows: 1
 
-   "tags",  "An array of item tags that will be exposed in the webapp. If this property is not provided - all items will be exposed.", "['camera', 'watch']"
-
+  * - Name
+    - Description
+    - Example Value
+  * - tags
+    - Array of item tags that will be exposed in the webapp. If this property is not provided - all items will be exposed.
+    - ``["camera", "watch"]``
 
 Kasko JS Optional metadata Parameters
 -------------------------------------
