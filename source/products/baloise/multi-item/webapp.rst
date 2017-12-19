@@ -18,8 +18,9 @@ Optional data that can be put in the "metadadata" tag of the kasko embed object
 .. csv-table::
    :header: "Name", "Description", "Example Value"
 
-   "agent_id",     "The ID of the sales agent.",     "123456789"
-   "sub_agent_id", "The ID of the sales sub-agent.", "123456789"
+   "back_button_url", "Webapp's back button URL.",      "https://www.kasko.io/"
+   "agent_id",        "The ID of the sales agent.",     "123456789"
+   "sub_agent_id",    "The ID of the sales sub-agent.", "123456789"
 
 Example Kasko JS embed code
 ---------------------------
@@ -34,6 +35,7 @@ Example Kasko JS embed code
         mode: "fullscreen",
         language: "de",
         metadata: {
+          back_button_url: "https://www.kasko.io/",
           agent_id: "123456789",
           sub_agent_id: "123456789",
           bcc_email: "test@email.com"
