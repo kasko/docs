@@ -22,9 +22,11 @@ Optional data that can be put in the "metadadata" tag of the kasko embed object
 .. csv-table::
    :header: "Name", "Description", "Example Value"
 
-   "back_button_url", "Webapp's back button URL.",      "https://www.kasko.io/"
-   "agent_id",        "The ID of the sales agent.",     "123456789"
-   "sub_agent_id",    "The ID of the sales sub-agent.", "123456789"
+   "back_button_url",  "Webapp's back button URL.",      "https://www.kasko.io/"
+   "salesagent_id",    "The ID of the sales agent.",     "123456789"
+   "subagent_id",      "The ID of the sub-agent.",       "123456789"
+   "salesagent_email", "The BCC salesagent email.",      "test@email.com"
+   "subagent_email",   "The BCC sub-agent email.",       "test@email.com"
 
 Example Kasko JS embed code
 ---------------------------
@@ -40,9 +42,10 @@ Example Kasko JS embed code
         language: "de",
         metadata: {
           back_button_url: "https://www.kasko.io/",
-          agent_id: "123456789",
-          sub_agent_id: "123456789",
-          bcc_email: "test@email.com"
+          salesagent_id: "123456789",
+          subagent_id: "123456789",
+          salesagent_email: "test@email.com",
+          subagent_email: "test@email.com"
         }
       });
     </script>
