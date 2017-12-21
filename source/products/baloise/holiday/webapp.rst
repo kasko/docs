@@ -31,7 +31,7 @@ Example Kasko JS embed code
       Kasko.Setup({
         container: "kasko-widget-container",
         key: "KEY",
-        product : "pJeQgLmKblzBR6x5poX5vdqEkV3wP7an",
+        product: "pJeQgLmKblzBR6x5poX5vdqEkV3wP7an",
         mode: "fullscreen",
         data: {
           luggage_value: 3000,
