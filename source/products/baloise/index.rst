@@ -1,5 +1,3 @@
-.. _products:
-
 Baloise Products
 ================
 
