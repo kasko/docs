@@ -1,5 +1,5 @@
 Warranty & GAP Insurance
-=======================
+========================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^
