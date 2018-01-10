@@ -1,7 +1,7 @@
 REST API
 ========
 
-.. note::  Please refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
+.. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
 
 **Please remember to use the API specific item and touchpoint.**
 
