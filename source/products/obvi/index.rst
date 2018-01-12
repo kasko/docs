@@ -1,5 +1,3 @@
-.. _products:
-
 Obvi Products
 =============
 

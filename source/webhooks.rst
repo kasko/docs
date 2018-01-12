@@ -1,4 +1,4 @@
-.. _keys:
+.. _webhooks:
 
 Webhooks
 ========
