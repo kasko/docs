@@ -32,7 +32,7 @@ Example KASKO JS embed code
           }
         },
         metadata: {
-          salesagentid: "123456789"
+          salesagent_id: "123456789"
         }
       });
     </script>

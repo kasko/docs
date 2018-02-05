@@ -40,8 +40,10 @@ Example Kasko JS embed code
         touchpoint : "tp_e46a5ac3b8eee88c49f3a0cb222a2",
         mode: "fullscreen",
         language: "de",
+        config: {
+          back_button_url: "https://www.kasko.io/"
+        },
         metadata: {
-          back_button_url: "https://www.kasko.io/",
           salesagent_id: "123456789",
           subagent_id: "123456789",
           salesagent_email: "test@email.com",
