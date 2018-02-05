@@ -8,7 +8,7 @@ Optional data that can be put in the "metadadata" tag of the kasko embed object
 .. csv-table::
    :header: "Name", "Description", "Example Value"
 
-   "salesagentid",  "The ID of the sales agent.", "123456789"
+   "salesagent_id",  "The ID of the sales agent.", "123456789"
 
 Example Kasko JS embed code
 ---------------------------
@@ -21,7 +21,7 @@ Example Kasko JS embed code
         product : "LJROpwloaQ8ZBmMA93M7W5PyE4qvAb31",
         mode: "fullscreen",
         metadata: {
-          salesagentid: 123456789
+          salesagent_id: 123456789
         }
       });
     </script>
