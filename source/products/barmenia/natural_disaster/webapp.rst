@@ -23,7 +23,7 @@ Example Kasko JS embed code
         mode: "fullscreen",
         theme: "barmenia-direkt",
         metadata: {
-          agent_id: "123456789"
+          salesagent_id: "123456789"
         }
       });
     </script>
