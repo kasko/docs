@@ -16,7 +16,6 @@ Product IDs
 ^^^^^^^^^^^
 
 .. csv-table::
-   :widths: 20, 40, 40
    :header: "Item Title", "Item ID"
 
    "Allianz Flat Share New Client", "``item_dc0e3555563151a6a1dc4d75369``"
