@@ -7,6 +7,7 @@ Optional properties that can be put in the "data" tag of the kasko embed object
 
 .. csv-table::
     :header: "Name", "Description", "Example Value"
+
    "first_name",          "Preselected invited user first name",        "Wolf"
    "email",               "Preselected invited user email",             "email@email.com"
    "invited_by",          "Name of person who invited to join group",   "Max Mustermann"
@@ -23,6 +24,7 @@ Optional data that can be put in the "config" tag of the kasko embed object
 
 .. csv-table::
     :header: "Name", "Description", "Example Value"
+
    "back_button_url",  "Webapp's back button URL.",      "https://www.kasko.io/"
 
 Kasko JS Optional metadata Parameters
@@ -31,6 +33,7 @@ Optional data that can be put in the "metadadata" tag of the kasko embed object
 
 .. csv-table::
     :header: "Name", "Description", "Example Value"
+
    "salesagent_id",    "The ID of the sales agent.",     "123456789"
    "subagent_id",      "The ID of the sub-agent.",       "123456789"
    "salesagent_email", "The BCC salesagent email.",      "test@email.com"
@@ -40,7 +43,8 @@ Example Kasko JS embed code for New Client
 ------------------------------------------
 
 .. code:: html
-<script type="text/javascript" src="https://js.kasko.io"></script>
+
+    <script type="text/javascript" src="https://js.kasko.io"></script>
     <div id="kasko-widget-container"></div>
     <script>
       Kasko.Setup({
@@ -66,6 +70,7 @@ Example Kasko JS embed code for Joining Group
 ---------------------------------------------
 
 .. code:: html
+
     <script type="text/javascript" src="https://js.kasko.io"></script>
     <div id="kasko-widget-container"></div>
     <script>
