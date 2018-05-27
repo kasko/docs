@@ -6,7 +6,7 @@ Kasko JS data Parameters
 Optional properties that can be put in the "data" tag of the kasko embed object
 
 .. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
+   :header: "Name", "Description", "Example Value"
 
    "first_name",          "Preselected invited user first name",        "Wolf"
    "email",               "Preselected invited user email",             "email@email.com"
@@ -23,7 +23,7 @@ Kasko JS config Parameters
 Optional data that can be put in the "config" tag of the kasko embed object
 
 .. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
+   :header: "Name", "Description", "Example Value"
 
    "back_button_url",  "Webapp's back button URL.",      "https://www.kasko.io/"
 
