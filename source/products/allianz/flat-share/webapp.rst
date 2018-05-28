@@ -49,7 +49,7 @@ Example Kasko JS embed code for New Client
     <script>
       Kasko.Setup({
         container: "kasko-widget-container",
-        key: "pk_test_LPdAR7gXV1oMWQyLZVkDqZ250jEGKawm",
+        key: "KEY",
         touchpoint : "tp_fa87ed4d89c7dbdad287884237ff4",
         mode: "fullscreen",
         language: "de",
@@ -76,7 +76,7 @@ Example Kasko JS embed code for Joining Group
     <script>
       Kasko.Setup({
         container: "kasko-widget-container",
-        key: "pk_test_LPdAR7gXV1oMWQyLZVkDqZ250jEGKawm",
+        key: "KEY",
         touchpoint : "tp_fa87ed4d89c7dbdad287884237ff4",
         mode: "fullscreen",
         language: "de",
@@ -85,15 +85,15 @@ Example Kasko JS embed code for Joining Group
             back_button_url: "https://www.kasko.io/"
         },
         data: {
-            "first_name": "Wolf",
-            "email": "email@email.io",
-            "invited_by": "Max Mustermann",
-            "group_id": "WG-12345678",
-            "house_number": 123,
-            "street": "street",
-            "city": "City",
-            "postcode": "1234",
-            "housemates_count": 2
+            first_name: "Wolf",
+            email: "email@email.io",
+            invited_by: "Max Mustermann",
+            group_id: "WG-12345678",
+            house_number: 123,
+            street: "street",
+            city: "City",
+            postcode: "1234",
+            housemates_count: 2
         },
         metadata: {
             salesagent_id: "123456789",
