@@ -54,7 +54,6 @@ Example Kasko JS embed code for New Client
         mode: "fullscreen",
         language: "de",
         config: {
-            item_id: "item_dc0e3555563151a6a1dc4d75369",
             back_button_url: "https://www.kasko.io/"
         },
         metadata: {
@@ -81,7 +80,6 @@ Example Kasko JS embed code for Joining Group
         mode: "fullscreen",
         language: "de",
         config: {
-            item_id: "item_c6088da5216fa83a002ca94a141",
             back_button_url: "https://www.kasko.io/"
         },
         data: {
