@@ -76,7 +76,7 @@ Example Kasko JS embed code for Joining Group
       Kasko.Setup({
         container: "kasko-widget-container",
         key: "KEY",
-        touchpoint : "tp_fa87ed4d89c7dbdad287884237ff4",
+        touchpoint : "tp_1c858d8f2558ee84e073633330f01",
         mode: "fullscreen",
         language: "de",
         config: {
