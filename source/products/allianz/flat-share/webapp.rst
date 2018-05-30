@@ -25,7 +25,7 @@ Optional data that can be put in the "config" tag of the kasko embed object
 .. csv-table::
    :header: "Name", "Description", "Example Value"
 
-   "back_button_url",  "Webapp's back button URL.",      "https://www.kasko.io/"
+   "portal_button_url",  "Webapp's back button URL.",      "https://www.kasko.io/"
 
 Kasko JS Optional metadata Parameters
 -------------------------------------
@@ -80,7 +80,7 @@ Example Kasko JS embed code for Joining Group
         mode: "fullscreen",
         language: "de",
         config: {
-            back_button_url: "https://www.kasko.io/"
+            portal_button_url: "https://www.kasko.io/"
         },
         data: {
             first_name: "Wolf",
