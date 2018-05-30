@@ -54,7 +54,7 @@ Example Kasko JS embed code for New Client
         mode: "fullscreen",
         language: "de",
         config: {
-            back_button_url: "https://www.kasko.io/"
+            portal_button_url: "https://www.kasko.io/"
         },
         metadata: {
             salesagent_id: "123456789",
