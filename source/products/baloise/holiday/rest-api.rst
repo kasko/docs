@@ -41,10 +41,10 @@ Data fields
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "gender",      "yes", "``string``", "Customers gender, accepted values are ``male`` or ``female``."
+   "salutation",      "yes", "``string``", "Customers gender, accepted values are ``mr`` or ``ms``."
    "dob",         "yes", "``string``", "Customers date of birth in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD)."
    "phone",       "yes", "``string``", "Customers phone number."
-   "home_number", "yes", "``string``", "Customers house number."
+   "house_number", "yes", "``string``", "Customers house number."
    "street",      "yes", "``string``", "Customers street."
    "city",        "yes", "``string``", "Customers city."
    "postcode",    "yes", "``string``", "Customers postal code, must be a valid Swiss postal code."
@@ -64,10 +64,10 @@ Example Request
             "last_name": "LastName",
             "email": "test@kasko.io",
             "data": {
-                "gender": "female",
+                "salutation": "mr",
                 "dob": "1990-12-31",
                 "phone": "+41781234567",
-                "home_number": "1",
+                "house_number": "1",
                 "street": "Street",
                 "city": "City",
                 "postcode": "1234"
