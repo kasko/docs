@@ -14,7 +14,6 @@ Query string data appended to the quote request
    :widths: 20, 20, 20, 80
 
    "luggage_insurance",  "yes", "``boolean``", "Luggage Cover, accepted values are ``true`` for ``false``."
-   "luggage_value",   "yes", "``integer``", "The value of luggage in cents. Increments of ``100000`` starting from ``0``, up to ``2000000``", "``0``, ``100000``, ``200000``, .., ``2000000`"
    "reduced_excess",  "yes", "``boolean``", "Reduced Excess Cover, accepted values are ``true`` for ``false``."
    "camper",  "yes", "``boolean``", "Reduced Excess is on camper, accepted values are ``true`` for ``false``."
    "trip_start_date",  "yes", "``date``", "Trip start date, yyyy-mm-dd (2018-06-20)."
