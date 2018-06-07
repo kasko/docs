@@ -16,3 +16,4 @@ List of KASKO insurance products with required data to quote and purchase a poli
    ATI_travel
    gav_car_and_living
    demo/index
+   randv/lawnmover/index
