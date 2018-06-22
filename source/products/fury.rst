@@ -103,3 +103,32 @@ Example Request
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<ID OF THE POLICY>"
         }'
+
+List Policies
+------------------------------
+
+List policies created with this distirbutor key
+
+.. code:: bash
+
+    curl https://api.kasko.io/policies?include=product \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Content-Type: application/json'
+
+Get Specific Policy
+------------------------------
+
+List policies created with this distirbutor key
+
+.. code:: bash
+
+    curl https://api.kasko.io/policies/[LONG POLICY ID]/?include=distributor \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Content-Type: application/json'
+
+
+
+
+
+
+
