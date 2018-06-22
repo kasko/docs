@@ -15,12 +15,7 @@ Query string data appended to the quote request
 
    "product",  "yes", "``string``", "Risk module, accepted values are ``product_a``, ``product_b`` and ``product_c``."
    "addon_1",  "yes", "``boolean``", "Indiciated wether addon 1 is used. Accepted values are ``true`` or ``false``."
-   "insured_circle",  "yes", "``string``", "Insured Circle, accepted values are ``circle_a``, ``circle_b``."
-   "age_group",  "if insured_circle = circle_a", "``string``", "Aged group if circle a, accepted values are ``under_30``, ``between_30_and_50``, ``above_50``."
-   "share_data",  "yes", "``boolean``", "Indiciated wether share data is used. Accepted values are ``true`` or ``false``."
-   "type_of_item",  "yes", "``string``", "Item Class, accepted values are ``item_a``, ``item_a_and_b``, ``item_a_and_b_and_c``."
-   "deductible",  "yes", "``integer``", "Deductable, accepted values are ``0``, ``20000``."
-  "cancellation_window",  "yes", "``string``", "The allowed cancellation window, accepted values are ``day``, ``month``, ``year``."
+ 
 
 Example Request
 ^^^^^^^^^^^^^^^
