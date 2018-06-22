@@ -12,7 +12,7 @@ Query string data appended to the quote request
 .. csv-table::
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
-
+   
    "product",  "yes", "``string``", "Risk module, accepted values are ``product_a``, ``product_b`` and ``product_c``."
    "addon_1",  "yes", "``boolean``", "Indiciated wether addon 1 is used. Accepted values are ``true`` or ``false``."
    "insured_circle",  "yes", "``string``", "Insured Circle, accepted values are ``circle_a``, ``circle_b``."
