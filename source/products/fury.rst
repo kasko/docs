@@ -19,6 +19,7 @@ Query string data appended to the quote request
    "age_group",  "if insured_circle = circle_a", "``string``", "Aged group if circle a, accepted values are ``under_30``, ``between_30_and_50``, ``above_50``."
    "share_data",  "yes", "``boolean``", "Indiciated wether share data is used. Accepted values are ``true`` or ``false``."
    "type_of_item",  "yes", "``string``", "Item Class, accepted values are ``item_a``, ``item_a_and_b``, ``item_a_and_b_and_c``."
+   "deductible",  "yes", "``integer``", "Deductable, accepted values are ``0``, ``20000``."
 
 
 Example Request
