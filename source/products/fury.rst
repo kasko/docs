@@ -30,7 +30,7 @@ Example Request
     curl https://api.kasko.io/quotes \
         -u <YOUR SECRET API KEY>: \
         -d variant_id=d2leL7QmGaOyz4M35rXPgrkVBEqK6RJZ \
-        -d data='{"age_group":"under_30","type_of_item":"item_a_and_b","share_data":true,"product":"product_a","addon_1":true,"insured_circle":"circle_b","cancellation_window":"month","deductible":20000}'
+        -d data=' {"age_group":"between_30_and_50","type_of_item":"item_a_and_b","share_data":true,"product":"product_a","addon_1":true,"insured_circle":"circle_a","cancellation_window":"month","deductible":20000}'
 
 Create Unpaid Policy Request
 ----------------------------
@@ -42,13 +42,13 @@ Data fields
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "gender",      "yes", "``string``", "Customers gender, accepted values are ``male`` or ``female``."
-   "dob",         "yes", "``string``", "Customers date of birth in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD)."
-   "phone",       "yes", "``string``", "Customers phone number."
-   "home_number", "yes", "``string``", "Customers house number."
-   "street",      "yes", "``string``", "Customers street."
-   "city",        "yes", "``string``", "Customers city."
-   "postcode",    "yes", "``string``", "Customers postal code, must be a valid Swiss postal code."
+   "salutation",     "yes",   "``string``",  "Customers salutation, accepted values are ``mr`` or ``ms``."
+   "dob",            "yes",   "``string``",  "Customers date of birth in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD)."
+   "phone",          "yes",   "``string``",  "Customers phone number."
+   "house_number",   "yes",   "``string``",  "Customers house number."
+   "street",         "yes",   "``string``",  "Customers street."
+   "city",           "yes",   "``string``",  "Customers city."
+   "postcode",       "yes",   "``string``",  "Customers postal code"
 
 Example Request
 ^^^^^^^^^^^^^^^
@@ -65,10 +65,10 @@ Example Request
             "last_name": "LastName",
             "email": "test@kasko.io",
             "data": {
-                "gender": "female",
-                "dob": "1990-12-31",
+                "salutation": "mr",
+                "dob": "1990-12-12",
                 "phone": "+41781234567",
-                "home_number": "1",
+                "house_number": "1",
                 "street": "Street",
                 "city": "City",
                 "postcode": "1234"
