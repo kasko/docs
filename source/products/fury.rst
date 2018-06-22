@@ -20,7 +20,7 @@ Query string data appended to the quote request
    "share_data",  "yes", "``boolean``", "Indiciated wether share data is used. Accepted values are ``true`` or ``false``."
    "type_of_item",  "yes", "``string``", "Item Class, accepted values are ``item_a``, ``item_a_and_b``, ``item_a_and_b_and_c``."
    "deductible",  "yes", "``integer``", "Deductable, accepted values are ``0``, ``20000``."
-
+   "cancellation_window",  "yes", "``string``", "The allowed cancellation window, accepted values are ``day`` or ``month`` or ``year``."
 
 Example Request
 ^^^^^^^^^^^^^^^
