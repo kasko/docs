@@ -14,7 +14,9 @@
     var callback = Kasko.getUrlParameter('callback_url');
     var unique_identifier = Kasko.getUrlParameter('unique_identifier');
     var language = Kasko.getUrlParameter('language');
-
+    var purchase_date = Kasko.getUrlParameter('purchase_date');
+    var purchase_value = Kasko.getUrlParameter('purchase_value');
+    var product_model = Kasko.getUrlParameter('product_model');
 
     var tags = Kasko.getUrlParameter('item');
     try {
@@ -34,6 +36,11 @@
       metadata: {
         unique_identifier: unique_identifier,
       },
+      data: {
+        purchase_date: purchase_date,
+        purchase_value: purchase_value,
+        product_model: product_model,
+      },  
       onSuccess: function(data) {
         var URL = callback;
         var POLICY_ID = data.policy.id;
