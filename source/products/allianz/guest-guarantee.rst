@@ -1,4 +1,4 @@
-Allianz Guest Guarantee PUSH API
+Allianz Guest Guarantee  API
 ======================================
 
 This API is used for creation of Allianz Guest Guarantee policies.
@@ -7,8 +7,6 @@ Getting started
 ---------------
 
 This uses the KASKO push API and is a single request.
-
-1) Make POST request to URL
 
 Authentication
 --------------
@@ -23,17 +21,6 @@ If you need to authenticate via bearer auth (e.g., for a cross-origin request), 
 
 All API requests must be made over `HTTPS <https://en.wikipedia.org/wiki/HTTPS>`_. Calls made over plain HTTP will fail.
 
-**Basic Authentication**
-
-.. code:: rest
-
-	curl -u sk_test_SECRET_KEY: https://push-api.kasko.io/
-
-**Bearer Authentication**
-
-.. code:: rest
-
-	curl -H "Authorization: Bearer sk_test_SECRET_KEY" https://push-api.kasko.io/
 
 Header
 ------
@@ -44,48 +31,45 @@ All requests must be in JSON and include ``Content-Type`` header.
 
 	-H "Content-Type: application/json"
 
+REST API
+========
 
-Create a Policy
----------------
+Get Quote Request
+-----------------
 
-Definition
-~~~~~~~~~~
-.. code:: bash
+Data fields
+^^^^^^^^^^^
 
-	POST https://push-api.kasko.io/
-
-Parameters
-~~~~~~~~~~
+Query string data appended to the quote request
 
 .. csv-table::
-   :header: "Parameter", "required", "Type", "Description"
-   :widths: 20, 20, 20, 80
-
-   "variant_id", "yes", "``string``", "d7zoBRlEp9yar6XyrjxPWm05VqwkQKA8"
-   "input", "yes", "``object``", "JSON - See Product Input."
-
-Product Input
-~~~~~~~~~~~~~
-
-.. csv-table::
-   :header: "Parameter", "required", "Type", "Description"
-   :widths: 20, 20, 20, 80
-
-   "first_name", "yes", "``string``", "Customer first name."
-   "last_name", "yes", "``string``", "Customer last name."
-   "email", "yes", "``string``", "Customer Email Address."
-   "data", "yes", "``object``", "JSON - See Policy Data Input."
-
-Policy Data Input
-~~~~~~~~~~~~~~~~~
-
-.. csv-table::
-   :header: "Parameter", "required", "Type", "Description"
+   :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
    "checkin_date", "yes", "``string``", "Check-in date in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD). Must be greater than or equal to todays date."
    "checkout_date", "yes", "``string``", "Check-out date in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD). Must be greater than or equal to check-in date."
    "sum_insured", "yes", "``string``", "The sum insured in cents. Allowed values are ``100000``, ``200000`` or ``300000``"
+
+Example Request
+^^^^^^^^^^^^^^^
+
+.. code:: bash
+
+    curl https://api.kasko.io/quotes \
+      -u <YOUR SECRET API KEY>: \
+      -d variant_id=d7zoBRlEp9yar6XyrjxPWm05VqwkQKA8 \
+      -d data='{"checkin_date":"2018-10-05","checkout_date":"2018-10-08","sum_insured":"200000"}'
+
+Create Unpaid Policy Request
+----------------------------
+
+Data fields
+^^^^^^^^^^^
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
    "street", "yes", "``string``", "Customers street."
    "house_number", "yes", "``string``", "Customers house number."
    "postcode", "yes", "``string``", "Customers postal code."
@@ -93,55 +77,54 @@ Policy Data Input
    "country", "yes", "``string``", "Customers country."
 
 Example Request
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 .. code:: bash
 
-    curl https://push-api.kasko.io/ \
+  curl https://api.kasko.io/policies \
+        -X POST \
         -u <YOUR SECRET API KEY>: \
-        -H "Content-Type: application/json" \
+        -H 'Content-Type: application/json' \
         -d '{
-            "variant_id":"d7zoBRlEp9yar6XyrjxPWm05VqwkQKA8",
-            "input":{
-                "first_name":"Test",
-                "last_name":"Person",
-                "email":"test@person.com",
-                "data":{
-                    "checkin_date":"2017-07-05",
-                    "checkout_date":"2017-07-05",
-                    "sum_insured":"200000",
-                    "street":"2nd Avenue",
-                    "house_number":"123",
-                    "postcode":"UX XXX",
-                    "city":"Atlantis",
-                    "country":"Noland"
-                }
+            "quote_token": "<TOKEN OBTAINED FORM QUOTE REQUEST>",
+            "first_name": "Matthew",
+            "last_name": "Wardle",
+            "email": "mwardle@kasko.io",
+            "data": {
+                "street":"2nd Avenue",
+                "house_number":"123",
+                "postcode":"UX XXX",
+                "city":"Gotham",
+                "country":"UK"
             }
         }'
 
-Example Response Success
-~~~~~~~~~~~~~~~~~~~~~~~~
+Convert Policy To Paid Request
+------------------------------
 
-Reference of created policy
+After creating unpaid policy it is required to convert it to paid. This can be done by making another request.
 
-response code 200
+Data fields
+^^^^^^^^^^^
 
-.. code:: javascript
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
 
-	{
-	  "reference": "97c3b16c-f2d1-11e6-88ad-59f2b961d2ab"
-	}
+   "token",     "yes", "``string``", "The ``payment_token`` returned by the create policy request."
+   "policy_id", "yes", "``string``", "The 33 character long policy ID returned by the create policy request."
 
-Example Response Failure
-~~~~~~~~~~~~~~~~~~~~~~~~
+Example Request
+^^^^^^^^^^^^^^^
 
-response code 400
+.. code:: bash
 
-.. code:: javascript
+    curl https://api.kasko.io/payments \
+        -X POST \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "token": "<PAYMENT TOKEN>",
+            "policy_id": "<ID OF THE POLICY>"
+        }'
 
-	{
-	  "errorMessage": "Bad Request: The 'first_name' field is required."
-	}
-
-
-If you have any questions please email us at ``techsupport@kasko.io``.
