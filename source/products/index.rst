@@ -17,3 +17,4 @@ List of KASKO insurance products with required data to quote and purchase a poli
    gav_car_and_living
    demo/index
    randv/lawnmover/index
+   zurich/index
