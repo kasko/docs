@@ -6,7 +6,7 @@ This API is used for creation of Allianz Guest Guarantee policies.
 Getting started
 ---------------
 
-This uses the KASKO push API and is a single request.
+This uses the KASKO API.
 
 Authentication
 --------------
