@@ -32,4 +32,3 @@ Integration methods
    :maxdepth: 1
 
    rest-api
-   push-api
