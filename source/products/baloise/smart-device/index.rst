@@ -31,4 +31,3 @@ Integration methods
 
    webapp
    rest-api
-   push-api
