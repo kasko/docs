@@ -16,7 +16,7 @@ Contents
    integration_methods
    keys
    kasko_js
-   rest-api/index
+   rest_api/index
    webhooks
    products/index
 
