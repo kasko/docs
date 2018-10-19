@@ -64,25 +64,25 @@ Example Request
 
 .. code:: bash
 
-curl -X POST \
-  'https://api.kasko.io/policies' \
-  -u sk_test_SECRET_KEY: \
-  -H 'Accept: application/vnd.kasko.v2+json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "data": {
-		"phone":"+11111",
-		"salutation": "mr",
-		"dob": "1991-10-31",
-		"street": "Test Street",
-		"state": "Test State",
-		"postcode": "1001",
-		"employment_status": "employed"
-  },
-  "quote_token":"<Quote Token>",
-  "first_name": "Test",
-  "last_name": "Person",
-  "email": "test@kasko.io",
-  "language": "de"
-}'
+	curl -X POST \
+	  'https://api.kasko.io/policies' \
+	  -u sk_test_SECRET_KEY: \
+	  -H 'Accept: application/vnd.kasko.v2+json' \
+	  -H 'Content-Type: application/json' \
+	  -d '{
+	  "data": {
+			"phone":"+11111",
+			"salutation": "mr",
+			"dob": "1991-10-31",
+			"street": "Test Street",
+			"state": "Test State",
+			"postcode": "1001",
+			"employment_status": "employed"
+	  },
+	  "quote_token":"<Quote Token>",
+	  "first_name": "Test",
+	  "last_name": "Person",
+	  "email": "test@kasko.io",
+	  "language": "de"
+	}'
 
