@@ -55,8 +55,8 @@ JSON data posted to /policies on creation of policy
    "state",              "string", "State of the policyholder's address.",         "State"
    "postcode",          "string", "Postcode of the policyholder's address.",     "1234"
    "employment_status",  "string", "Employment status",     "employed"
-   "coinsured_first_name", "string|optional", "Co-insured First name",     "test"
-   "coinsured_first_name", "string|optional", "Co-insured Last name",     "person"
+   "coinsured_first_name", "string|optional", "Co-insured First name","test"
+   "coinsured_first_name", "string|optional", "Co-insured Last name", "person"
 
 
 Example Request
