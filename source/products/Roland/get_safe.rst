@@ -21,7 +21,7 @@ Query string data appended to the quote request
    :widths: 20, 20, 80, 20
 
    "duration",                "str",   "Insurance duration. Available values (depending on item): P1Y"
-   "start_date",              "iso_date",   "Start date of policy.  ISO date", "yyyy-mm-dd"
+   "start_date",              "iso_date",   "Start date of policy  ISO date", "yyyy-mm-dd"
    "main_module",             "str",  "Which insurance module", "PBV|PBVIM"
    "marital_status",           "str",  "Customer marital status", "single|married"
 
@@ -54,9 +54,9 @@ JSON data posted to /policies on creation of policy
    "street",            "string", "Street name of the policyholder's address.",  "Main street"
    "state",              "string", "State of the policyholder's address.",         "State"
    "postcode",          "string", "Postcode of the policyholder's address.",     "1234"
-   "employment_status",  "string", Employment status",     "employed"
-   "coinsured_first_name", "string|optional", "Co-insurerd First name",     "test"
-   "coinsured_first_name", "string|optional", "Co-insurerd Last name .",     "person"
+   "employment_status",  "string", "Employment status",     "employed"
+   "coinsured_first_name", "string|optional", "Co-insured First name",     "test"
+   "coinsured_first_name", "string|optional", "Co-insured Last name",     "person"
 
 
 Example Request
