@@ -18,15 +18,11 @@ Query string data appended to the quote request
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "duration",                "str",   "Insurance duration. Available values (depending on item): P1Y, P2Y, P3Y, P4Y, P5Y", "P1Y"
-   "item_value",              "int",   "Item value in cents.", "200000"
-   "older_than_three_months", "bool",  "Has the item been purchased in the last 3 months?", "false"
-   "theft",                   "bool",  "Theft module.", "true"
-   "damage",                  "bool",  "Damage module.", "false"
-   "warranty",                "bool",  "Warranty module (not available for all items).", "false"
-   "loss",                    "bool",  "Loss module (can be set to `true` only if theft is also `true`).", "false"
-   "item_purchase_date",      "str",   "Item purchase date. Required if `warranty` module is enabled.", "2017-10-04"
-   "item_manufacturers_warranty_duration", "str", "Item manufacturers warranty duration. Required if `warranty` module is enabled. Available values: P1Y, P2Y ... P9Y, P10Y.", "P1Y"
+   "duration",                "str",   "Insurance duration. Available values (depending on item): P1Y"
+   "start_date",              "iso_date",   "Start date of policy.  ISO date", "yyyy-mm-dd"
+   "main_module",             "str",  "Which insurance module", "PBV|PBVIM"
+   "marital_status",           "str",  "Customer marital status", "single|married"
+
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -36,7 +32,6 @@ Example Request
    curl --get https://api.kasko.io/quotes \
        -u sk_test_SECRET_KEY: \
        -d touchpoint_id=TOUCHPOINT_ID \
-       -d item_id=item_82b0b4d6d843bb7e15b431a9ceb \
        -d language=de \
        -d data='{"duration":"P1Y","item_value":100000,"older_than_three_months":false,"theft":true,"damage":false,"loss":false}'
 
@@ -71,3 +66,33 @@ Example Request
        -d email=john@example.com \
        -d language=de \
        -d data='{"phone":"+417304200","salutation":"mr","dob":"1989-02-04","house_number":"12","street":"Main street","city":"Lubeck","postcode":"1234","item_identifier":"WT3211","item_description":"Nikon D3000"}'
+
+Convert Policy To Paid Request
+------------------------------
+
+After creating unpaid policy it is required to convert it to paid. This can be done by making another request.
+
+Data fields
+^^^^^^^^^^^
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "token",     "yes", "``string``", "The ``payment_token`` returned by the create policy request."
+   "policy_id", "yes", "``string``", "The 33 character long policy ID returned by the create policy request."
+
+Example Request
+^^^^^^^^^^^^^^^
+
+.. code:: bash
+
+    curl https://api.kasko.io/payments \
+        -X POST \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "token": "<PAYMENT TOKEN>",
+            "policy_id": "<ID OF THE POLICY>"
+        }'
+
