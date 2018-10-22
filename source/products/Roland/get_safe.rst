@@ -23,7 +23,7 @@ Query string data appended to the quote request
    "duration",                "str",   "Insurance duration. Available values (depending on item): P1Y"
    "start_date",              "iso_date",   "Start date of policy  ISO date", "yyyy-mm-dd"
    "main_module",             "str",  "Which insurance module", "PBV|PBVIM"
-   "partner_coverage",        "boolean",  "Customer marital status", "true|false"
+   "partner_coverage",        "bool",  "Customer marital status", "true|false"
 
 
 Example Request
