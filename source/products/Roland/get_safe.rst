@@ -39,8 +39,8 @@ Example Request
        -d subscription_plan_id=sp_01a1cc12c98ccc5b2c7a2d1e9fa09 \
        -d data='{"duration":"P1Y","start_date":2018-12-12,"main_module":PBV,"partner_coverage":true}'
 
-Policy Data
------------
+Create Unpaid Policy Request
+----------------------------
 JSON data posted to /policies on creation of policy
 
 .. csv-table::
@@ -84,5 +84,9 @@ Example Request
 	  "last_name": "Person",
 	  "email": "test@kasko.io",
 	  "language": "de"
-	}'
+        }'
 
+Convert Policy To Paid Request
+------------------------------
+
+After creating unpiad policy it is required to convert it to paid. This can be done by making another request
