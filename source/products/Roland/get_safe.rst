@@ -8,9 +8,9 @@ REST API
 V2 Header
 ----------
 
-The API requests must use the V2 header as show in the examples below
+The API requests must use the V2 header as show in the examples below:
 
-Accept: application/vnd.kasko.v2+json
+``Accept: application/vnd.kasko.v2+json``
 
 Quote Data
 ----------
@@ -41,7 +41,7 @@ Example Request
 
 Create Unpaid Policy Request
 ----------------------------
-JSON data posted to /policies on creation of unpaid policy
+JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
