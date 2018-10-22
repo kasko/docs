@@ -41,7 +41,7 @@ Example Request
 
 Create Unpaid Policy Request
 ----------------------------
-JSON data posted to /policies on creation of policy
+JSON data posted to /policies on creation of unpaid policy
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
@@ -88,7 +88,7 @@ Example Request
 
 Convert Policy To Paid Request
 ------------------------------
-After creating unpiad policy it is required to convert it to paid. This can be done by making another request
+After creating unpiad policy it is required to convert it to paid. This can be done by making another request.
 
 .. csv-table::
    :header: "Parameter", "Required", "Type", "Description"
