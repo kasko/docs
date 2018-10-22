@@ -88,5 +88,30 @@ Example Request
 
 Convert Policy To Paid Request
 ------------------------------
-
 After creating unpiad policy it is required to convert it to paid. This can be done by making another request
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "token",     "yes", "``string``", "The ``payment_token`` returned by the create unpaid policy request."
+   "policy_id", "yes", "``string``", "The 33 character long policy ID returned by the create unpaid policy request."
+   "method", "yes", "``string``", "Payment method ``distributor``."
+   "provider", "yes", "``string``", "Payment provider ``distributor``."
+ 
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    curl https://api.kasko.io/payments \
+        -X POST \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "token": "<PAYMENT TOKEN>",
+            "policy_id": "<ID OF THE POLICY>",
+            "method": "distributor",
+            "provider": "distributor",
+        }'
