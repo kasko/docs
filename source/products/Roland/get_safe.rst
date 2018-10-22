@@ -23,7 +23,7 @@ Query string data appended to the quote request
    "duration",                "str",   "Insurance duration. Available values (depending on item): P1Y"
    "start_date",              "iso_date",   "Start date of policy  ISO date", "yyyy-mm-dd"
    "main_module",             "str",  "Which insurance module", "PBV|PBVIM"
-   "marital_status",           "str",  "Customer marital status", "single|married"
+   "partner_coverage",        "boolean",  "Customer marital status", "true|false"
 
 
 Example Request
@@ -37,7 +37,7 @@ Example Request
        -d touchpoint_id=TOUCHPOINT_ID \
        -d item_id=item_b22001a5cb67ddc81ce7db58647 \
        -d subscription_plan_id=sp_01a1cc12c98ccc5b2c7a2d1e9fa09 \
-       -d data='{"duration":"P1Y","start_date":2018-12-12,"main_module":PBV,"marital_status":married}'
+       -d data='{"duration":"P1Y","start_date":2018-12-12,"main_module":PBV,"partner_coverage":true}'
 
 Policy Data
 -----------
