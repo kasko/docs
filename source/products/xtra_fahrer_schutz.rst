@@ -14,7 +14,7 @@ Product Information
    "Region", "DE"
 
 Kasko JS Optional Data Parameters
--------------
+---------------------------------
 Optional data that can be put in the "data" tag of the kasko embed object
 
 .. csv-table::
