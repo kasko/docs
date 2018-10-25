@@ -20,7 +20,7 @@ Query string data appended to the quote request
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "duration",                "string",   "Insurance duration. Available values (depending on item): P1Y"
+   "duration",                "string",   "Insurance duration. Available values:", "P1Y"
    "start_date",              "iso_date",   "Start date of policy  ISO date", "yyyy-mm-dd"
    "main_module",             "string",  "Which insurance module", "PBV|PBVIM"
    "partner_coverage",        "bool",  "Coverage for partner", "true|false"
