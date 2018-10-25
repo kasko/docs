@@ -20,7 +20,7 @@ Query string data appended to the quote request
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "duration",                "str",   "Insurance duration. Available values (depending on item): P1Y"
+   "duration",                "string",   "Insurance duration. Available values:", "P1Y"
    "start_date",              "iso_date",   "Start date of policy  ISO date", "yyyy-mm-dd"
    "main_module",             "string",  "Which insurance module", "PBV|PBVIM"
    "partner_coverage",        "bool",  "Coverage for partner", "true|false"
@@ -45,23 +45,23 @@ JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
-   :widths: 20, 20, 100, 20
+   :widths: 35, 20, 75, 20
 
-   "phone",                          "string|optional", "Free text string up to 255 characters.",      "+417304200"
-   "salutation",                     "string", "Customer title. Available values: mr, ms.",   "mr"
-   "dob",                            "string", "Date of birth of the policholder.",           "1989-02-04"
-   "house_number",                   "string", "House number of the policyholder's address.", "12"
-   "street",                         "string", "Street name of the policyholder's address.",  "Main street"
-   "state",                          "string", "State of the policyholder's address.",         "State"
-   "postcode",                       "string", "Postcode of the policyholder's address.","1234"
-   "previous_insurance_insurer",     "string|optional", "Previous insurer name.","Insurer name"
-   "previous_insurance_claims_count","integer|optional", "Previous insurance claim count.","2"
-   "previous_insurance_cancelation", "integer|optional", "Previous cancelation reason.","2"
-   "previous_insurance_start_date"   "string|optional", "Previous insurance start date in ISO 8601 format.","YYYY-mm-dd"
-   "previous_insurance_end_date",    "string|optional", "Previous insurance start date in ISO 8601 format.","YYYY-mm-dd"
-   "partner_coverage",               "bool", "Partner coverage.", "true"
-   "coinsured_first_name",           "string|optional", "Co-insured First name. Required if ``partner_coverage`` is ``true``.","FirstName"
-   "coinsured_last_name",            "string|optional", "Co-insured Last name. Required if ``partner_coverage`` is ``true``.", "LastName"
+   "phone",                           "string|optional",   "Free text string up to 255 characters.",   "+417304200"
+   "salutation",                      "string",   "Customer title. Available values: mr, ms.",   "mr"
+   "dob",                             "string",   "Date of birth of the policholder.",   "1989-02-04"
+   "house_number",                    "string",   "House number of the policyholder's address.",   "12"
+   "street",                          "string",   "Street name of the policyholder's address.",   "Main street"
+   "state",                           "string",   "State of the policyholder's address.",   "State"
+   "postcode",                        "string",   Postcode of the policyholder's address.",   "1234"
+   "previous_insurance_insurer",      "string|optional",   "Previous insurer name.",   "Insurer name"
+   "previous_insurance_claims_count", "integer|optional",   "Previous insurance claim count.",   "2"
+   "previous_insurance_cancellation", "integer|optional", "Previous cancellation reason.",   "2"
+   "previous_insurance_start_date"    "string|optional", "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
+   "previous_insurance_end_date",     "string|optional", "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
+   "partner_coverage",                "bool", "Partner coverage.",   "true"
+   "coinsured_first_name",            "string|optional",   "Co-insured First name. Required if ``partner_coverage`` is ``true``.",   "FirstName"
+   "coinsured_last_name",             "string|optional",   "Co-insured Last name. Required if ``partner_coverage`` is ``true``.",   "LastName"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -89,7 +89,7 @@ Example Request
 	  "last_name": "Person",
 	  "email": "test@kasko.io",
 	  "language": "de"
-        }'
+      }'
 
 Convert Policy To Paid Request
 ------------------------------
@@ -103,7 +103,7 @@ After creating unpiad policy it is required to convert it to paid. This can be d
    "policy_id", "yes", "``string``", "The 33 character long policy ID returned by the create unpaid policy request."
    "method", "yes", "``string``", "Payment method ``distributor``."
    "provider", "yes", "``string``", "Payment provider ``distributor``."
- 
+
 
 Example Request
 ~~~~~~~~~~~~~~~
