@@ -47,17 +47,21 @@ JSON data posted to /policies on creation of unpaid policy.
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "phone",             "string", "Free text string up to 255 characters.",      "+417304200"
-   "salutation",        "string", "Customer title. Available values: mr, ms.",   "mr"
-   "dob",               "string", "Date of birth of the policholder.",           "1989-02-04"
-   "house_number",      "string", "House number of the policyholder's address.", "12"
-   "street",            "string", "Street name of the policyholder's address.",  "Main street"
-   "state",              "string", "State of the policyholder's address.",         "State"
-   "postcode",          "string", "Postcode of the policyholder's address.","1234"
-   "employment_status",  "string", "Employment status",     "employed"
-   "coinsured_first_name", "string|optional", "Co-insured First name","test"
-   "coinsured_first_name", "string|optional", "Co-insured Last name", "person"
-
+   "phone",                             "string|optional", "Free text string up to 255 characters.",      "+417304200"
+   "salutation",                        "string", "Customer title. Available values: mr, ms.",   "mr"
+   "dob",                               "string", "Date of birth of the policholder.",           "1989-02-04"
+   "house_number",                      "string", "House number of the policyholder's address.", "12"
+   "street",                            "string", "Street name of the policyholder's address.",  "Main street"
+   "state",                             "string", "State of the policyholder's address.",         "State"
+   "postcode",                          "string", "Postcode of the policyholder's address.","1234"
+   "previous_insurance_insurer",        "string|optional", "Previous insurer name.","Insurer name"
+   "previous_insurance_claims_count",   "integer|optional", "Previous insurance claim count.","2"
+   "previous_insurance_cancelation",    "integer|optional", "Previous cancelation reason.","2"
+   "previous_insurance_start_date"      "string|optional", "Previous insurance start date in ISO 8601 format.","YYYY-mm-dd"
+   "previous_insurance_end_date",       "string|optional", "Previous insurance start date in ISO 8601 format.","YYYY-mm-dd"
+   "partner_coverage",                  "bool", "Partner coverage.", "true"
+   "coinsured_first_name",              "string|optional", "Co-insured First name. Required if `partner_coverage` is `true`.","FirstName"
+   "coinsured_last_name",               "string|optional", "Co-insured Last name. Required if `partner_coverage` is `true`.", "LastName"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -74,10 +78,11 @@ Example Request
 			"phone":"+11111",
 			"salutation": "mr",
 			"dob": "1991-10-31",
+                        "house_number": "1A"
 			"street": "Test Street",
 			"state": "Test State",
 			"postcode": "1001",
-			"employment_status": "employed"
+                        "partner_coverage": false
 	  },
 	  "quote_token":"<Quote Token>",
 	  "first_name": "Test",
