@@ -1,5 +1,5 @@
 AXA Travel Insurance
-===================
+====================
 
 Product Information
 -------------------
@@ -15,7 +15,7 @@ Product Information
 
 
 Example Kasko JS embed code
--------------
+---------------------------
 
 Note this new app design is best run fullscreen.  So we have included fullscreen tag below.
 
