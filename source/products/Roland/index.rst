@@ -1,7 +1,7 @@
 Roland Products
 ================
 
-List of Baloise insurance products.
+List of Roland insurance products.
 
 
 .. toctree::
