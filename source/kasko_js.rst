@@ -63,9 +63,7 @@ Setup KASKO JS
         container: "kasko-widget-container",
         key: "TEST OR LIVE CLIENT KEY",
         product: "PRODUCT KEY",
-        overlay_color: "#FFFFFF",
-        traffic_source: "TRAFIC SOURCE",
-        data:{
+        data: {
             optional data: "see optional params"
         }
       });
@@ -87,11 +85,9 @@ Widget setup parameters
 +------------------+------------+---------------+---------------------------------------------------------+
 | product          | yes        | string        | Product key provided by KASKO.                          |
 +------------------+------------+---------------+---------------------------------------------------------+
-| overlay\_color   | no         | string        | HEX Color code of the loading overlay.                  |
-+------------------+------------+---------------+---------------------------------------------------------+
-| traffic\_source  | no         | string        | Distributor reference of traffic source.  e.g. Email    |
-+------------------+------------+---------------+---------------------------------------------------------+
 | data             | no         | data object   | Data                                                    |
++------------------+------------+---------------+---------------------------------------------------------+
+| config           | no         | config object | Specific product configuration.                         |
 +------------------+------------+---------------+---------------------------------------------------------+
 
 Generic Optional data parameters
@@ -104,18 +100,33 @@ These fields can prepopulate widget data or be used to pass extra information
 +------------------+---------------+-----------------------------------------------------------------------------------------+
 | Parameter        | Type          | Description                                                                             |
 +==================+===============+=========================================================================================+
-| firstname        | string        | Firstname of the customer - This will prepopulate in the widget                         |
+| first_name       | string        | Firstname of the customer - This will prepopulate in the widget                         |
 +------------------+---------------+-----------------------------------------------------------------------------------------+
-| lastname         | string        | Lastname of the customer - This will prepopulate in the widget                          |
+| last_name        | string        | Lastname of the customer - This will prepopulate in the widget                          |
 +------------------+---------------+-----------------------------------------------------------------------------------------+
 | email            | string        | Email Address of the customer - This will prepopulate in the widget                     |
 +------------------+---------------+-----------------------------------------------------------------------------------------+
-| registration     | string        | Registration plate of the car the policy is for - This will prepopulate in the widget   |
-+------------------+---------------+-----------------------------------------------------------------------------------------+
-| classified_id    | string        | ID of the classified advert                                                             |
-+------------------+---------------+-----------------------------------------------------------------------------------------+
 
 .. note::   Please see product specific page for product specific optional data params.
+
+Generic Optional config parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These fields configure the application depending on the needs of the page.
+
++-----------------------+----------+--------------------------------------------------------------------------------+
+| Parameter             | Type     | Description                                                                    |
++=======================+==========+================================================================================+
+| header\_visibility    | string[] | On what devices should the header be visible? Defaults to ALL devices.         |
++-----------------------+----------+--------------------------------------------------------------------------------+
+| footer\_visibility    | string[] | On what devices should the footer be visible? Defaults to desktop and tablet.  |
++-----------------------+----------+--------------------------------------------------------------------------------+
+| hamburger\_visibility | string[] | On what devices should the hamburger side menu be visible? Defaults to mobile. |
++-----------------------+----------+--------------------------------------------------------------------------------+
+
+Available device types: `desktop`, `tablet`, `mobile`. If no device type is defined (`[]` - empty array), then this section will not be visible on any device.
+
+.. note::   Please see product specific page for product specific optional config params.
 
 Testing
 -------
