@@ -1,3 +1,4 @@
+========
 REST API
 ========
 
@@ -6,11 +7,14 @@ REST API
 **Please remember to use the API specific item and touchpoint.**
 
 V2 Header
-----------
+=========
 
 The API requests must use the V2 header as show in the examples below:
 
 ``Accept: application/vnd.kasko.v2+json``
+
+Policy Purchase
+===============
 
 Quote Data
 ----------
@@ -49,7 +53,7 @@ JSON data posted to /policies on creation of unpaid policy.
 
    "phone",                           "string|optional",   "Free text string up to 255 characters.",   "+417304200"
    "salutation",                      "string",   "Customer title. Available values: mr, ms.",   "mr"
-   "dob",                             "string",   "Date of birth of the policholder.",   "1989-02-04"
+   "dob",                             "string",   "Date of birth of the policyholder.",   "1989-02-04"
    "house_number",                    "string",   "House number of the policyholder's address.",   "12"
    "street",                          "string",   "Street name of the policyholder's address.",   "Main street"
    "state",                           "string",   "State of the policyholder's address.",   "State"
@@ -57,7 +61,7 @@ JSON data posted to /policies on creation of unpaid policy.
    "previous_insurance_insurer",      "string|optional",   "Previous insurer name.",   "Insurer name"
    "previous_insurance_claims_count", "integer|optional",   "Previous insurance claim count.",   "2"
    "previous_insurance_cancellation", "integer|optional", "Previous cancellation reason.",   "2"
-   "previous_insurance_start_date"    "string|optional", "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
+   "previous_insurance_start_date",   "string|optional", "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
    "previous_insurance_end_date",     "string|optional", "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
    "partner_coverage",                "bool", "Partner coverage.",   "true"
    "coinsured_first_name",            "string|optional",   "Co-insured First name. Required if ``partner_coverage`` is ``true``.",   "FirstName"
@@ -93,7 +97,7 @@ Example Request
 
 Convert Policy To Paid Request
 ------------------------------
-After creating unpiad policy it is required to convert it to paid. This can be done by making another request.
+After creating unpaid policy it is required to convert it to paid. This can be done by making another request.
 
 .. csv-table::
    :header: "Parameter", "Required", "Type", "Description"
@@ -101,8 +105,8 @@ After creating unpiad policy it is required to convert it to paid. This can be d
 
    "token",     "yes", "``string``", "The ``payment_token`` returned by the create unpaid policy request."
    "policy_id", "yes", "``string``", "The 33 character long policy ID returned by the create unpaid policy request."
-   "method", "yes", "``string``", "Payment method ``distributor``."
-   "provider", "yes", "``string``", "Payment provider ``distributor``."
+   "method",    "yes", "``string``", "Payment method ``distributor``."
+   "provider",  "yes", "``string``", "Payment provider ``distributor``."
 
 
 Example Request
@@ -120,3 +124,32 @@ Example Request
             "method": "distributor",
             "provider": "distributor",
         }'
+
+Policy Cancellation
+==================
+
+Cancel Paid Policy Request
+----------------------------
+JSON data sent in policy cancellation request.
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "status",              "yes", "string",   "Policy status ``cancelled``."
+   "cancellation_reason", "yes", "string",   "Reason why policy is being cancelled."
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+	curl https://api.kasko.io/policies/<ID_OF_THE_POLICY> \
+    -X PUT \
+    -u <YOUR SECRET API KEY>: \
+    -H 'Accept: application/vnd.kasko.v2+json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+        "status": "cancelled",
+        "cancellation_reason": "Reason"
+    }'
