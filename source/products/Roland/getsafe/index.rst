@@ -10,7 +10,7 @@ Product Information
    "Name",      "Getafe"
    "Insurer",   "Roland"
    "Region",    "Germany"
-   "Languages", "``DE``
+   "Languages", "``DE``"
 
 Product IDs
 ^^^^^^^^^^^
