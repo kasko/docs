@@ -1,4 +1,4 @@
-Friday Verfox Insurance
+Friday Verivox Insurance
 =======================
 
 Product Information
