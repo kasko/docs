@@ -1,4 +1,4 @@
-Friday Verivox Insurance
+Friday Zusatzfahrer Insurance
 =======================
 
 Product Information
@@ -7,7 +7,7 @@ Product Information
 .. csv-table::
    :widths: 25, 75
 
-   "Name",      "Friday Verifox"
+   "Name",      "Friday Zusatzfahrer"
    "Insurer",   "Friday"
    "Region",    "Germany"
    "Languages", "``DE``"

@@ -7,5 +7,5 @@ List of Friday insurance products.
 .. toctree::
    :maxdepth: 1
 
-   verifox/index
+   zusatzfahrer/index
    
