@@ -19,9 +19,27 @@ Product IDs
    :widths: 20, 40, 40
    :header: "Language", "Product ID", "Variant ID"
 
-   "``DE``", "``L14J5Za9VRe7yjDaVrXzWwmpBO0AkKor``", "``9znERVLG5Wwk3dXdR3MBPyJ4vQrpAb0e``"
-   "``FR``", "``WKLe03JjQRwmZzDYAzD7Ob4NPlk8rpyv``", "``LPE5mgGpndOQZoX7j5Dze0w8aK7Br3N1``"
-   "``IT``", "``wQKOzW9P5omVBexzA4XqdE6r48LA3GYN``", "``pJeQgLmKblzBR6x5poX5vdqEkV3wP7an``"
+   "``DE``", "``L14J5Za9VRe7yjDaVrXzWwmpBO0AkKor``"
+   "``FR``", "``WKLe03JjQRwmZzDYAzD7Ob4NPlk8rpyv``"
+   "``IT``", "``wQKOzW9P5omVBexzA4XqdE6r48LA3GYN``"
+
+Touchpoint ID
+^^^^^^^^^^^^^
+
+.. csv-table::
+   :widths: 40, 60
+   :header: "Touchpoint Title", "Touchpoint ID"
+
+   "Baloise Cyber", "``tp_38efa11a75798629ec4bd4084a5c9``"
+
+Item ID
+^^^^^^^
+
+.. csv-table::
+   :widths: 40, 60
+   :header: "Item Title", "Item ID"
+
+   "Baloise Cyber", "``item_c86957fb952733fcadecaa75d9f``"
 
 Integration methods
 ^^^^^^^^^^^^^^^^^^^
