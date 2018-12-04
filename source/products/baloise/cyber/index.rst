@@ -16,8 +16,8 @@ Product IDs
 ^^^^^^^^^^^
 
 .. csv-table::
-   :widths: 20, 40, 40
-   :header: "Language", "Product ID", "Variant ID"
+   :widths: 40, 60 
+   :header: "Language", "Product ID"
 
    "``DE``", "``L14J5Za9VRe7yjDaVrXzWwmpBO0AkKor``"
    "``FR``", "``WKLe03JjQRwmZzDYAzD7Ob4NPlk8rpyv``"
