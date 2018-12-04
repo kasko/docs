@@ -25,6 +25,13 @@ Example KASKO JS embed code
         touchpoint: "tp_38efa11a75798629ec4bd4084a5c9",
         mode: "fullscreen",
         language: "de",
+        data: {
+          quote:{
+            product: "2",
+            family: "2"
+            duration: "PY2"
+          }
+        }
       });
     </script>
 
