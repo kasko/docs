@@ -24,7 +24,7 @@ API Product IDs
    "``EN``", "``n5l3L4wzQEPJykxvnjxqaBVZR78dvj0o``", "``WKLe03JjQRwmZzDYkgx7Ob4NPlk8rpyv``"
 
 Webapp Product IDs
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 .. csv-table::
    :widths: 20, 40, 40

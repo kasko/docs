@@ -11,7 +11,7 @@ Optional data that can be put in the ``data`` tag of the KASKO embed object.
 
    "product",  "``no``", "`string`", "Safe Pay, Safe Surf, Surf & Pay", "``1`` - Safe pay, ``2`` - Safe surf, ``3`` - Safe pay & surf."
    "family",   "``no``", "`string`", "Single, Family",                  "``1`` - single, ``2`` - family."
-   "duration", "``no``", "`string`", "Duration in years",               "``1`` - single year, ``2`` - two years."
+   "duration", "``no``", "`string`", "Duration in years",               "``PY1`` - single year, ``PY2`` - two years, ``PY3`` - three years."
 
 Example KASKO JS embed code
 ---------------------------
@@ -21,16 +21,10 @@ Example KASKO JS embed code
     <script>
       Kasko.Setup({
         container: "kasko-widget-container",
-        key: "<PUBLIC KEY>",
-        product: "L14J5Za9VRe7yjDaVrXzWwmpBO0AkKor",
-        overlay_color: "#FFFFFF",
-        data: {
-          quote:{
-            product: "2",
-            family: "2"
-            duration: "2"
-          }
-        }
+        key: "KEY",
+        touchpoint: "tp_38efa11a75798629ec4bd4084a5c9",
+        mode: "fullscreen",
+        language: "de"
       });
     </script>
 

@@ -4,14 +4,6 @@ REST API
 Get Quote Request
 -----------------
 
-Query string data appended to the quote request
-
-.. csv-table::
-   :header: "Parameter", "Required", "Type", "Description"
-   :widths: 20, 20, 20, 80
-
-   "duration",  "yes", "``string``", "Number of days for the cover, accepted values are ``1``, ``2``, ``3``, ``7``, ``14``, ``21``."
-
 Example Request
 ~~~~~~~~~~~~~~~
 
@@ -19,9 +11,10 @@ Example Request
 
     curl https://api.kasko.io/quotes \
         -u <YOUR SECRET API KEY>: \
-        -d variant_id=2ekYGz8ProWy1BMVgaDjAd6nVp9NL5vb \
-        -d data='{"duration": "1"}'
+        -d variant_id=pgzP7GyB5WbENADQ78xl2VqenJ3r9m6Z
 
+Policy Data Fields
+------------------
 
 Create Unpaid Policy Request
 ----------------------------
@@ -33,7 +26,8 @@ Data fields
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "registration", "yes", "``string``", "Registration of the vehicle. Example: ``EE-123``"
+   "license_plate",   "yes", "``string``", "Vehicle License Plate"
+
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -45,12 +39,12 @@ Example Request
         -u <YOUR SECRET API KEY>: \
         -H 'Content-Type: application/json' \
         -d '{
-            "quote_token": "<TOKEN OBTAINED FROM QUOTE REQUEST>",
+            "quote_token": "<TOKEN OBTAINED FORM QUOTE REQUEST>",
             "first_name": "FirstName",
             "last_name": "LastName",
             "email": "test@kasko.io",
             "data": {
-                "registration": "EE-123"
+                "license_plate": "HH-1234"
             }
         }'
 
@@ -66,8 +60,8 @@ Data fields
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "token",     "yes", "``string``", "The ``payment_token`` returned by the create policy request."
-   "policy_id", "yes", "``string``", "The 33 character long policy ``id`` returned by the create policy request."
+   "token",     "yes", "``string``",  "The ``payment_token`` returned by the create policy request."
+   "policy_id", "yes", "``string``",  "The 33 character long policy ID returned by the create policy request."
 
 Example Request
 ~~~~~~~~~~~~~~~

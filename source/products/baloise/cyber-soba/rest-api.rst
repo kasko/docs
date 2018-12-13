@@ -15,7 +15,7 @@ Query string data appended to the quote request
 
    "product",  "yes", "``string``", "Risk module, accepted values are ``1`` for ``Safe Pay``, ``2`` for ``Safe Surf`` and ``3`` for ``Safe Pay & Safe Surf``."
    "family",   "yes", "``string``", "Indiciated wether it will be a single or famility cover. Accepted values are ``1`` for ``Single`` and ``2`` for ``Family``."
-   "duration", "yes", "``string``", "The policy duration in years, accepted values are ``1`` for ``single year`` and ``2`` for ``two years``."
+   "duration", "yes", "``string``", "The policy duration in years, accepted values are ``P1Y`` for ``single year``, ``P2Y`` for ``two years`` and ``P3Y`` for ``three years``."
 
 Example Request
 ^^^^^^^^^^^^^^^

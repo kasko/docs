@@ -13,7 +13,7 @@ All source files are located in `source` folder.
 To auto build whenever source files are changes use the following command (You should run this command from the project root).
 
 ```sh
-./build
+./build.sh
 ```
 
 

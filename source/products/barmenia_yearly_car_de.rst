@@ -1,5 +1,5 @@
 Kfz-Versicherung: Premium-Schutz
-===================
+================================
 
 Product Information
 -------------------
@@ -20,7 +20,7 @@ Preload Data
 This data should be prefilled in the KASKO JS to preload the insurance widget with data.
 
 Example data object
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 .. code:: html
 
@@ -69,7 +69,7 @@ Parameters
 
 
 KASKO JS Setup object example
-------------------------------------
+-----------------------------
 
 .. code:: html
 

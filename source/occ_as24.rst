@@ -1,5 +1,5 @@
 OCC AutoScout24 Quote Lookup
-======================================
+============================
 
 This API is used for getting an indicitive quote for a AutoScout24 Make and Model
 
@@ -14,7 +14,7 @@ The basic steps to creating a policy are as follows.
 
 
 Get a Quote
---------------------
+-----------
 Get a indicitive quote from the KASKO platform
 
 Definition
@@ -29,13 +29,13 @@ Parameters
 +------------------+------------+---------------+----------------------------------------------------------------+
 | Parameter        | required   | Type          | Description                                                    |
 +==================+============+===============+================================================================+
-| year		       | yes        | integer       |  year of car production		                                 |
+| year             | yes        | integer       |  year of car production                                        |
 +------------------+------------+---------------+----------------------------------------------------------------+
-| make             | yes        | string        |  AS24 car make 										         |
+| make             | yes        | string        |  AS24 car make                                                 |
 +------------------+------------+---------------+----------------------------------------------------------------+
-| model		       | yes        | string        |  AS24 car model 				                                 |
+| model            | yes        | string        |  AS24 car model                                                |
 +------------------+------------+---------------+----------------------------------------------------------------+
-| market value     | yes        | integer       |  AS24 car market value  								         |
+| market value     | yes        | integer       |  AS24 car market value                                         |
 +------------------+------------+---------------+----------------------------------------------------------------+
 
 .. csv-table::
@@ -57,7 +57,7 @@ Example Request
 	curl 'https://api.kasko.io/indexes/PGqXYJndRax9zoNzAEjMLwA01y76B5gp?year=1990&make=Peugeot&model=205&market_value=30000'
 
 Example Response Success
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 response code 200
 
@@ -69,7 +69,7 @@ response code 200
 	}
 
 Example Response Failure
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 response code 404
 
