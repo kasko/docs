@@ -24,7 +24,7 @@ Query string data appended to the quote request
    "items_count",             "integer",   "Number of items insured", "1"
    "car_sharing",             "bool",      "Whether or not car sharing selected", "false"
    "start_date",              "iso_date",  "Start date of policy  ISO date", "yyyy-mm-dd"
-   "skip_items",              "bool",      "Which insurance module", "PBV|PBVIM",  "false |true"
+   "skip_items",              "bool",      "Which insurance module", "true|false"
 
 
 Example Request
@@ -32,12 +32,24 @@ Example Request
 
 .. code:: bash
 
-   curl --get https://api.kasko.io/quotes?key=PUBLIC_KEY \
-       -H 'Accept: application/vnd.kasko.v2+json'
-       -d touchpoint_id=TOUCHPOINT_ID \
-       -d item_id=ITEM_ID \
-       -d subscription_plan_id=sp_4e3bd701b6d2aa532732c80d6f2d1 \
-       -d data='{"duration":"P1Y","start_date":2018-12-12,"main_module":PBV,"partner_coverage":true}'
+    curl -X POST \
+      'https://api.kasko.io/quotes' \
+      -H 'Accept: application/vnd.kasko.v2+json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+        "key": "<PUBLIC KEY>",
+        "language": "de",
+        "item_id": "<ITEM ID>",
+        "touchpoint_id": "<TOUCHPOINT ID>",
+        "subscription_plan_id": "<SUBSCRIPTION PLAN ID>",
+        "data": {
+            "housemates_count": 0,
+            "items_count": 3,
+            "car_sharing": false,
+            "start_date": "2018-12-13",
+            "skip_items": false
+        }
+    }'
 
 Create Unpaid Policy Request
 ----------------------------
@@ -47,62 +59,76 @@ JSON data posted to /policies on creation of unpaid policy.
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 35, 20, 75, 20
 
-   "phone",                           "string|optional",   "Free text string up to 255 characters.",   "+417304200"
-   "salutation",                      "string",   "Customer title. Available values: mr, ms.",   "mr"
-   "dob",                             "string",   "Date of birth of the policholder.",   "1989-02-04"
+   "phone",                           "string",   "Free text string up to 255 characters.",   "+411111111"
    "house_number",                    "string",   "House number of the policyholder's address.",   "12"
    "street",                          "string",   "Street name of the policyholder's address.",   "Main street"
-   "state",                           "string",   "State of the policyholder's address.",   "State"
+   "city",                            "string",   "City name.",  "London"
    "postcode",                        "string",   Postcode of the policyholder's address.",   "1234"
-   "previous_insurance_insurer",      "string|optional",   "Previous insurer name.",   "Insurer name"
-   "previous_insurance_claims_count", "integer|optional",   "Previous insurance claim count.",   "2"
-   "previous_insurance_cancellation", "integer|optional", "Previous cancellation reason.",   "2"
-   "previous_insurance_start_date"    "string|optional", "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
-   "previous_insurance_end_date",     "string|optional", "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
-   "partner_coverage",                "bool", "Partner coverage.",   "true"
-   "coinsured_first_name",            "string|optional",   "Co-insured First name. Required if ``partner_coverage`` is ``true``.",   "FirstName"
-   "coinsured_last_name",             "string|optional",   "Co-insured Last name. Required if ``partner_coverage`` is ``true``.",   "LastName"
+   "dob",                             "string",   "Date of birth of the policy holder.",   "1989-02-04"
+   "housemates",                      "array",    "Array containing housemate information.", "[]"
+   "household_id",                    "string",   "House hold id", "lhhl_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+   "member_id",                       "string",   "Member id", "lmbr_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+   "items",                           "array",   "Array of items insured",  "[]"
 
 Example Request
 ~~~~~~~~~~~~~~~
 
 .. code:: bash
 
-	curl -X POST \
-	  'https://api.kasko.io/policies' \
-	  -u sk_test_SECRET_KEY: \
-	  -H 'Accept: application/vnd.kasko.v2+json' \
-	  -H 'Content-Type: application/json' \
-	  -d '{
-	  "data": {
-			"phone":"+11111",
-			"salutation": "mr",
-			"dob": "1991-10-31",
-                        "house_number": "1A"
-			"street": "Test Street",
-			"state": "Test State",
-			"postcode": "1001",
-                        "partner_coverage": false
-	  },
-	  "quote_token":"<Quote Token>",
-	  "first_name": "Test",
-	  "last_name": "Person",
-	  "email": "test@kasko.io",
-	  "language": "de"
-      }'
+    curl -X POST \
+        'https://api.kasko.io/policies' \
+        -H 'Accept: application/vnd.kasko.v2+json' \
+        -H 'Content-Type: application/json' \
+        -d '{
+          "data": {
+              "city": "basel",
+              "dob": "1990-01-01",
+              "house_number": "12",
+              "housemates": [
+                  {
+                      "email": "f@e.lix",
+                      "first_name": "Felix"
+                  }
+              ],
+              "items": [
+                  {
+                      "name": "Natel",
+                      "type": "phone"
+                  },
+                  {
+                      "name": "Kamera",
+                      "type": "camera"
+                  },
+                  {
+                      "name": "Velo",
+                      "type": "bike"
+                  }
+              ],
+              "phone": "+41 61 111 11 11",
+              "postcode": "4053",
+              "street": "Some street"
+          },
+          "email": "sample@gmail.com",
+          "first_name": "First name",
+          "language": "de",
+          "last_name": "Last name",
+          "quote_token": "quote_token",
+          "referrer_url": "https://www.splitsurance.ch/signup/",
+          "key": "<PUBLIC KEY>"
+    }'
 
 Convert Policy To Paid Request
 ------------------------------
-After creating unpiad policy it is required to convert it to paid. This can be done by making another request.
+After creating unpaid policy it is required to convert it to paid. This can be done by making another request.
 
 .. csv-table::
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "token",     "yes", "``string``", "The ``payment_token`` returned by the create unpaid policy request."
+   "token",     "yes", "``string``", "The ``stripe token`` returned by stripe."
    "policy_id", "yes", "``string``", "The 33 character long policy ID returned by the create unpaid policy request."
-   "method", "yes", "``string``", "Payment method ``distributor``."
-   "provider", "yes", "``string``", "Payment provider ``distributor``."
+   "method", "yes", "``string``", "Payment method ``creditcard``."
+   "provider", "yes", "``string``", "Payment provider ``stripe``."
 
 
 Example Request
@@ -110,13 +136,13 @@ Example Request
 
 .. code:: bash
 
-    curl https://api.kasko.io/payments \
-        -X POST \
+    curl -X POST \
+        'https://api.kasko.io/payments' \
         -u <YOUR SECRET API KEY>: \
         -H 'Content-Type: application/json' \
         -d '{
-            "token": "<PAYMENT TOKEN>",
+            "token": "<STRIPE PAYMENT TOKEN>",
             "policy_id": "<ID OF THE POLICY>",
-            "method": "distributor",
-            "provider": "distributor",
+            "method": "creditcard",
+            "provider": "stripe",
         }'
