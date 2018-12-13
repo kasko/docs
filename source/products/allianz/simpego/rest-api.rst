@@ -138,11 +138,11 @@ Example Request
 
     curl -X POST \
         'https://api.kasko.io/payments' \
-        -u <YOUR SECRET API KEY>: \
         -H 'Content-Type: application/json' \
         -d '{
             "token": "<STRIPE PAYMENT TOKEN>",
             "policy_id": "<ID OF THE POLICY>",
             "method": "creditcard",
             "provider": "stripe",
+            "key": "<PUBLIC KEY>"
         }'
