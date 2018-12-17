@@ -20,11 +20,10 @@ Query string data appended to the quote request
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "housemates_count",        "integer",   "Number of house members", "1"
+   "housemates_count",        "integer",   "Number of house members, always 1", "1"
    "items_count",             "integer",   "Number of items insured", "1"
    "car_sharing",             "bool",      "Whether or not car sharing selected", "false"
    "start_date",              "iso_date",  "Start date of policy  ISO date", "yyyy-mm-dd"
-   "skip_items",              "bool",      "Which insurance module", "true|false"
 
 
 Example Request
@@ -43,7 +42,7 @@ Example Request
         "touchpoint_id": "<TOUCHPOINT ID>",
         "subscription_plan_id": "<SUBSCRIPTION PLAN ID>",
         "data": {
-            "housemates_count": 0,
+            "housemates_count": 1,
             "items_count": 3,
             "car_sharing": false,
             "start_date": "2018-12-13",
@@ -65,9 +64,7 @@ JSON data posted to /policies on creation of unpaid policy.
    "city",                            "string",   "City name.",  "London"
    "postcode",                        "string",   "Postcode of the policyholder's address.",   "1234"
    "dob",                             "string",   "Date of birth of the policy holder.",   "1989-02-04"
-   "housemates",                      "array",    "Array containing housemate information.", "[]"
-   "household_id",                    "string",   "House hold id", "lhhl_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-   "member_id",                       "string",   "Member id", "lmbr_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+   "housemates",                      "array",    "Empty array.", "[]"
    "items",                           "array",    "Array of items insured",  "[]"
 
 Example Request
@@ -81,15 +78,10 @@ Example Request
         -H 'Content-Type: application/json' \
         -d '{
           "data": {
-              "city": "basel",
+              "city": "Basel",
               "dob": "1990-01-01",
               "house_number": "12",
-              "housemates": [
-                  {
-                      "email": "f@e.lix",
-                      "first_name": "Felix"
-                  }
-              ],
+              "housemates": [],
               "items": [
                   {
                       "name": "Natel",
@@ -104,16 +96,16 @@ Example Request
                       "type": "bike"
                   }
               ],
-              "phone": "+41 61 111 11 11",
+              "phone": "+41611111111",
               "postcode": "4053",
               "street": "Some street"
           },
-          "email": "sample@gmail.com",
+          "email": "test@kasko.io",
           "first_name": "First name",
           "language": "de",
           "last_name": "Last name",
           "quote_token": "quote_token",
-          "referrer_url": "https://www.splitsurance.ch/signup/",
+          "referrer_url": "",
           "key": "<PUBLIC KEY>"
     }'
 
