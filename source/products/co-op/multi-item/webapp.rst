@@ -14,6 +14,9 @@ Example Kasko JS embed code
         key: "KEY",
         touchpoint : "tp_85d2d5c63c41d33db637c9c56f47e",
         mode: "fullscreen",
-        language: "en"
+        language: "en",
+        config: {
+          portal_url: 'portal_url'
+        }
       });
     </script>
