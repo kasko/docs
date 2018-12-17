@@ -126,7 +126,7 @@ Example Request
         }'
 
 Policy Cancellation
-==================
+===================
 
 Cancel Paid Policy Request
 ----------------------------
