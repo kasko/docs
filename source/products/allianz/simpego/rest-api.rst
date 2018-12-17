@@ -63,12 +63,12 @@ JSON data posted to /policies on creation of unpaid policy.
    "house_number",                    "string",   "House number of the policyholder's address.",   "12"
    "street",                          "string",   "Street name of the policyholder's address.",   "Main street"
    "city",                            "string",   "City name.",  "London"
-   "postcode",                        "string",   Postcode of the policyholder's address.",   "1234"
+   "postcode",                        "string",   "Postcode of the policyholder's address.",   "1234"
    "dob",                             "string",   "Date of birth of the policy holder.",   "1989-02-04"
    "housemates",                      "array",    "Array containing housemate information.", "[]"
    "household_id",                    "string",   "House hold id", "lhhl_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
    "member_id",                       "string",   "Member id", "lmbr_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-   "items",                           "array",   "Array of items insured",  "[]"
+   "items",                           "array",    "Array of items insured",  "[]"
 
 Example Request
 ~~~~~~~~~~~~~~~
