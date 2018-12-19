@@ -78,21 +78,21 @@ Example Request
 	  -H 'Accept: application/vnd.kasko.v2+json' \
 	  -H 'Content-Type: application/json' \
 	  -d '{
-	  "data": {
-			"phone":"+11111",
-			"salutation": "mr",
-			"dob": "1991-10-31",
-                        "house_number": "1A"
-			"street": "Test Street",
-			"state": "Test State",
-			"postcode": "1001",
-                        "partner_coverage": false
-	  },
-	  "quote_token":"<Quote Token>",
-	  "first_name": "Test",
-	  "last_name": "Person",
-	  "email": "test@kasko.io",
-	  "language": "de"
+          "data": {
+                "phone":"+11111",
+                "salutation": "mr",
+                "dob": "1991-10-31",
+                "house_number": "1A"
+                "street": "Test Street",
+                "state": "Test State",
+                "postcode": "1001",
+                "partner_coverage": false
+          },
+          "quote_token":"<Quote Token>",
+          "first_name": "Test",
+          "last_name": "Person",
+          "email": "test@kasko.io",
+          "language": "de"
       }'
 
 Convert Policy To Paid Request
@@ -122,7 +122,7 @@ Example Request
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<ID OF THE POLICY>",
             "method": "distributor",
-            "provider": "distributor",
+            "provider": "distributor"
         }'
 
 Policy Cancellation
@@ -138,6 +138,7 @@ JSON data sent in policy cancellation request.
 
    "status",              "yes", "string",   "Policy status ``cancelled``."
    "cancellation_reason", "yes", "string",   "Reason why policy is being cancelled."
+   "termination_date",    "no", "string",    "Date on which policy was terminated in ISO 8601 format (YYYY-mm-dd)."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -151,5 +152,6 @@ Example Request
     -H 'Content-Type: application/json' \
     -d '{
         "status": "cancelled",
-        "cancellation_reason": "Reason"
+        "cancellation_reason": "Reason",
+        "termination_date": "2018-12-18"
     }'
