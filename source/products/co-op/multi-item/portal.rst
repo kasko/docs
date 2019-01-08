@@ -1,5 +1,10 @@
-Webapp
+Portal
 ======
+
+KASKO JS is used to load and configure the KASKO widget onto your site.
+It is required to include KASKO JS in your page for the snippet below to work. More about this can be found in :ref:`kasko_js`.
+
+When implementing, you will need :ref:`keys`.
 
 Example Kasko JS embed code
 ---------------------------
@@ -11,12 +16,11 @@ Example Kasko JS embed code
     <script>
       Kasko.Setup({
         container: "kasko-widget-container",
+        app: "portal",
         key: "KEY",
-        touchpoint : "tp_85d2d5c63c41d33db637c9c56f47e",
-        mode: "fullscreen",
         language: "en",
         config: {
-          portal_url: "https://your.portal.com/link/to/page"
+          webapp_url: "https://your.webapp.com/link/to/page"
         }
       });
     </script>
