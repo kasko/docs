@@ -102,5 +102,5 @@ Example Request
 .. code:: bash
 
     curl https://api.kasko.io/indexed_policies?end_date=2018-02-04+00%3A00%3A00  \
-        -u sk_test_c3r175XP39I2mgHaDGZe5yyP8eMAZUci: \
+        -u <YOUR SECRET API KEY>: \
         -H 'Accept: application/vnd.kasko.v2+json'
