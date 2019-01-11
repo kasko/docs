@@ -18,7 +18,7 @@ Query string data appended to the quote request
         "house_number",    "string",    "House Number obtained from Google Maps API",     "1"
         "postcode",        "string",    "DE postcode obtained from Google Maps API",      "80335"
         "rent_place",      "boolean",   "Indicates if place is rented",                   "true"
-        "family_house",    "boolean",   "Indicates if family house,                       "true"
+        "family_house",    "boolean",   "Indicates if family house",                      "true"
         "house_area",      "int",       "Area of house",                                  "123"
 
 
