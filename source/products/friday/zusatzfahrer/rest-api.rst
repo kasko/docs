@@ -76,3 +76,31 @@ Example Request
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<ID OF THE POLICY>"
         }'
+
+Get policies by start date
+----------------------------------
+
+Get all policies by given start date, encoded url format date (Y-m-d H:i:s)
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    curl https://api.kasko.io/indexed_policies?start_date=2018-02-04+00%3A00%3A00  \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Accept: application/vnd.kasko.v2+json'
+
+Get policies by end date
+----------------------------------
+
+Get all policies by given end date, encoded url format date (Y-m-d H:i:s)
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    curl https://api.kasko.io/indexed_policies?end_date=2018-02-04+00%3A00%3A00  \
+        -u sk_test_c3r175XP39I2mgHaDGZe5yyP8eMAZUci: \
+        -H 'Accept: application/vnd.kasko.v2+json'
