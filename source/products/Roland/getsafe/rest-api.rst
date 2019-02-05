@@ -37,11 +37,11 @@ Example Request
 
    curl --get https://api.kasko.io/quotes \
        -u sk_test_SECRET_KEY: \
-       -H 'Accept: application/vnd.kasko.v2+json'
+       -H 'Accept: application/vnd.kasko.v2+json' \
        -d touchpoint_id=TOUCHPOINT_ID \
        -d item_id=item_b22001a5cb67ddc81ce7db58647 \
        -d subscription_plan_id=sp_01a1cc12c98ccc5b2c7a2d1e9fa09 \
-       -d data='{"duration":"P1Y","start_date":2018-12-12,"main_module":PBV,"partner_coverage":true}'
+       -d data='{"duration":"P1Y","start_date":"2018-12-12","main_module":"PBV","partner_coverage":true}'
 
 Create Unpaid Policy Request
 ----------------------------
@@ -57,7 +57,7 @@ JSON data posted to /policies on creation of unpaid policy.
    "house_number",                    "string",   "House number of the policyholder's address.",   "12"
    "street",                          "string",   "Street name of the policyholder's address.",   "Main street"
    "state",                           "string",   "State of the policyholder's address.",   "State"
-   "postcode",                        "string",   Postcode of the policyholder's address.",   "1234"
+   "postcode",                        "string",   "Postcode of the policyholder's address.",   "1234"
    "previous_insurance_insurer",      "string|optional",   "Previous insurer name.",   "Insurer name"
    "previous_insurance_claims_count", "integer|optional",   "Previous insurance claim count.",   "2"
    "previous_insurance_cancellation", "integer|optional", "Previous cancellation reason.",   "2"
@@ -82,7 +82,7 @@ Example Request
                 "phone":"+11111",
                 "salutation": "mr",
                 "dob": "1991-10-31",
-                "house_number": "1A"
+                "house_number": "1A",
                 "street": "Test Street",
                 "state": "Test State",
                 "postcode": "1001",
@@ -92,7 +92,10 @@ Example Request
           "first_name": "Test",
           "last_name": "Person",
           "email": "test@kasko.io",
-          "language": "de"
+          "language": "de",
+          "metadata": {
+    	    "linked_policy": "DEMO-XXXX"
+          }
       }'
 
 Convert Policy To Paid Request
