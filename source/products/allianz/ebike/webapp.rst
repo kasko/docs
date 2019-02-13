@@ -17,12 +17,6 @@ Example Kasko JS embed code
         language: "de",
         config: {
             portal_button_url: "https://www.kasko.io/"
-        },
-        metadata: {
-            salesagent_id: "123456789",
-            subagent_id: "123456789",
-            salesagent_email: "test@email.com",
-            subagent_email: "test@email.com"
         }
       });
     </script>
