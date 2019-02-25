@@ -214,8 +214,8 @@ The response will contain policy data in response body. Also response headers ``
 
 .. _Update:
 
-Update policy data
-------------------
+Update policy
+-------------
 
 JSON data sent in policy update request.
 
@@ -275,8 +275,8 @@ JSON data sent in policy cancellation request.
    "cancellation_reason", "yes", "string",   "Reason why policy is being cancelled."
    "termination_date",    "no", "string",    "Date on which policy was terminated in ISO 8601 format (YYYY-mm-dd)."
 
-Example Request:
-~~~~~~~~~~~~~~~~
+Example Request
+~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
