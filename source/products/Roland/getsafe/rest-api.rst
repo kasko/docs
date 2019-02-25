@@ -6,19 +6,33 @@ REST API
 
 **Please remember to use the API specific item and touchpoint.**
 
-V2 Header
-=========
+Headers
+=======
 
-The API requests must use the V2 header as show in the examples below:
+1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in: Quote_, Offer_, Show_, Update_, Cancel_ requests.
+2. ``If-Match: <ETag>`` - header that should be send along with Update_ and Cancel_ requests. As ``<ETag>`` value should be used header ``Etag`` from Show_ response.
+3. ``If-Unmodified-Since: <Date>`` - header that should be send along with Update_ and Cancel_ requests. As ``<Date>`` value (RFC7232) should be used header ``Last-Modified`` from Show_ response.
 
-``Accept: application/vnd.kasko.v2+json``
+Possible requests
+=================
 
-Policy Purchase
-===============
+At least 3 requests required in following order to buy policy:
 
-Quote Data
-----------
-Query string data appended to the quote request
+1. Quote_ requests - get estimate of policy costs.
+2. Offer_ requests - create offer.
+3. Payment_ requests - covert offer to policy.
+
+When there is policy created, following actions can be taken:
+
+4. Update_ request - update policy quote ( price sensitive ) or other information ( price insensitive ) information.
+5. Cancel_ request - cancel policy. Note when policy is cancelled no more modification requests can be done.
+
+.. _Quote:
+
+Quote request
+-------------
+This requests calculates how much policy holder should pay for policy.
+Following factors are considered while calculating policy price:
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
@@ -43,9 +57,30 @@ Example Request
        -d subscription_plan_id=sp_01a1cc12c98ccc5b2c7a2d1e9fa09 \
        -d data='{"duration":"P1Y","start_date":"2018-12-12","main_module":"PBV","partner_coverage":true}'
 
-Create Unpaid Policy Request
+.. _QuoteResponse:
+
+Sample response
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    {
+        "token": "<QUOTE TOKEN>",
+        "gross_payment_amount": 2056,
+        "extra_data": {
+            "gross_premium": 2056,
+            "premium_tax": 328,
+            "net_premium": 1728,
+            "tax_rate": 0.19
+        }
+    }
+
+.. _Offer:
+
+Create offer (unpaid policy)
 ----------------------------
-JSON data posted to /policies on creation of unpaid policy.
+
+This request stores policy holder information that is related to offer. Following information can be stored in offer:
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
@@ -79,7 +114,7 @@ Example Request
 	  -H 'Content-Type: application/json' \
 	  -d '{
           "data": {
-                "phone":"+11111",
+                "phone":"+11111111",
                 "salutation": "mr",
                 "dob": "1991-10-31",
                 "house_number": "1A",
@@ -88,7 +123,7 @@ Example Request
                 "postcode": "1001",
                 "partner_coverage": false
           },
-          "quote_token":"<Quote Token>",
+          "quote_token":"<QUOTE TOKEN>",
           "first_name": "Test",
           "last_name": "Person",
           "email": "test@kasko.io",
@@ -98,16 +133,40 @@ Example Request
           }
       }'
 
-Convert Policy To Paid Request
-------------------------------
-After creating unpaid policy it is required to convert it to paid. This can be done by making another request.
+NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
+
+.. _OfferResponse:
+
+Sample response
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    {
+        "id": "<POLICY ID>",
+        "insurer_policy_id": "TEST-ROLANDGS-XXXXXXX",
+        "payment_token": "<PAYMENT TOKEN>",
+        "_links": {
+            "_self": {
+                "href": "https://qa-0-api.kasko.io/policies/<POLICY ID>"
+            }
+        }
+    }
+
+.. _Payment:
+
+Convert offer to policy (payment)
+---------------------------------
+
+To create policy you should convert offer. In other words - make payment for offer.
+This can be done by making following request:
 
 .. csv-table::
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "token",     "yes", "``string``", "The ``payment_token`` returned by the create unpaid policy request."
-   "policy_id", "yes", "``string``", "The 33 character long policy ID returned by the create unpaid policy request."
+   "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by OfferResponse_."
+   "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
    "method",    "yes", "``string``", "Payment method ``distributor``."
    "provider",  "yes", "``string``", "Payment provider ``distributor``."
 
@@ -115,7 +174,7 @@ After creating unpaid policy it is required to convert it to paid. This can be d
 Example Request
 ~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
     curl https://api.kasko.io/payments \
         -X POST \
@@ -123,16 +182,89 @@ Example Request
         -H 'Content-Type: application/json' \
         -d '{
             "token": "<PAYMENT TOKEN>",
-            "policy_id": "<ID OF THE POLICY>",
+            "policy_id": "<POLICY ID>",
             "method": "distributor",
             "provider": "distributor"
         }'
 
-Policy Cancellation
-===================
+NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
 
-Cancel Paid Policy Request
-----------------------------
+.. _Show:
+
+Show policy of id
+-----------------
+
+Example Request
+~~~~~~~~~~~~~~~
+.. code-block:: bash
+
+    curl -X GET https://api.kasko.io/policies/<POLICY ID> \
+        -H 'Accept: application/vnd.kasko.v2+json' \
+        -H <YOUR SECRET API KEY> \
+        -H 'Content-Type: application/json'
+
+Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve policy data.
+
+.. _ShowResponse:
+
+Sample response
+~~~~~~~~~~~~~~~
+
+The response will contain policy data in response body. Also response headers ``Last-Modified`` and ``Etag`` will be exposed.
+
+.. _Update:
+
+Update policy data
+------------------
+
+JSON data sent in policy update request.
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "first_name", "yes", "string", "Policy holder name."
+   "last_name", "yes", "string", "Policy holder surname"
+   "email", "yes", "string", "Policy holder email address."
+   "data", "yes", "object", "Policy data object see _Offer."
+   "quote_token", "no", "string", "for more details see Quote data Quote_."
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl https://api.kasko.io/policies/<ID_OF_THE_POLICY> \
+        -X PUT \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Accept: application/vnd.kasko.v2+json' \
+        -H 'If-Match: <Etag>' \
+        -H 'If-Unmodified-Since: <Last-Modified>' \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "first_name": "Holder name",
+            "last_name": "Holder last name",
+            "email": "test+2@kasko.io",
+            "data": {
+                "phone":"+11111111",
+                "salutation": "mr",
+                "dob": "1991-10-31",
+                "house_number": "1A",
+                "street": "Test Street",
+                "state": "Test State",
+                "postcode": "1001",
+                "partner_coverage": false
+            },
+            "quote_token":"<QUOTE TOKEN>"
+        }'
+
+NOTE. You should use ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
+
+.. _Cancel:
+
+Cancel policy request
+---------------------
+
 JSON data sent in policy cancellation request.
 
 .. csv-table::
@@ -143,18 +275,22 @@ JSON data sent in policy cancellation request.
    "cancellation_reason", "yes", "string",   "Reason why policy is being cancelled."
    "termination_date",    "no", "string",    "Date on which policy was terminated in ISO 8601 format (YYYY-mm-dd)."
 
-Example Request
-~~~~~~~~~~~~~~~
+Example Request:
+~~~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: bash
 
-	curl https://api.kasko.io/policies/<ID_OF_THE_POLICY> \
-    -X PUT \
-    -u <YOUR SECRET API KEY>: \
-    -H 'Accept: application/vnd.kasko.v2+json' \
-    -H 'Content-Type: application/json' \
-    -d '{
-        "status": "cancelled",
-        "cancellation_reason": "Reason",
-        "termination_date": "2018-12-18"
-    }'
+    curl https://api.kasko.io/policies/<ID_OF_THE_POLICY> \
+        -X PUT \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Accept: application/vnd.kasko.v2+json' \
+        -H 'If-Match: <Etag>' \
+        -H 'If-Unmodified-Since: <Last-Modified>' \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "status": "cancelled",
+            "cancellation_reason": "Specify your reason here",
+            "termination_date": "2018-12-18"
+        }'
+
+NOTE. You should use ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
