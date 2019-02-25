@@ -234,7 +234,7 @@ Example Request
 
 .. code-block:: bash
 
-    curl https://api.kasko.io/policies/<ID_OF_THE_POLICY> \
+    curl https://api.kasko.io/policies/<POLICY ID> \
         -X PUT \
         -u <YOUR SECRET API KEY>: \
         -H 'Accept: application/vnd.kasko.v2+json' \
@@ -258,7 +258,7 @@ Example Request
             "quote_token":"<QUOTE TOKEN>"
         }'
 
-NOTE. You should use ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
+NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
 .. _Cancel:
 
@@ -280,7 +280,7 @@ Example Request:
 
 .. code-block:: bash
 
-    curl https://api.kasko.io/policies/<ID_OF_THE_POLICY> \
+    curl https://api.kasko.io/policies/<POLICY ID> \
         -X PUT \
         -u <YOUR SECRET API KEY>: \
         -H 'Accept: application/vnd.kasko.v2+json' \
@@ -293,4 +293,4 @@ Example Request:
             "termination_date": "2018-12-18"
         }'
 
-NOTE. You should use ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
+NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
