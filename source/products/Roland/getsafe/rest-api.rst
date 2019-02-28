@@ -2,36 +2,36 @@
 REST API
 ========
 
-.. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
+.. note::  Refer to ref:`REST API page<rest_api>` for more complete documentation regarding the necessary requests before performing and building your own.
 
 **Please remember to use the API specific item and touchpoint.**
 
 Headers
 =======
 
-1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in: Quote_, Offer_, Show_, Update_, Cancel_ requests.
-2. ``If-Match: <ETag>`` - header that should be send along with Update_ and Cancel_ requests. As ``<ETag>`` value should be used header ``Etag`` from Show_ response.
-3. ``If-Unmodified-Since: <Date>`` - header that should be send along with Update_ and Cancel_ requests. As ``<Date>`` value (RFC7232) should be used header ``Last-Modified`` from Show_ response.
+1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in Quote_, Offer_, Show_, Update_, Cancel_ requests.
+2. ``If-Match: <ETag>`` - header that should be sent along with Update_ and Cancel_ requests. As ``<ETag>`` value should be used header ``Etag`` from Show_ response.
+3. ``If-Unmodified-Since: <Date>`` - header that should be sent along with Update_ and Cancel_ requests. As ``<Date>`` value (RFC7232) should be used header ``Last-Modified`` from Show_ response.
 
 Possible requests
 =================
 
 At least 3 requests required in following order to buy policy:
 
-1. Quote_ requests - get estimate of policy costs.
-2. Offer_ requests - create offer.
+1. Quote_ requests - get an estimate of policy costs.
+2. Offer_ requests - create an offer.
 3. Payment_ requests - covert offer to policy.
 
-When there is policy created, following actions can be taken:
+When there is a policy created, the following actions can be taken:
 
 4. Update_ request - update policy quote ( price sensitive ) or other information ( price insensitive ) information.
-5. Cancel_ request - cancel policy. Note when policy is cancelled no more modification requests can be done.
+5. Cancel_ request - cancel the policy. Note when the policy is cancelled no more modification requests can be done.
 
 .. _Quote:
 
 Quote request
 -------------
-This requests calculates how much policy holder should pay for policy.
+This request calculates how much policyholder should pay for the policy.
 Following factors are considered while calculating policy price:
 
 .. csv-table::
@@ -77,7 +77,7 @@ Sample response
 
 .. _Offer:
 
-Create offer (unpaid policy)
+Create an offer (unpaid policy)
 ----------------------------
 
 This request stores policy holder information that is related to offer. Following information can be stored in offer:
@@ -158,7 +158,7 @@ Sample response
 Convert offer to policy (payment)
 ---------------------------------
 
-To create policy you should convert offer. In other words - make payment for offer.
+To create a policy you should convert offer to policy. In other words - make payment for the offer.
 This can be done by making following request:
 
 .. csv-table::
@@ -210,7 +210,7 @@ Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve pol
 Sample response
 ~~~~~~~~~~~~~~~
 
-The response will contain policy data in response body. Also response headers ``Last-Modified`` and ``Etag`` will be exposed.
+The response will contain policy data in the response body. Also, response headers ``Last-Modified`` and ``Etag`` will be exposed.
 
 .. _Update:
 
