@@ -20,6 +20,7 @@ Query string data appended to the quote request
    "damage",                  "bool",  "Damage module.", "false"
    "warranty",                "bool",  "Warranty module (not available for all items).", "false"
    "loss",                    "bool",  "Loss module (can be set to `true` only if theft is also `true`).", "false"
+   "liability",               "bool",  "Liability module (available only for items from Group 3).", "false"
    "item_purchase_date",      "str",   "Item purchase date. Required if `warranty` module is enabled.", "2017-10-04"
    "item_manufacturers_warranty_duration", "str", "Item manufacturers warranty duration. Required if `warranty` module is enabled. Available values: P1Y, P2Y ... P9Y, P10Y.", "P1Y"
 
