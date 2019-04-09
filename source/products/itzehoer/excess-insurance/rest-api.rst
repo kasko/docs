@@ -35,8 +35,8 @@ Example Request
       'https://api.kasko.io/quotes' \
       -H 'Accept: application/vnd.kasko.v2+json' \
       -H 'Content-Type: application/json' \
+      -u <SECRET KEY>: \
       -d '{
-        "key": "<PUBLIC KEY>",
         "language": "de",
         "item_id": "<ITEM ID>",
         "touchpoint_id": "<TOUCHPOINT ID>",
@@ -78,6 +78,7 @@ Example Request
         'https://api.kasko.io/policies' \
         -H 'Accept: application/vnd.kasko.v2+json' \
         -H 'Content-Type: application/json' \
+        -u <SECRET KEY>: \
         -d '{
           "data": {
               "company_name": "Kasko",
@@ -85,20 +86,17 @@ Example Request
               "city": "Hamburg",
               "house_number": "12",
               "postcode": "10115",
-              "street": "Some street"
+              "street": "Some street",
               "license_plate": "B-AA-1234",
               "manufacture_number": "12345",
               "serial_number": "1234abnd1234abdn2",
-              "model_code": "1234",              
-
+              "model_code": "1234"             
           },
           "email": "test@kasko.io",
           "first_name": "First name",
           "language": "de",
           "last_name": "Last name",
-          "quote_token": "quote_token",
-          "referrer_url": "",
-          "key": "<PUBLIC KEY>"
+          "quote_token": "quote_token"
     }'
 
 Convert offer to policy (payment)
