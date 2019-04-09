@@ -22,8 +22,8 @@ Query string data appended to the quote request
 
    "vehicle_type",            "string", Yes, "Car or Lorry", "car|lorry"
    "vehicle_power",           "integer", Yes,   "Vehicle Power in Kw (Max 999)", "1"
-   "start_date",              "iso_date", Yes,  "Start date of policy  ISO date. Max 2 months in future", "yyyy-mm-dd"
-   "end_date",                "iso_date", Yes,  "End date of policy  ISO date.", "yyyy-mm-dd"
+   "start_date",              "iso_date", Yes,  "Start date of policy  ISO date. Max 2 months in future", "yyyy-mm-ddTHH:MM:SS.000Z"
+   "end_date",                "iso_date", Yes,  "End date of policy  ISO date.", "yyyy-mm-ddTHH:MM:SS.000Z"
 
 
 Example Request
@@ -44,8 +44,8 @@ Example Request
         "data": {
             "vehicle_type": "car",
             "vehicle_power": 300,
-            "start_date": "2018-12-13",
-            "end_date": "2018-12-20"            
+            "start_date": "2019-04-10T12:00:00.000Z",
+            "end_date": "2019-04-20T12:00:00.000Z"            
         }
     }'
 
