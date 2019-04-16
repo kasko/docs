@@ -95,6 +95,42 @@ Example Request
         }
     }'
 
+Example Response
+~~~~~~~~~~~~~~~~
+
+.. code:: javascript
+
+{
+  "token": "TOKEN",
+  "gross_payment_amount": 65810,
+  "extra_data": {
+    "gross_premium": 65810,
+    "premium_tax": 10510,
+    "net_premium": 55300,
+    "tax_rate": 0.19,
+    "security_liability": 10000000,
+    "breach_costs": 10000000,
+    "business_interruption": 5000000,
+    "regulatory_fines": 5000000,
+    "pci": 5000000,
+    "emergency_costs": 1000000,
+    "cyber_terrorism": 5000000,
+    "internet_media_liability": 5000000,
+    "digital_asset_replacement": 5000000,
+    "cyber_extortion": 2500000,
+    "cyber_crime": 5000000,
+    "hardware_damage": 2500000,
+    "price": {
+      "gross_premium": 65810,
+      "net_premium": 55300,
+      "premium_tax": 10510,
+      "net_net_premium": 55300
+    },
+    "deductible": 200000,
+    "risk_group": "normal_risk"
+  }
+}
+
 Create Unpaid Policy Request
 ----------------------------
 JSON data posted to /policies on creation of unpaid policy.
@@ -141,6 +177,22 @@ Example Request
           "last_name": "Last name",
           "quote_token": "quote_token"
     }'
+
+Example Response
+~~~~~~~~~~~~~~~~
+
+.. code:: javascript
+
+{
+  "id": "Insurer Policy ID",
+  "insurer_policy_id": "Policy ID",
+  "payment_token": "TOKEN",
+  "_links": {
+    "_self": {
+      "href": "https:\/\/api.kasko.io\/policies\/[Insurer Policy ID]"
+    }
+  }
+}
 
 Convert offer to policy (payment)
 ---------------------------------
