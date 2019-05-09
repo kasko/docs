@@ -16,11 +16,11 @@ Headers
 Possible requests
 =================
 
-At least 3 requests required in following order to buy policy:
+To purchase a policy at least 3 requests are required in the following order:
 
-1. Quote_ requests - get an estimate of policy costs.
+1. Quote_ requests - get the policy price.
 2. Offer_ requests - create an offer.
-3. Payment_ requests - covert offer to policy.
+3. Payment_ requests - covert offer to a paid policy.
 
 .. _Quote:
 
@@ -38,7 +38,7 @@ Following factors are considered while calculating policy price:
    "departure_date",             "iso_date", "Start date of departure ISO date",  "yyyy-mm-dd"
    "departure_time",        "string",  "Start time of departure", "09:00"
    "delay",                  "int",  "Delay of the bus", "30"
-   "payout_amount",        "int",  "Payout amount if bus is delayed", "35"
+   "payout_amount",        "int",  "Payout amount if bus is delayed", "3500"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -51,7 +51,7 @@ Example Request
        -d touchpoint_id=tp_21716734231da536b06e0a624719f \
        -d item_id=item_e24329e6750469ee0bd5a92c65a \
        -d subscription_plan_id=sp_8f603535e76eb895124c9d2785c1b \
-       -d data='{"departure_location":"zurich","arrival_location":"grenoble","departure_date":"2019-04-11","departure_time":"09:00","delay":0,"payout_amount":35}'
+       -d data='{"departure_location":"zurich","arrival_location":"grenoble","departure_date":"2019-04-11","departure_time":"09:00","delay":0,"payout_amount":3500}'
 
 .. _QuoteResponse:
 
@@ -143,8 +143,6 @@ This can be done by making following request:
    "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
    "method",    "yes", "``string``", "Payment method ``invoice``."
    "provider",  "yes", "``string``", "Payment provider ``invoice``."
-   "metadata.iban",  "yes", "``string``", "``DE89370400440532013000``"
-   "metadata.bic",  "yes", "``string``", "``BYLADEM1001``"
 
 
 Example Request
@@ -160,18 +158,14 @@ Example Request
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<POLICY ID>",
             "method": "invoice",
-            "provider": "invoice",
-            "metadata": {
-                "iban": "DE89370400440532013000",
-                "bic": "BYLADEM1001"
-            }
+            "provider": "invoice"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
 
 .. _Show:
 
-Show policy of id
+Show policy by id
 -----------------
 
 Example Request
