@@ -65,8 +65,8 @@ Sample response
             "premium_tax": 25,
             "net_premium": 490,
             "tax_rate": 0.05,
-            "end_date": "11/04/2019 19:10",
-            "start_date": "11/04/2019 13:50",
+            "end_date": "2019-04-11 19:10",
+            "start_date": "2019-04-11 13:50",
             "actual_delay_minutes": 75,
             "departure_location": "Zurich",
             "arrival_station": "Milano (Lampugnano)"
