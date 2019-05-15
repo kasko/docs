@@ -33,10 +33,7 @@ Following factors are considered while calculating policy price:
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "departure_location",                "string",   "Departure location", "zurich"
-   "arrival_location",              "string",   "Arrival location", "grenoble"
-   "departure_date",             "iso_date", "Start date of departure ISO date",  "yyyy-mm-dd"
-   "departure_time",        "string",  "Start time of departure", "09:00"
+   "ride_id",                "string",   "Id of the ride", "direct:81568581:2:1304"
    "delay",                  "int",  "Delay of the bus", "30"
    "payout_amount",        "int",  "Payout amount if bus is delayed", "3500"
 
@@ -51,7 +48,7 @@ Example Request
        -d touchpoint_id=tp_21716734231da536b06e0a624719f \
        -d item_id=item_e24329e6750469ee0bd5a92c65a \
        -d subscription_plan_id=sp_8f603535e76eb895124c9d2785c1b \
-       -d data='{"departure_location":"zurich","arrival_location":"grenoble","departure_date":"2019-04-11","departure_time":"09:00","delay":0,"payout_amount":3500}'
+       -d data='{"ride_id":"direct:81568581:2:1304","delay":0,"payout_amount":3500}'
 
 .. _QuoteResponse:
 
@@ -62,14 +59,17 @@ Sample response
 
     {
         "token": "<QUOTE TOKEN>",
-        "gross_payment_amount": 307,
+        "gross_payment_amount": 515,
         "extra_data": {
-            "gross_premium": 307,
-            "premium_tax": 15,
-            "net_premium": 292,
+            "gross_premium": 515,
+            "premium_tax": 25,
+            "net_premium": 490,
             "tax_rate": 0.05,
-            "end_date": "2019-04-11 09:00",
-            "start_date": "2019-04-11 09:01"
+            "end_date": "11/04/2019 19:10",
+            "start_date": "11/04/2019 13:50",
+            "actual_delay_minutes": 75,
+            "departure_location": "Zurich",
+            "arrival_station": "Milano (Lampugnano)"
         }
     }
 
