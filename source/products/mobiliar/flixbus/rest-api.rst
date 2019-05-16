@@ -159,7 +159,7 @@ Example Request
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<POLICY ID>",
             "method": "invoice",
-            "provider": "invoice"
+            "provider": "invoice",
             "key": "<YOUR PUBLIC API KEY>"
         }'
 
