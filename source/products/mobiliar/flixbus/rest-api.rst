@@ -143,6 +143,7 @@ This can be done by making following request:
    "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
    "method",    "yes", "``string``", "Payment method ``invoice``."
    "provider",  "yes", "``string``", "Payment provider ``invoice``."
+   "key",  "yes", "``string``", "``<YOUR PUBLIC API KEY>``."
 
 
 Example Request
@@ -159,6 +160,7 @@ Example Request
             "policy_id": "<POLICY ID>",
             "method": "invoice",
             "provider": "invoice"
+            "key": "<YOUR PUBLIC API KEY>"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
