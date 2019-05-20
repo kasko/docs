@@ -59,8 +59,8 @@ Example Request
 
 .. _QuoteResponse:
 
-Sample response
-~~~~~~~~~~~~~~~
+Example response
+~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -78,7 +78,7 @@ Sample response
 .. _Offer:
 
 Create an offer (unpaid policy)
-----------------------------
+-------------------------------
 
 This request stores policy holder information that is related to offer. Following information can be stored in offer:
 
@@ -137,8 +137,8 @@ NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
 
 .. _OfferResponse:
 
-Sample response
-~~~~~~~~~~~~~~~
+Example response
+~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -207,8 +207,8 @@ Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve pol
 
 .. _ShowResponse:
 
-Sample response
-~~~~~~~~~~~~~~~
+Example response
+~~~~~~~~~~~~~~~~
 
 The response will contain policy data in the response body. Also, response headers ``Last-Modified`` and ``Etag`` will be exposed.
 

@@ -49,6 +49,8 @@ Example Request
         }
     }'
 
+.. _OfferResponse:
+
 Create Unpaid Policy Request
 ----------------------------
 JSON data posted to /policies on creation of unpaid policy.
