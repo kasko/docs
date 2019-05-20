@@ -52,6 +52,11 @@ JSON data posted to /policies on creation of policy
    "postcode",          "string", "Postcode of the policyholder's address.",     "1234"
    "item_identifier",   "string", "Unique item identifier (receipt number, IMEI etc.)", "WT3211"
    "item_description",  "string", "Description of the item (i.e. make + model).", "Nikon D3000"
+   "payee_private",     "string", "Flag identifying flow. Available values: private,company.", "private"
+   "company_industry",  "string", "Company industry name. Has to be set if `payee_private` is `company`.", "Architekturbüros"
+   "company_legal_form","string", "Company legal form number. Has to be set if `payee_private` is `company`.", "10"
+   "company_name",      "string", "Name of the company. Has to be set if `payee_private` is `company`.", "Kasko"
+   "company_uid",       "string", "Company unique identifier.", "CH00000000000"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -65,4 +70,4 @@ Example Request
        -d last_name=Doe \
        -d email=john@example.com \
        -d language=de \
-       -d data='{"phone":"+417304200","salutation":"mr","dob":"1989-02-04","house_number":"12","street":"Main street","city":"Lubeck","postcode":"1234","item_identifier":"WT3211","item_description":"Nikon D3000"}'
+       -d data='{"phone":"+417304200","salutation":"mr","dob":"1989-02-04","house_number":"12","street":"Main street","city":"Lubeck","postcode":"1234","item_identifier":"WT3211","item_description":"Nikon D3000", "payee_private":"private"}'

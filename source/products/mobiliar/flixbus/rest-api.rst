@@ -9,9 +9,7 @@ REST API
 Headers
 =======
 
-1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in Quote_, Offer_, Show_, Update_, Cancel_ requests.
-2. ``If-Match: <ETag>`` - header that should be sent along with Update_ and Cancel_ requests. As ``<ETag>`` value should be used header ``Etag`` from Show_ response.
-3. ``If-Unmodified-Since: <Date>`` - header that should be sent along with Update_ and Cancel_ requests. As ``<Date>`` value (RFC7232) should be used header ``Last-Modified`` from Show_ response.
+1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in Quote_, Offer_, Show_ requests.
 
 Possible requests
 =================
@@ -52,8 +50,8 @@ Example Request
 
 .. _QuoteResponse:
 
-Sample response
-~~~~~~~~~~~~~~~
+Example response
+~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -76,7 +74,7 @@ Sample response
 .. _Offer:
 
 Create an offer (unpaid policy)
-----------------------------
+-------------------------------
 
 This request stores policy holder information that is related to offer. Following information can be stored in offer:
 
@@ -111,8 +109,8 @@ NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
 
 .. _OfferResponse:
 
-Sample response
-~~~~~~~~~~~~~~~
+Example response
+~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -180,5 +178,3 @@ Example Request
         -H 'Content-Type: application/json'
 
 Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve policy data.
-
-.. _ShowResponse:
