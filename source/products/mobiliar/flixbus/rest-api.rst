@@ -141,8 +141,6 @@ This can be done by making following request:
    "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
    "method",    "yes", "``string``", "Payment method ``invoice``."
    "provider",  "yes", "``string``", "Payment provider ``invoice``."
-   "key",  "yes", "``string``", "``<YOUR PUBLIC API KEY>``."
-
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -151,14 +149,13 @@ Example Request
 
     curl https://api.kasko.io/payments \
         -X POST \
-        -u <YOUR SECRET API KEY>: \
+        -u sk_test_SECRET_KEY: \
         -H 'Content-Type: application/json' \
         -d '{
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<POLICY ID>",
             "method": "invoice",
-            "provider": "invoice",
-            "key": "<YOUR PUBLIC API KEY>"
+            "provider": "invoice"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
@@ -174,7 +171,7 @@ Example Request
 
     curl -X GET https://api.kasko.io/policies/<POLICY ID> \
         -H 'Accept: application/vnd.kasko.v2+json' \
-        -H <YOUR SECRET API KEY> \
+        -u sk_test_lPwoeZ8fCYyZ2L11bWcPa9fNbD8dTjKj: \
         -H 'Content-Type: application/json'
 
 Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve policy data.
