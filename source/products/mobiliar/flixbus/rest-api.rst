@@ -46,7 +46,7 @@ Example Request
        -d touchpoint_id=tp_21716734231da536b06e0a624719f \
        -d item_id=item_e24329e6750469ee0bd5a92c65a \
        -d subscription_plan_id=sp_8f603535e76eb895124c9d2785c1b \
-       -d data='{"ride_id":"direct:81568581:2:1304","delay":0,"payout_amount":3500}'
+       -d data='{"ride_id":"direct:81568581:2:1304","delay":30,"payout_amount":3500}'
 
 .. _QuoteResponse:
 
