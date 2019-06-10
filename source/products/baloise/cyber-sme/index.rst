@@ -1,5 +1,5 @@
 Baloise Cyber SME Insurance
-==========================
+===========================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^

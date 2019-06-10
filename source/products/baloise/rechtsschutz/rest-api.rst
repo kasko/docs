@@ -59,7 +59,7 @@ Example Request
       'https://api.kasko.io/quotes' \
       -H 'Accept: application/vnd.kasko.v2+json' \
       -H 'Content-Type: application/json' \
-      -u <SECRET KEY>: \
+      -u <YOUR SECRET API KEY>: \
       -d '{
         "language": "de",
         "item_id": "<ITEM ID>",
@@ -158,7 +158,7 @@ Example Request
         'https://api.kasko.io/policies' \
         -H 'Accept: application/vnd.kasko.v2+json' \
         -H 'Content-Type: application/json' \
-        -u <SECRET KEY>: \
+        -u <YOUR SECRET API KEY>: \
         -d '{
           "data": {
             "company_name_with_legal_form": "Kasko",
@@ -189,7 +189,7 @@ Example Response
       "payment_token": "TOKEN",
       "_links": {
         "_self": {
-          "href": "https:\/\/api.kasko.io\/policies\/[Insurer Policy ID]"
+          "href": "https:\/\/api.kasko.io\/policies\/[INSURER POLICY ID]"
         }
       }
     }
