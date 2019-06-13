@@ -1,0 +1,212 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Kasko Event API"
+  },
+  "paths": {
+    "/policies": {
+      "post": {
+        "tags": [
+          "Policies"
+        ],
+        "description": "Refer to Kasko API documentation for product integration details.",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "callbacks": {
+          "policy-purchased": {
+            "$ref": "#/components/callbacks/policy-purchased"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "callbacks": {
+      "policy-purchased": {
+        "{$callbackUrl}": {
+          "post": {
+            "parameters": [
+              {
+                "in": "header",
+                "name": "X-KASKO-Event",
+                "required": true,
+                "description": "The event type that was triggered.",
+                "example": "policy.created",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "in": "header",
+                "name": "X-KASKO-Delivery",
+                "required": true,
+                "description": "A guid to identify the payload and event being sent.",
+                "example": "baf59150f9a60c1c0e6a700e6f531676",
+                "schema": {
+                  "type": "string"
+                }
+              },
+              {
+                "in": "header",
+                "name": "X-KASKO-Signature",
+                "required": true,
+                "description": "The value of this header is computed as the HMAC hex digest of the payload, using the webhook secret as the key.",
+                "example": "policy.created",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            ],
+            "requestBody": {
+              "description": "Callback payload",
+              "required": true,
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/policy"
+                  },
+                  "example": {
+                    "id": "lpol_0000000000000000000000000000",
+                    "livemode": true,
+                    "policy_id": "TEST-POL-1111111111",
+                    "product_id": "item_000000000000000000000000000",
+                    "first_name": "Max",
+                    "last_name": "Mustermann",
+                    "email": "test@kasko.io",
+                    "policy_created_date": "2019-06-13T13:09:16+00:00",
+                    "start_date": "2019-06-13T22:00:00+00:00",
+                    "end_date": "2020-06-13T22:00:00+00:00",
+                    "gross_premium": 2401,
+                    "premium_tax": 383,
+                    "metadata": [],
+                    "assets": [
+                      {
+                        "designation": "policy_document",
+                        "name": "Policydoc",
+                        "extension": "pdf",
+                        "href": "https://assets.kasko.io/live/policies/private/00000000000000000000000000000000/TEST-POL-1111111111/Policydoc-13-06-2019_13-09-18.pdf?expires=0000000000&user_id=00000000000000000000000000000000&account_id=00000000000000000000000000000000&signature=U~dTaJW8OkIlvEPzPhL7eqjvYywqxtIZjLYduPl&key=APKAIKKPZYXS3F2TH2TA"
+                      }
+                    ],
+                    "_links": {
+                      "self": {
+                        "href": "https://api.kasko.io/policies/lpol_0000000000000000000000000000"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "responses": {
+              "204": {
+                "description": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "policy": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Kasko internal policy id."
+          },
+          "livemode": {
+            "type": "boolean",
+            "description": "Test or Live mode."
+          },
+          "policy_id": {
+            "type": "string",
+            "description": "Insurer policy id"
+          },
+          "product_id": {
+            "type": "string",
+            "description": "Kasko internal product id."
+          },
+          "first_name": {
+            "type": "string",
+            "description": "Policy holder's first name."
+          },
+          "last_name": {
+            "type": "string",
+            "description": "Policy holder's last name."
+          },
+          "email": {
+            "type": "string",
+            "description": "Policy holder's email name."
+          },
+          "policy_created_date": {
+            "type": "string",
+            "description": "Policy creation date."
+          },
+          "start_date": {
+            "type": "string",
+            "description": "Policy contract start date."
+          },
+          "end_date": {
+            "type": "string",
+            "description": "Policy contract end date."
+          },
+          "gross_premium": {
+            "type": "integer",
+            "description": "Policy insurance premium amount."
+          },
+          "premium_tax": {
+            "type": "integer",
+            "description": "Policy insurance premium tax amount."
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "assets": {
+            "$ref": "#/components/schemas/asset"
+          },
+          "_links": {
+            "$ref": "#/components/schemas/link"
+          }
+        }
+      },
+      "asset": {
+        "type": "object",
+        "properties": {
+          "designation": {
+            "type": "string",
+            "description": "Document type."
+          },
+          "name": {
+            "type": "string",
+            "description": "Document name."
+          },
+          "extension": {
+            "type": "string",
+            "description": "Document extension."
+          },
+          "href": {
+            "type": "string",
+            "description": "Document location url signed with time signature."
+          }
+        }
+      },
+      "link": {
+        "type": "object",
+        "properties": {
+          "self": {
+            "type": "object",
+            "properties": {
+              "href": {
+                "type": "string",
+                "description": "Api link to fetch full policy data."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
