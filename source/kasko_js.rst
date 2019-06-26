@@ -166,7 +166,7 @@ Sometimes it's useful to prefill a webapp with predefined data. For example, an 
 
 `kdata` is short for `KASKO data`. This querystring parameter is used to prefill an application with given `data` (name, address, email, etc) and `metadata` (could be anything, but most commonly used for analytics tracking data or agent information).
 
-.. note::   **Important!** `kdata` can only be used on the integration level. It will not work if set on webapp level (`webapp.kasko.io` domain). This is because KASKO JS is responsible for decoding `kdata` and passing it on to the webapp in a different format.
+.. warning::   `kdata` can only be used on the integration level. It will not work if set on webapp level (`webapp.kasko.io` domain). This is because KASKO JS is responsible for decoding `kdata` and passing it on to the webapp in a different format.
 
 `kdata` value can be a url-safe-base64-encoded string or a JSON string. **It is preferred to use url-safe-base64-encoded string as it is supported by all browsers.**
 
@@ -174,31 +174,35 @@ Sometimes it's useful to prefill a webapp with predefined data. For example, an 
 Examples
 ~~~~~~~~
 
-url-safe-base64-encoded string (only data)
+url-safe-base64-encoded string (only data):
 
 .. code:: html
-	?kdata=eyJmaXJzdF9uYW1lIjoiSm9obiJ9
+
+    ?kdata=eyJmaXJzdF9uYW1lIjoiSm9obiJ9
 
 
-url-safe-base64-encoded string (data + metadata)
-
-.. code:: html
-	?kdata=eyJkYXRhIjp7ImZpcnN0X25hbWUiOiJKb2huIn0sIm1ldGFkYXRhIjp7ImFnZW50X2lkIjoxMjN9fQ
-
-
-JSON string (only data)
+url-safe-base64-encoded string (data + metadata):
 
 .. code:: html
-	?kdata={"first_name":"John"}
+
+    ?kdata=eyJkYXRhIjp7ImZpcnN0X25hbWUiOiJKb2huIn0sIm1ldGFkYXRhIjp7ImFnZW50X2lkIjoxMjN9fQ
 
 
-JSON string (data + metadata)
+JSON string (only data):
 
 .. code:: html
-	?kdata={"data":{"first_name":"John"},"metadata":{"agent_id":123}}
+
+    ?kdata={"first_name":"John"}
 
 
-.. note::   What's _url-safe-base-encoded string_? This is a base64 encoded string that has all the trailing equals signs removed from it.
+JSON string (data + metadata):
+
+.. code:: html
+
+    ?kdata={"data":{"first_name":"John"},"metadata":{"agent_id":123}}
+
+
+.. note::   What's *url-safe-base-encoded string*? This is a base64 encoded string that has all the trailing equals signs removed from it.
 
 
 Limitations
