@@ -156,3 +156,68 @@ When testing is complete and you're ready to Go Live, please swap the
 Client TEST key for the Client LIVE key in your production site.
 
 .. note:: You must swap you client key with the LIVE client key before going live.
+
+Querystring Prefill
+-------------------
+
+Sometimes it's useful to prefill a webapp with predefined data. For example, an email campaign may have a link to the webapp integration. In order to store the email campaign tracker ID on the customer's policy, query string prefill can be used.
+
+.. note::   ?kdata=eyJmaXJzdF9uYW1lIjoiSm9obiJ9
+
+`kdata` is short for `KASKO data`. This querystring parameter is used to prefill an application with given `data` (name, address, email, etc) and `metadata` (could be anything, but most commonly used for analytics tracking data or agent information).
+
+.. warning::   `kdata` can only be used on the integration level. It will not work if set on webapp level (`webapp.kasko.io` domain). This is because KASKO JS is responsible for decoding `kdata` and passing it on to the webapp in a different format.
+
+`kdata` value can be a url-safe-base64-encoded string or a JSON string. **It is preferred to use url-safe-base64-encoded string as it is supported by all browsers.**
+
+Example url-safe-base64-encoding (uses `js-base64 <https://github.com/dankogai/js-base64>`_ dependency):
+
+.. code-block:: javascript
+
+    var Base64 = require('js-base64').Base64;
+
+    var data = { first_name: 'John' };
+
+    var value = Base64.encode(data).replace(/[=]+$/, ''); // eyJmaXJzdF9uYW1lIjoiSm9obiJ9
+
+    console.log('?kdata=' + value); // ?kdata=eyJmaXJzdF9uYW1lIjoiSm9obiJ9
+
+
+Examples
+~~~~~~~~
+
+url-safe-base64-encoded string (only data):
+
+.. code:: html
+
+    ?kdata=eyJmaXJzdF9uYW1lIjoiSm9obiJ9
+
+
+url-safe-base64-encoded string (data + metadata):
+
+.. code:: html
+
+    ?kdata=eyJkYXRhIjp7ImZpcnN0X25hbWUiOiJKb2huIn0sIm1ldGFkYXRhIjp7ImFnZW50X2lkIjoxMjN9fQ
+
+
+JSON string (only data):
+
+.. code:: html
+
+    ?kdata={"first_name":"John"}
+
+
+JSON string (data + metadata):
+
+.. code:: html
+
+    ?kdata={"data":{"first_name":"John"},"metadata":{"agent_id":123}}
+
+
+.. note::   What's *url-safe-base-encoded string*? This is a base64 encoded string that has all the trailing equals signs removed from it.
+
+
+Limitations
+~~~~~~~~~~~
+
+Some older browsers have strict max URL length limits after which the URL gets truncated. If this limit is breached, the base64 or JSON value gets broken. In general it is recommended to have the URL length below 2000 characters long. Read `this StackOverflow explanation for more information <https://stackoverflow.com/a/417184>`_.
