@@ -170,6 +170,18 @@ Sometimes it's useful to prefill a webapp with predefined data. For example, an 
 
 `kdata` value can be a url-safe-base64-encoded string or a JSON string. **It is preferred to use url-safe-base64-encoded string as it is supported by all browsers.**
 
+Example url-safe-base64-encoding (uses `js-base64 <https://github.com/dankogai/js-base64>`_ dependency):
+
+.. code-block:: javascript
+
+    var Base64 = require('js-base64').Base64;
+
+    var data = { first_name: 'John' };
+
+    var value = Base64.encode(data).replace(/[=]+$/, ''); // eyJmaXJzdF9uYW1lIjoiSm9obiJ9
+
+    console.log('?kdata=' + value); // ?kdata=eyJmaXJzdF9uYW1lIjoiSm9obiJ9
+
 
 Examples
 ~~~~~~~~
