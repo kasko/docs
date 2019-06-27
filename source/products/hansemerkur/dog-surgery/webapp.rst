@@ -16,7 +16,7 @@ Example Kasko JS embed code
         mode: "fullscreen",
         language: "de",
         config: {
-          adnr_number: {adnr_number},
+          adnr_number: "{adnr_number}",
         }
       });
     </script>
