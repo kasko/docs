@@ -121,3 +121,44 @@ This event is triggered when policy has been successfully created.
         }
       }
     }
+
+Policy updated
+~~~~~~~~~~~~~~
+
+This event is triggered when policy has been successfully updated.
+
+**Payload**
+
+.. code:: javascript
+
+    {
+      "id": "tJGmCVljXbLr1kn1BzpAIgOxegK3AMBoy",
+      "livemode": false,
+      "policy_id": "TEST-POLICY-12345",
+      "product_id": "oH68at2ddL7WnDJg23jhMPGRJy83QNpa",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john@example.com",
+      "policy_created_date": "2017-07-18T12:37:56+00:00",
+      "start_date": "2017-07-18T12:37:56+00:00",
+      "end_date": "2017-08-12T12:37:56+00:00",
+      "gross_premium": 1999,
+      "premium_tax": 400,
+      "metadata": {
+        "some": "value"
+      },
+      "assets": [
+        {
+          "designation": "policy_document",
+          "name": "Policy Certificate",
+          "extension": "pdf",
+          "href": "https://assets.kasko.io/test/policies/private/tJGmCVljXbLr1kn1BzpAIgOxegK3AMBoy/TEST-POLICY-12345/Document.pdf"
+        }
+      ],
+      "_links": {
+        "self": {
+          "href": "https://api.kasko.io/policies/tJGmCVljXbLr1kn1BzpAIgOxegK3AMBoy"
+        }
+      }
+    }
+
