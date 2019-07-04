@@ -46,6 +46,15 @@ Data fields
    "city",           "yes",   "``string``",  "Customers city."
    "postcode",       "yes",   "``string``",  "Customers postal code, must be a valid Swiss postal code."
    "receipt_number", "yes",   "``string``",  "Receipt number of the purchased item(s)."
+   "payee_private",  "yes",   "``string``",  "Flag identifying flow. Available values: private,company."
+   "company_industry",       "yes",   "``string``",  "Company industry name. Has to be set if payee_private is company."
+   "company_legal_form",       "yes",   "``string``",  "Company legal form number. Has to be set if `payee_private` is `company`."
+   "company_name",       "yes",   "``string``",  "Name of the company. Has to be set if `payee_private` is `company`."
+   "company_uid",       "no",   "``string``",  "Company unique identifier."
+   "crefo_uid",       "no",   "``string``",  "Credit reform unique identifier."
+   
+
+   
 
 Example Request
 ^^^^^^^^^^^^^^^
@@ -69,6 +78,12 @@ Example Request
                 "street": "Street",
                 "city": "City",
                 "postcode": "1234",
+                "payee_private": "company",
+                "company_industry": "Architekturbüros",
+                "company_legal_form: "10",
+                "company_name": "Kasko",
+                "company_uid": "CH00000000000",
+                "crefo_uid": "CHE-000.000.000",
                 "receipt_number": "REF123"
             }
         }'
