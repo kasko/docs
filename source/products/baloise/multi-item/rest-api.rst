@@ -58,6 +58,7 @@ JSON data posted to /policies on creation of policy
    "company_legal_form","string", "Company legal form number. Has to be set if `payee_private` is `company`.", "10"
    "company_name",      "string", "Name of the company. Has to be set if `payee_private` is `company`.", "Kasko"
    "company_uid",       "string", "Company unique identifier.", "CH00000000000"
+   "crefo_uid",       "string", "Credit reform unique identifier.", "CHE-000.000.000"
 
 Example Request
 ~~~~~~~~~~~~~~~
