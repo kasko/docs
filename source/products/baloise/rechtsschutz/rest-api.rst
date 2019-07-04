@@ -131,6 +131,7 @@ Create Offer Request
 
 
     "crefo_id",                 "string", No,  "Credit Reform id.", "40000000"
+    "crefo_uid",                "string", No,  "Credit Reform unique id.", "CHE-000.000.000"
     "company_industry",         "string", Yes, "Company industry name.", "Architekturbüros"
     "company_legal_form",       "string", No,  "Company legal form: `10` - `Einzelfirma`, `15` - `Unbekannte Rechtsform`, `20` - `Einfache Gesellschaft`, `21` - `Kollektivgesellschaft`, `22` - `Kommanditgesellschaft`, `23` - `Treuhänderschaft/Treuunternehmen`, `29` - `Europäische Gesellschaft`, `30` - `Genossenschaft`, `31` - `Aktiengesellschaft`, `32` - `Kommandit Aktiengesellschaft`, `33` - `GmbH`, `34` - `Stiftung`, `36` -` Verein`, `38` - `Anstalt FL`, `40` - `Formloser Bericht`, `41` - `Zweigniederl. ausländ.Gesellsch.`, `50` - `Anstalt des öffentl. Rechts`, `55` - `Institut des öffentl. Rechts`, `60` - `Oeffentl. rechtl. Körperschaft`.", "10|15|20|21|22|23|29|30|31|32|33|34|36|38|40|41|50|55|60"
     "company_name",             "string", Yes, "Insured company's name.", "Kasko"
@@ -205,6 +206,7 @@ Example Request
         -d '{
           "data": {
            "crefo_id": "40000000",
+            "crefo_uid": "CHE-000.000.000",
             "company_industry": "Architekturbüros",
             "company_legal_form": "10",
             "company_name": "Kasko",
