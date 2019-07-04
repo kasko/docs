@@ -119,6 +119,7 @@ Create Unpaid Policy Request
    :widths: 20, 20, 20, 80, 20
 
     "crefo_id",     "string", No,   "Credit Reform id.", "40000000"
+    "crefo_uid",    "string", No,   "Credit Reform unique id.", "CHE-000.000.000"
     "company_uid",  "string", No,   "Company identifier.", "CH07310000000"
     "company_name", "string", Yes,  "Insured company's name.", "Kasko"
     "house_number", "string", No,   "House number of the policyholder's address.", "12"
@@ -150,6 +151,7 @@ Example Request
         -d '{
           "data": {
             "crefo_id": "40000000",
+            "crefo_uid": "CHE-000.000.000",
             "company_uid": "CH07310000000",
             "company_name": "Kasko",
             "house_number": "12",
