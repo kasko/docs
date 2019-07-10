@@ -61,7 +61,6 @@ Example Request
       -H 'Content-Type: application/json' \
       -u <SECRET KEY>: \
       -d '{
-        "language": "de",
         "item_id": "<ITEM ID>",
         "touchpoint_id": "<TOUCHPOINT ID>",
         "subscription_plan_id": "<SUBSCRIPTION PLAN ID>",
