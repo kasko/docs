@@ -16,6 +16,10 @@ Example Kasko JS embed code
         mode: "fullscreen",
         language: "de",
         config: {
+          // it's a hack, default mode is `true`
+          // `true` - show logo in header, hide phone number in header
+          // `false` - hide logo in header, show phone number in header
+          hamburger_visibility: true/false,
           adnr_number: "{adnr_number}",
         }
       });
