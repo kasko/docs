@@ -145,7 +145,8 @@ JSON data posted to /policies on creation of unpaid policy.
    "company_city", "string", Yes,   "City name of company.",  "Hamburg"
    "company_postcode", "string", Yes,   "Postcode of the company address.",   "10115"
    "company_country",  "string", Yes,   "Country of Company  (DE required at launch)",   "DE"
-   "salutation", "string", Yes,   "Salutation",   "mr|mrs"
+   "salutation", "string", Yes,   "Salutation",   "mr|mrs",
+   "metadata", "json", No, "Optional metadata", ""
 
 
 Example Request
@@ -174,7 +175,17 @@ Example Request
           "first_name": "First name",
           "language": "de",
           "last_name": "Last name",
-          "quote_token": "quote_token"
+          "quote_token": "quote_token",
+          "metadata": {
+            "agent_company_name": "Company name",
+            "agent_email": "test@kasko.io",
+            "agent_first_name": "Firstname",
+            "agent_last_name": "Lastname",
+            "agent_number": "12345",
+            "agent_phone": "49711111",
+            "agent_salutation": "Mr",
+            "reference_number": "123"
+          }
     }'
 
 Example Response
