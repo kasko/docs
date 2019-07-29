@@ -145,7 +145,7 @@ JSON data posted to /policies on creation of unpaid policy.
    "company_city", "string", Yes,   "City name of company.",  "Hamburg"
    "company_postcode", "string", Yes,   "Postcode of the company address.",   "10115"
    "company_country",  "string", Yes,   "Country of Company  (DE required at launch)",   "DE"
-   "salutation", "string", Yes,   "Salutation",   "mr|mrs",
+   "salutation", "string", Yes,   "Salutation",   "mr|mrs"
    "metadata", "json", No, "Optional metadata", ""
 
 
