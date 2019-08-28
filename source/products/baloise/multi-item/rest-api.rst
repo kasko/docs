@@ -41,12 +41,12 @@ Policy Data
 JSON data posted to /policies on creation of policy
 
 .. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
-   :widths: 20, 20, 80, 20
+   :header: "Name", "Type", "Description", "Rules", "Example Value"
+   :widths: 20, 20, 80, 60, 20
 
-   "phone",             "string", "Free text string up to 255 characters.",      "+417304200"
-   "salutation",        "string", "Customer title. Available values: mr, ms.",   "mr"
-   "dob",               "string", "Date of birth of the policholder.",           "1989-02-04"
+   "phone",             "string", "Free text string up to 255 characters.", "string, valid phone number, max 30 chars long string",      "+417304200"
+   "salutation",        "string", "Customer title.", "One of values: mr, ms.",   "mr"
+   "dob",               "string", "Date of birth of the policy holder.","ISO 8601 date. Policy holder at least 16 years old.",           "1989-02-04"
    "house_number",      "string", "House number of the policyholder's address.", "12"
    "street",            "string", "Street name of the policyholder's address.",  "Main street"
    "city",              "string", "City of the policyholder's address.",         "Lubeck"
