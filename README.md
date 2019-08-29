@@ -20,3 +20,6 @@ To auto build whenever source files are changes use the following command (You s
 ### Need Help? Found a bug?
 
 Just [submit an issue](https://github.com/kasko/docs/issues) to the Kasko Docs Github if you need any help. And, of course, feel free to submit pull requests with bug fixes or changes.
+
+### Templating Docs
+[Check docs](https://sphinx-rtd-theme.readthedocs.io/en/stable/)
