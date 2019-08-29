@@ -90,6 +90,8 @@ Widget setup parameters
 +------------------+------------+---------------+---------------------------------------------------------------------------------+
 | config           | no         | config object | Specific product configuration.                                                 |
 +------------------+------------+---------------+---------------------------------------------------------------------------------+
+| callback         | no         | object        | Custom callbacks triggered at various stages within the application.            |
++------------------+------------+---------------+---------------------------------------------------------------------------------+
 
 Generic Optional `data` parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,8 +112,8 @@ These fields can pre-populate widget data or be used to pass extra information
 
 .. note::   Please see product specific page for product specific optional `data` parameters.
 
-Generic Optional config parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Generic Optional `config` parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These fields configure the application depending on the needs of the page.
 
@@ -128,6 +130,39 @@ These fields configure the application depending on the needs of the page.
 Available device types: `desktop`, `tablet`, `mobile`. If no device type is defined (`[]` - empty array), then this section will not be visible on any device.
 
 .. note::   Please see product specific page for product specific optional config parameters.
+
+Callbacks
+~~~~~~~~~
+
+Sometimes it's necessary to add custom functionality on some event. For example, tracking every policy purchase to an external tool. This can be achieved via callbacks.
+
+Example callback
+^^^^^^^^^^^^^^^^
+
+.. code:: html
+
+    <script>
+      Kasko.Setup({
+        container: 'kasko-widget-container',
+        key: 'TEST OR LIVE CLIENT KEY',
+        touchpoint: 'Touchpoint ID',
+        language: 'en',
+        callback: {
+          policy_purchase: function(data) {
+            console.log('Policy has been successfully purchased!', data);
+          }
+        }
+      });
+    </script>
+
+Available callbacks
+^^^^^^^^^^^^^^^^^^^
+
++-----------------------+--------------------------------------------------------------------------------+
+| Parameter             | Description                                                                    |
++=======================+================================================================================+
+| policy\_purchase      | Triggered when a policy has been successfully created and paid for.            |
++-----------------------+----------+---------------------------------------------------------------------+
 
 Testing
 -------
