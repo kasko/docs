@@ -5,11 +5,6 @@ KASKO JS v1
 
 .. warning::   KASKO JS v1 is deprecated in favor of :ref:`KASKO JS v2 <kasko_js_v2>`.
 
-
-KASKO JS is used to load and configure the KASKO widget onto your site.
-KASKO JS automatically handles sizing of the widget so that it works
-responsively in your page.
-
 Before you start this guide you will need :ref:`keys`
 
 
