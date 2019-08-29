@@ -1,0 +1,4 @@
+.. _kasko_js_v2:
+
+KASKO JS v2
+===========
