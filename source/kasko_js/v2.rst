@@ -36,7 +36,7 @@ If you wish to have the widget popup in a new window instead of loading inline o
 
 .. code:: html
 
-    mode: "popup"
+    mode: 'popup'
 
 When using popup mode the container attribute is the target which KASKO JS will attach the click event handler too.
 
@@ -47,7 +47,7 @@ If you wish to have the widget to consume the whole page instead of loading inli
 
 .. code:: html
 
-    mode: "fullscreen"
+    mode: 'fullscreen'
 
 Setup KASKO JS
 --------------
@@ -56,11 +56,12 @@ Setup KASKO JS
 
     <script>
       Kasko.Setup({
-        container: "kasko-widget-container",
-        key: "TEST OR LIVE CLIENT KEY",
-        touchpoint: "Touchpoint ID",
+        container: 'kasko-widget-container',
+        key: 'TEST OR LIVE CLIENT KEY',
+        touchpoint: 'Touchpoint ID',
+        language: 'en',
         data: {
-          prefill_data: "see prefill"
+          prefill_data: 'see prefill'
         }
       });
     </script>
@@ -78,6 +79,8 @@ Widget setup parameters
 | container        | yes        | string        | ID of the div you want the KASKO Widget to appear in.                           |
 +------------------+------------+---------------+---------------------------------------------------------------------------------+
 | key              | yes        | string        | TEST or LIVE client key provided by KASKO.                                      |
++------------------+------------+---------------+---------------------------------------------------------------------------------+
+| language         | yes        | string        | Language in which the product should be shown in.                               |
 +------------------+------------+---------------+---------------------------------------------------------------------------------+
 | touchpoint       | no         | string        | Touchpoint ID provided by KASKO. Required for everything except the portal app. |
 +------------------+------------+---------------+---------------------------------------------------------------------------------+
