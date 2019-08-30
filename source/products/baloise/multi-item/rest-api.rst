@@ -10,7 +10,7 @@ Possible requests
 
 At least 3 requests required in following order to buy policy:
 
-1. Quote_ requests - get an estimate of policy costs.
+1. Quote_ requests - specify required coverage & get an estimate of policy costs.
 2. Offer_ requests - create an offer.
 3. Payment_ requests - covert offer to policy.
 
@@ -22,7 +22,7 @@ Optional requests:
 
 Quote Data
 ----------
-Quote data determines insurance coverages as well as affects price estimate. The Query string data appended to the quote request.
+Quote data determines insurance coverages as well as affects price estimate. The query string data appended to the quote request.
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
@@ -42,6 +42,7 @@ Quote data determines insurance coverages as well as affects price estimate. The
 
 Quote Request
 ~~~~~~~~~~~~~~~
+Sample quote request:
 
 .. code:: bash
 
@@ -92,22 +93,22 @@ JSON data posted to create an offer.
 | Name                   | Description                  | Rules                                                                                                      | Example                              |
 +========================+==============================+============================================================================================================+======================================+
 | first_name             | Name of policy holder.       |  - ``required``, string any letters from ``EBCDIC 500``, special chars: ``space, dash, apostrophe``        | ``John``, ``Li-thylwar``,            |
-|                        |                              |  - len ``min: 2``, ``max: 35`` chars                                                                       | ``Sit'redwarg``                      |
+|                        |                              |  - length ``min: 2``, ``max: 35`` chars                                                                    | ``Sit'redwarg``                      |
 |                        |                              |  - space or dash or apostrophe are allowed but not as leading or trailing character                        |                                      |
 |                        |                              |  - no subsequent space, dash, apostrophe                                                                   |                                      |
 |                        |                              |  - no more than ``3 sequential chars``                                                                     |                                      |
 |                        |                              |  - first character of each word should be in capitals                                                      |                                      |
 |                        |                              |  - only upper case or lower case characters are not allowed                                                |                                      |
-|                        |                              |  - keyword black list first_name keyword blacklist Ref1_                                                   |                                      |
+|                        |                              |  - keyword black list  Ref1_  - cannot contain specified keywords                                          |                                      |
 +------------------------+------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------+
 | last_name              | Surname of policy holder.    |  - ``required``, string any letters from ``EBCDIC 500``, special chars: ``space, dash, apostrophe``        | ``Doe``, ``Armin van Buuren``        |
-|                        |                              |  - len ``min: 2``, ``max: 35`` chars                                                                       |                                      |
-|                        |                              |  - space or dash or apostrophe are allowed but not as leading or trailing character                        |                                      |
-|                        |                              |  - no subsequent space, dash, apostrophe                                                                   |                                      |
+|                        |                              |  - length ``min: 2``, ``max: 35`` chars                                                                    |                                      |
+|                        |                              |  - ``space, dash, apostrophe `` are allowed but not as leading or trailing character                       |                                      |
+|                        |                              |  - no subsequent ``space, dash, apostrophe``                                                               |                                      |
 |                        |                              |  - no more than ``3 sequential chars``                                                                     |                                      |
-|                        |                              |  - first character of each word should be in capitals, except Ref2_                                        |                                      |
+|                        |                              |  - first character of each word should be in capitals, except Ref2_ - specified names                      |                                      |
 |                        |                              |  - only upper case or lower case characters are not allowed                                                |                                      |
-|                        |                              |  - keyword black list keyword blacklist Ref3_                                                              |                                      |
+|                        |                              |  - keyword black list Ref3_ -  - cannot contain specified keywords                                         |                                      |
 +------------------------+------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------+
 | email                  | Email of policy holder.      |  - ``required``, valid email address, MX records are being checked                                         | ``john@example.com``                 |
 |                        |                              |  - length ``min: 2``, ``max: 70`` chars                                                                    |                                      |
@@ -276,18 +277,8 @@ This can be done by making following request:
 
    "token",     "yes", "``string``", "The ``PAYMENT_TOKEN>`` returned by OfferResponse_."
    "policy_id", "yes", "``string``", "The 33 character long ``POLICY_ID`` returned by OfferResponse_."
-   "method",    "yes", "``string``", "Payment method ``baloise_invoice``."
-   "provider",  "yes", "``string``", "Payment provider ``baloise_invoice``."
-   "metadata",  "yes", "``object``", "Payer meta data object."
-   "metadata.city",  "yes", "``string``", "Payer city."
-   "metadata.company_paying",  "yes", "``boolean``", "Determines payer type. If set to true meaning, that company is paying."
-   "metadata.company_name",  "``required_if:metadata.company_paying,true``", "``string``", "Name of the company which is paying."
-   "metadata.first_name",  "``required_if:metadata.company_paying,false``", "``string``", "Payer's first name."
-   "metadata.house_number",  "no", "``string``", "Payer's house number."
-   "metadata.last_name",   "``required_if:metadata.company_paying,false``", "``string``", "Payer's last name."
-   "metadata.postcode",    "``required_if:metadata.company_paying,false``", "``string``", "Payer's postcode."
-   "metadata.salutation",    "``required_if:metadata.company_paying,false``", "``string``", "Payer's salutation, in: mr, ms."
-   "metadata.street",    "``required_if:metadata.company_paying,false``", "``string``", "Payer's street."
+   "method",    "yes", "``string``", "Payment method ``distributor``."
+   "provider",  "yes", "``string``", "Payment provider ``distributor``."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -299,20 +290,10 @@ Example Request
         -u sk_test_SECRET_KEY: \
         -H 'Content-Type: application/json' \
         -d '{
-            "method": "baloise_invoice",
-            "provider": "baloise_invoice",
+            "method": "distributor",
+            "provider": "distributor",
             "token": "PAYMENT_TOKEN",
             "policy_id": "POLICY_ID",
-            "metadata": {
-                "city": "Basel",
-                "company_paying": false,
-                "first_name": "John",
-                "house_number": "11",
-                "last_name": "Doe",
-                "postcode": "4056",
-                "salutation": "mr",
-                "street": "Strasse 4"
-            },
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
