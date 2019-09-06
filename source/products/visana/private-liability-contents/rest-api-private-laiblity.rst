@@ -74,10 +74,6 @@ Example Request
         }
     }'
 
-Example Response
-~~~~~~~~~~~~~~~~
-
-.. code:: javascript
 
 Example Response
 ~~~~~~~~~~~~~~~~
