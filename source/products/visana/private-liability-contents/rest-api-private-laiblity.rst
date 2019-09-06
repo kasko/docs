@@ -18,26 +18,25 @@ Query string data appended to the quote request.
 
 An industry type must be selected but it can have more than one.   
 
-.. csv-table::
 
-| Name                         | Type    | Required                              | Description                                                                                 |
-|------------------------------|---------|---------------------------------------|---------------------------------------------------------------------------------------------|
-| existing_customer            | boolean | true                                  | Does the customer have health insurance with Visana                                         |
-| existing_insurance           | boolean | true                                  | Does the customer have an exisiting insurance (private liability & content)                 |
-| persons                      | string  | true                                  | How many people are living in the property, value (single, family)                          |
-| ownership                    | string  | true                                  | Ownership of the property, value (owner, renter)                                            |
-| more_than_one_person         | boolean | true                                  | Module to insure additional people in the same property                                     |
-| person_count                 | integer | required_if:more_than_one_person,true | The amount of people to insure additionally, value (min, max:3)                             |
-| renters_damage               | integer | required_if:ownership,renter          | Deductible for renter damanges, value (0, 20000)                                            |
-| insured_sum                  | integer | true                                  | Insured sum of renter damages, value (500000000, 1000000000)                                |
-| optional_modules1            | boolean | true                                  | Insure optional module: liability of driving a car that's not owned by you                  |
-| optional_modules2            | boolean | true                                  | Insure optional module: model aircraft                                                      |
-| optional_modules3            | boolean | true                                  | Insure optional module: participation of horseriding sport activities                       |
-| optional_modules4            | boolean | true                                  | Insure optional module: damages of riding a horse that's not owned by you                   |
-| optional_modules4_guarantee  | string  | required_if:optional_modules4,true    | Insured sum (damages of the horse), value (10_20, 10_30, 20_20, 20_30, 30_30, 30_40, 30_50) |
-| optional_modules4_equestrian | boolean | required_if:optional_modules4,true    | Insure horse riding event                                                                   |
-| duration                     | string  | true                                  | Policy duration, value (P3Y, P4Y, P5Y, P6Y, P7Y, P8Y, P9Y, P10Y)                            |
-| policy_start_date            | string  | true                                  | Policy start date, value (iso_date, after:yesterday, before:+18 months)                     |
+**Name**|**Type**|**Required **|**Description**
+:-----:|:-----:|:-----:|:-----:
+existing\_customer|boolean|true|Does the customer have health insurance with Visana
+existing\_insurance|boolean|true|Does the customer have an exisiting insurance (private liability & content)
+persons|string|true|How many people are living in the property, value (single, family)
+ownership|string|true|Ownership of the property, value (owner, renter)
+more\_than\_one\_person|boolean|true|Module to insure additional people in the same property
+person\_count|integer|required\_if:more\_than\_one\_person,true|The amount of people to insure additionally, value (min, max:3)
+renters\_damage|integer|required\_if:ownership,renter|Deductible for renter damanges, value (0, 20000)
+insured\_sum|integer|true|Insured sum of renter damages, value (500000000, 1000000000)
+optional\_modules1|boolean|true|Insure optional module: liability of driving a car that's not owned by you
+optional\_modules2|boolean|true|Insure optional module: model aircraft
+optional\_modules3|boolean|true|Insure optional module: participation of horseriding sport activities
+optional\_modules4|boolean|true|Insure optional module: damages of riding a horse that's not owned by you
+optional\_modules4\_guarantee|string|required\_if:optional\_modules4,true|Insured sum (damages of the horse), value (10\_20, 10\_30, 20\_20, 20\_30, 30\_30, 30\_40, 30\_50)
+optional\_modules4\_equestrian|boolean|required\_if:optional\_modules4,true|Insure horse riding event
+duration|string|true|Policy duration, value (P3Y, P4Y, P5Y, P6Y, P7Y, P8Y, P9Y, P10Y)
+policy\_start\_date|string|true|Policy start date, value (iso\_date, after:yesterday, before:+18 months)
 
 Example Request
 ~~~~~~~~~~~~~~~
