@@ -55,32 +55,22 @@ Example Request
         "touchpoint_id": "<TOUCHPOINT ID>",
         "subscription_plan_id": "<SUBSCRIPTION PLAN ID>",
         "data": {
-            "industry_architects_engineers": true,
-            "industry_construction": false,
-            "industry_regulator": false,
-            "industry_consultancy": false,
-            "industry_educational_institution": false,
-            "industry_health_services": false,
-            "industry_retail_wholesale": false,
-            "industry_financial_service": false,
-            "industry_property": false,
-            "industry_hotel": false,
-            "industry_information_technology": false,
-            "industry_aviation": false,
-            "industry_mechanical_engineering": false,
-            "industry_pharma": false,
-            "industry_manufacturing": false,
-            "industry_lawyer": false,
-            "industry_other_services": false,
-            "industry_telecommunications": false,
-            "industry_associations": false,
-            "industry_utility_provider": false,
-            "industry_miscellaneous": false,
-            "duration": "P1Y",
-            "turnover": 499999900,
-            "insured_sum": 10000000,
-            "policy_start_date": "2019-04-17",
-            "distributor_discount": "zurich"
+          "existing_customer":false,
+          "existing_insurance":false,
+          "persons":"single",
+          "ownership":"owner",
+          "more_than_one_person":false,
+          "person_count":1,
+          "renters_damage":20000,
+          "insured_sum":500000000,
+          "optional_modules1":false,
+          "optional_modules2":false,
+          "optional_modules3":false,
+          "optional_modules4":false,
+          "optional_modules4_guarantee":"10_20",
+          "optional_modules4_equestrian":false,
+          "duration":"P3Y",
+          "policy_start_date":"2019-09-06"
         }
     }'
 
@@ -89,54 +79,47 @@ Example Response
 
 .. code:: javascript
 
+Example Response
+~~~~~~~~~~~~~~~~
+
+.. code:: javascript
+
       {
-        "token": "TOKEN",
-        "gross_payment_amount": 65810,
-        "extra_data": {
-          "gross_premium": 65810,
-          "premium_tax": 10510,
-          "net_premium": 55300,
-          "tax_rate": 0.19,
-          "security_liability": 10000000,
-          "breach_costs": 10000000,
-          "business_interruption": 5000000,
-          "regulatory_fines": 5000000,
-          "pci": 5000000,
-          "emergency_costs": 1000000,
-          "cyber_terrorism": 5000000,
-          "internet_media_liability": 5000000,
-          "digital_asset_replacement": 5000000,
-          "cyber_extortion": 2500000,
-          "cyber_crime": 5000000,
-          "hardware_damage": 2500000,
-          "price": {
-            "gross_premium": 65810,
-            "net_premium": 55300,
-            "premium_tax": 10510,
-            "net_net_premium": 55300
-          },
-          "deductible": 200000,
-          "risk_group": "normal_risk"
-        }
-      }
+      "token": <Quote Token>,
+      "gross_payment_amount": 22995,
+      "extra_data": {
+        "gross_premium": 22995,
+        "premium_tax": 1095,
+        "net_premium": 21900,
+        "tax_rate": 0.05,
+        "suggested_insured_sum_hr": 0,
+        "lock_change": 0,
+        "private_liability_gross_premium": 22995,
+        "yearly_private_liability_gross_premium": 7665
+     } 
+}
 
 Create Unpaid Policy Request
 ----------------------------
 JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
-   :header: "Name", "Type", "Required", "Description", "Example Value"
-   :widths: 20, 20, 20, 80, 20
+   :header: "Name", "Type", "Required", "Description"
+   :widths: 20, 20, 20, 80
 
-   "company_name_with_legal_form", "string", Yes,   "Company Name",   "Kasko LTD"
-   "company_website", "string", No,   "URL of company",   "https://www.kasko.io"
-   "company_house_number", "string", Yes,   "House number of the companys address.",   "12"
-   "company_street", "string", Yes,   "Street name of the company address.",   "Main street"
-   "company_city", "string", Yes,   "City name of company.",  "Hamburg"
-   "company_postcode", "string", Yes,   "Postcode of the company address.",   "10115"
-   "company_country",  "string", Yes,   "Country of Company  (DE required at launch)",   "DE"
-   "salutation", "string", Yes,   "Salutation",   "mr|mrs"
-   "metadata", "json", No, "Optional metadata", ""
+   existing_customer,boolean,true,Does the customer have health insurance with Visana
+   existing_insurance,boolean,true,Does the customer have an exisiting insurance (private liability & content)
+   salutation,string,true,"Salutation of the policyholder, value (ms, mr)"
+   dob,string,true,"Date of birth od the policyholder, value (iso_date, before:18 years ago, after:100 years ago)"
+   phone,string,true,"Phone number of the policyholder, value (regex:/^\\+?[0-9\\s]+$/)"
+   house_number,string,false,House number of the address
+   street,string,true,Street name of the address
+   city,string,true,City name of the address
+   postcode,string,true,"Postcode of the address, value (regex:/^[0-9]{4}$/, ch_postal_code)"
+   sales_agent,integer,true,Agent Number
+   agent_details,string,false,Agent Details
+   no_damages,boolean,true,Opt-in confirming that the customers have not been rejected/cancelled  by other insurance companies or received special conditions due to damages
+   flexible_cancellation,boolean,true,Does the customer want to have flexible cancellation term for his/her policy
 
 
 Example Request
@@ -151,31 +134,24 @@ Example Request
         -u <SECRET KEY>: \
         -d '{
           "data": {
-            "company_name_with_legal_form": "Kasko",
-            "company_website": "www.kasko.io",
-            "company_street": "123",
-            "company_house_number": "123",
-            "company_postcode": "10115",
-            "company_city": "Hamburg",
-            "company_country": "DE",
-            "salutation": "mr",
-            "phone": "+49711111"
+              "existing_customer": false,
+              "existing_insurance": false,
+              "salutation": "mr",
+              "dob": "1984-12-29",
+              "phone": "+41777777777",
+              "house_number": "1234",
+              "street": "Test Stasse",
+              "city": "Vessy",
+              "postcode": "1234",
+              "sales_agent": 5,
+              "no_damages": true,
+              "flexible_cancellation": false
           },
           "email": "test@kasko.io",
           "first_name": "First name",
           "language": "de",
           "last_name": "Last name",
-          "quote_token": "quote_token",
-          "metadata": {
-            "agent_company_name": "Company name",
-            "agent_email": "test@kasko.io",
-            "agent_first_name": "Firstname",
-            "agent_last_name": "Lastname",
-            "agent_number": "12345",
-            "agent_phone": "49711111",
-            "agent_salutation": "Mr",
-            "reference_number": "123"
-          }
+          "quote_token": "quote_token"
     }'
 
 Example Response
@@ -207,10 +183,9 @@ This can be done by making following request:
    "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by OfferResponse_."
    "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
    "method",    "yes", "``string``", "Payment method ``invoice``."
-   "provider",  "yes", "``string``", "Payment provider ``zurich_invoice``."
-   "metadata.account_holder_name",  "yes", "``string``", "Account name``Kasko``."
-   "metadata.iban",  "yes", "``string``", "Account IBAN``NO9386011117947``."
-   "metadata.bic",  "yes", "``string``", "Account BIC ``12345678``."
+   "provider",  "yes", "``string``", "Payment provider ``invoice``."
+   "metadata.iban",  "yes", "``string``", "Agreed IBAN ."
+   "metadata.bic",  "yes", "``string``", "Agreed BIC."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -225,11 +200,10 @@ Example Request
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<POLICY ID>",
             "method": "invoice",
-            "provider": "zurich_invoice",
+            "provider": "invoice",
             "metadata": {
-                  "account_holder_name": "Kasko",
-                  "iban": "NO9386011117947",
-                  "bic": "12345678"
+                  "iban": "IBAN",
+                  "bic": "BIC"
             }
         }'
 
