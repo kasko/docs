@@ -78,9 +78,9 @@ Example Response
       }
 
 
-Policy Data
-^^^^^^^^^^^
-Query string data appended to the policy request
+Create Unpaid Policy Request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
@@ -110,6 +110,112 @@ Query string data appended to the policy request
    "coverage_to_2000", "boolean", "", "true"
    "coverage_to_5000", "boolean", "", "true"
    "adnr_number", "string", "", "12"
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    curl -X POST \
+        'https://api.kasko.io/policies' \
+        -H 'Accept: application/vnd.kasko.v2+json' \
+        -H 'Content-Type: application/json' \
+        -u <SECRET KEY>: \
+        -d '{
+            "data": {
+               "dog_name": "Rex",
+               "dog_gender": "male",
+               "dog_with_chip": true,
+               "dog_chip_number": "123456789123456",
+               "dog_tattoo_number": "ABC123",
+               "dog_health": true,
+               "previous_insurance": false,
+               "previous_insurance_name": "",
+               "previous_insurance_ended_by": "",
+               "salutation": "mr",
+               "dob": "2017-11-06",
+               "house_number": "ABC",
+               "street": "DEF",
+               "city": "London",
+               "postcode": "12345",
+               "phone": "+999 233445566",
+               "consultation": false,
+               "coverage_to_1000": true,
+               "coverage_to_2000": false,
+               "coverage_to_5000": false,
+               "adnr_number": "12"
+            },
+            "email": "test@kasko.io",
+            "first_name": "First name",
+            "language": "de",
+            "last_name": "Last name",
+            "quote_token": "quote_token",
+            "metadata": {
+                "agent_company_name": "Company name",
+                "agent_email": "test@kasko.io",
+                "agent_first_name": "Firstname",
+                "agent_last_name": "Lastname",
+                "agent_number": "12345",
+                "agent_phone": "49711111",
+                "agent_salutation": "Mr",
+                "reference_number": "123"
+            }
+    }'
+
+Example Response
+~~~~~~~~~~~~~~~~
+
+.. code:: javascript
+
+    {
+      "id": "Insurer Policy ID",
+      "insurer_policy_id": "Policy ID",
+      "payment_token": "TOKEN",
+      "_links": {
+        "_self": {
+          "href": "https:\/\/api.kasko.io\/policies\/[Insurer Policy ID]"
+        }
+      }
+    }
+
+Convert offer to policy (payment)
+---------------------------------
+
+To create a policy you should convert offer to policy. In other words - make payment for the offer.
+This can be done by making following request:
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by OfferResponse_."
+   "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
+   "method",    "yes", "``string``", "Payment method ``invoice``."
+   "provider",  "yes", "``string``", "Payment provider ``invoice``."
+   "metadata.account_holder_name",  "yes", "``string``", "Account name``Kasko``."
+   "metadata.iban",  "yes", "``string``", "Account IBAN``NO9386011117947``."
+   "metadata.bic",  "yes", "``string``", "Account BIC ``12345678``."
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl https://api.kasko.io/payments \
+        -X POST \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "token": "<PAYMENT TOKEN>",
+            "policy_id": "<POLICY ID>",
+            "method": "invoice",
+            "provider": "invoice",
+            "metadata": {
+                  "account_holder_name": "Kasko",
+                  "iban": "NO9386011117947",
+                  "bic": "12345678"
+            }
+        }'
 
 Integration methods
 ^^^^^^^^^^^^^^^^^^^
