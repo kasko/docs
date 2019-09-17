@@ -1,5 +1,5 @@
 REST API - Dog Surgery
-========
+======================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
 
@@ -173,7 +173,7 @@ Example Response
     }
 
 Convert offer to policy (payment)
----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To create a policy you should convert offer to policy. In other words - make payment for the offer.
 This can be done by making following request:
