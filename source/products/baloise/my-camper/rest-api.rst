@@ -31,9 +31,17 @@ Following factors are considered while calculating policy price:
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "ride_id",                "string",   "Id of the ride", "direct:81568581:2:1304"
-   "delay",                  "int",  "Delay of the bus", "30"
-   "payout_amount",        "int",  "Payout amount if bus is delayed", "3500"
+   "cart_value",           "int",    "Cart value, max 5000000.", "50000"
+   "duration",             "string", "P5D (Per 5 Days).", "P5D"
+   "private_liability",    "bool",   "Private liability.", "TRUE"
+   "comprehensive_damage", "bool",   "Comprehensive damage.", "TRUE"
+   "deductible_insurance", "bool",   "Deductible insurance.", "TRUE"
+   "car_interior",         "bool",   "Car interior.", "TRUE"
+   "luggage",              "bool",   "Luggage.", "TRUE"
+   "luggage_insured_sum",  "int",    "Sum of luggage 500000 or 1000000. (Rquired if luggage = true", "1000000"
+   "annulation_cost",      "bool",   "Annulation cost.", "TRUE"
+   "breakdown",            "bool",   "Breakdown.", "TRUE"
+   "policy_start_date",    "string", "Policy start date `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD).", "2019-08-01"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -43,10 +51,10 @@ Example Request
    curl --get https://api.kasko.io/quotes \
        -u sk_test_SECRET_KEY: \
        -H 'Accept: application/vnd.kasko.v2+json' \
-       -d touchpoint_id=tp_21716734231da536b06e0a624719f \
-       -d item_id=item_e24329e6750469ee0bd5a92c65a \
-       -d subscription_plan_id=sp_8f603535e76eb895124c9d2785c1b \
-       -d data='{"ride_id":"direct:81568581:2:1304","delay":30,"payout_amount":3500}'
+       -d touchpoint_id=tp_7db25312d7e45d3d45618eba5bb74 \
+       -d item_id=item_33e03cd6862c15059e83642a045 \
+       -d subscription_plan_id=sp_965a0917e8c77eaff35e7699fea8b \
+       -d data='{"cart_value":50000,"duration":"P5D","private_liability":true,"comprehensive_damage":true,"deductible_insurance":true,"car_interior":true,"luggage":true,"luggage_insured_sum":500000,"annulation_cost":true,"breakdown":true,"policy_start_date":"2019-08-01"}'
 
 .. _QuoteResponse:
 
@@ -57,17 +65,12 @@ Example response
 
     {
         "token": "<QUOTE TOKEN>",
-        "gross_payment_amount": 515,
+        "gross_payment_amount": 24200,
         "extra_data": {
-            "gross_premium": 515,
-            "premium_tax": 25,
-            "net_premium": 490,
+            "gross_premium": 24200,
+            "premium_tax": 1152,
+            "net_premium": 23048,
             "tax_rate": 0.05,
-            "end_date": "2019-04-11 19:10",
-            "start_date": "2019-04-11 13:50",
-            "actual_delay_minutes": 75,
-            "departure_location": "Zurich",
-            "arrival_station": "Milano (Lampugnano)"
         }
     }
 
@@ -82,7 +85,13 @@ This request stores policy holder information that is related to offer. Followin
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 35, 20, 75, 20
 
-   "phone",                           "string",   "Free text string up to 255 characters.",   "+417304200"
+    "phone",        "string", "Phone number.", "+11111111"
+    "salutation",   "string", "Salutation.", "mr"
+    "dob",          "string", "Date of birth `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD).", "1990-08-01"
+    "street",       "string", "Street name"., "First street"
+    "city",         "string", "City.", "London"
+    "house_number", "string", "House number.", "1234"
+    "postcode",     "string", "Postcode of the first residence owner's address.", "1234"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -96,7 +105,13 @@ Example Request
 	  -H 'Content-Type: application/json' \
 	  -d '{
           "data": {
-                "phone":"+11111111"
+                "phone":"+11111111",
+                "salutation":"mr",
+                "dob":"1990-08-01",
+                "street":"First street",
+                "city":"London",
+                "house_number":"1234",
+                "postcode":"1234"
           },
           "quote_token":"<QUOTE TOKEN>",
           "first_name": "Test",
@@ -116,7 +131,7 @@ Example response
 
     {
         "id": "<POLICY ID>",
-        "insurer_policy_id": "TEST-MOB-34L3638J876",
+        "insurer_policy_id": "<INSURER_POLICY_ID>",
         "payment_token": "<PAYMENT TOKEN>",
         "_links": {
             "_self": {
@@ -139,8 +154,8 @@ This can be done by making following request:
 
    "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by OfferResponse_."
    "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
-   "method",    "yes", "``string``", "Payment method ``invoice``."
-   "provider",  "yes", "``string``", "Payment provider ``invoice``."
+   "method",    "yes", "``string``", "Payment method ``distributor``."
+   "provider",  "yes", "``string``", "Payment provider ``distributor``."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -154,8 +169,8 @@ Example Request
         -d '{
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<POLICY ID>",
-            "method": "invoice",
-            "provider": "invoice"
+            "method": "distributor",
+            "provider": "distributor"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
