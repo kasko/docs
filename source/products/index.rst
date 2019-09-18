@@ -12,3 +12,4 @@ List of KASKO insurance products with required data to quote and purchase a poli
    xtra_fahrer_schutz
    ATI_travel
    zurich/index
+   hansemerkur/index
