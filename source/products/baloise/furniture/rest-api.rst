@@ -15,7 +15,7 @@ Query string data appended to the quote request
 
    "purchase_date",   "yes",   "``string``",    "Date in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Max allowed date: ``today``."
    "purchase_value",  "yes",   "``integer``",   "Purchase value in cents."
-   "duration",        "yes",   "``string``",    "Policy duration in years. Allowed values: ``P1Y`` and ``P4Y`` for ``1 year`` and ``4 year`` duration respectively."
+   "duration",        "yes",   "``string``",    "Policy duration in years. Allowed values: ``P5Y`` for ``5 year`` duration."
 
 
 Example Request
@@ -26,7 +26,7 @@ Example Request
     curl https://api.kasko.io/quotes \
         -u <YOUR SECRET API KEY>: \
         -d variant_id=LPE5mgGpndOQZoX7WbXze0w8aK7Br3N1 \
-        -d data='{"purchase_date":"2017-09-05","purchase_value":"120000","duration":"P4Y"}'
+        -d data='{"purchase_date":"2017-09-05","purchase_value":"120000","duration":"P5Y"}'
 
 Create Unpaid Policy Request
 ----------------------------
