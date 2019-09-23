@@ -92,6 +92,7 @@ This request stores policy holder information that is related to offer. Followin
     "city",         "string", "City.", "London"
     "house_number", "string", "House number.", "1234"
     "postcode",     "string", "Postcode of the first residence owner's address.", "1234"
+    "booking_number", "string", "Booking number.", "1234"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -111,7 +112,8 @@ Example Request
                 "street":"First street",
                 "city":"London",
                 "house_number":"1234",
-                "postcode":"1234"
+                "postcode":"1234",
+                "booking_number": "1234"
           },
           "quote_token":"<QUOTE TOKEN>",
           "first_name": "Test",
