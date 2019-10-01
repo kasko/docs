@@ -41,7 +41,6 @@ Example Request
         "item_id": "<ITEM ID>",
         "touchpoint_id": "<TOUCHPOINT ID>",
         "subscription_plan_id": "<SUBSCRIPTION PLAN ID>",
-        "key": "<PUBLIC KEY>",
         "data": {
             "coverage_type": "top_5000",
             "dog_breed": "boxer",
@@ -141,7 +140,6 @@ Example Request
             "email": "test@kasko.io",
             "first_name": "First name",
             "language": "de",
-            "key": "<PUBLIC KEY>",
             "last_name": "Last name",
             "quote_token": "quote_token",
             "metadata": {
@@ -171,6 +169,8 @@ Example Response
         }
       }
     }
+    
+.. _OfferResponse:
 
 Convert offer to policy (payment)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -199,7 +199,6 @@ Example Request
         -d '{
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<POLICY ID>",
-            "key": "<PUBLIC KEY>",
             "method": "distributor",
             "provider": "distributor"
         }'
