@@ -68,9 +68,16 @@ Example response
         "gross_payment_amount": 24200,
         "extra_data": {
             "gross_premium": 24200,
-            "premium_tax": 1152,
-            "net_premium": 23048,
+            "premium_tax": 1138,
+            "net_premium": 23062,
             "tax_rate": 0.05,
+            "private_liability_gross_premium": 4500,
+            "comprehensive_damage_gross_premium": 4500,
+            "deductible_insurance_gross_premium": 2500,
+            "car_interior_gross_premium": 3500,
+            "luggage_gross_premium": 2700,
+            "annulation_cost_gross_premium": 3000,
+            "breakdown_gross_premium": 3500
         }
     }
 
@@ -83,16 +90,17 @@ This request stores policy holder information that is related to offer. Followin
 
 .. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
-   :widths: 35, 20, 75, 20
+   :widths: 20, 20, 80, 20
 
     "phone",        "string", "Phone number.", "+11111111"
     "salutation",   "string", "Salutation.", "mr"
     "dob",          "string", "Date of birth `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD).", "1990-08-01"
-    "street",       "string", "Street name"., "First street"
+    "street",       "string", "Street name.", "First street"
     "city",         "string", "City.", "London"
     "house_number", "string", "House number.", "1234"
     "postcode",     "string", "Postcode of the first residence owner's address.", "1234"
     "booking_number", "string", "Booking number.", "1234"
+    "booking_value", "string", "Booking value.", "1234"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -113,7 +121,8 @@ Example Request
                 "city":"London",
                 "house_number":"1234",
                 "postcode":"1234",
-                "booking_number": "1234"
+                "booking_number": "1234",
+                "booking_value": "1234"
           },
           "quote_token":"<QUOTE TOKEN>",
           "first_name": "Test",
