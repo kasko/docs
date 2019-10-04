@@ -103,7 +103,7 @@ JSON data posted to create an offer.
 +------------------------+------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------+
 | last_name              | Surname of policy holder.    |  - ``required``, string any letters from ``EBCDIC 500``, special chars: ``space, dash, apostrophe``        | ``Doe``, ``Armin van Buuren``        |
 |                        |                              |  - length ``min: 2``, ``max: 35`` chars                                                                    |                                      |
-|                        |                              |  - ``space, dash, apostrophe `` are allowed but not as leading or trailing character                       |                                      |
+|                        |                              |  - ``space, dash, apostrophe`` are allowed but not as leading or trailing character                        |                                      |
 |                        |                              |  - no subsequent ``space, dash, apostrophe``                                                               |                                      |
 |                        |                              |  - no more than ``3 sequential chars``                                                                     |                                      |
 |                        |                              |  - first character of each word should be in capitals, except Ref2_ - specified names                      |                                      |

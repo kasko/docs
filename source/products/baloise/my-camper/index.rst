@@ -1,5 +1,5 @@
 Baloise - My Camper Insurance
-==========================
+=============================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^
