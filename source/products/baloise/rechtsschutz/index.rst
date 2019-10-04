@@ -1,5 +1,5 @@
 Baloise - Rechtsschutz Insurance
-==========================
+================================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^
