@@ -1,3 +1,2 @@
 #!/bin/bash
-sphinx-autobuild source/ _build_html/
-sphinx-quickstart
+sphinx-autobuild -a -E source/ _build_html/
