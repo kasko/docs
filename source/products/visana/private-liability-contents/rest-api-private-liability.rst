@@ -152,6 +152,7 @@ Example Request
 
 Example Response
 ~~~~~~~~~~~~~~~~
+.. _OfferResponse:
 
 .. code:: javascript
 

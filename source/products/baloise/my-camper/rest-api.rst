@@ -9,18 +9,16 @@ REST API
 Headers
 =======
 
-1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in Quote_, Offer_, Show_ requests.
+1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in `Quote request`_, `Offer`_, `Show`_ requests.
 
 Possible requests
 =================
 
 To purchase a policy at least 3 requests are required in the following order:
 
-1. Quote_ requests - get the policy price.
-2. Offer_ requests - create an offer.
-3. Payment_ requests - covert offer to a paid policy.
-
-.. _Quote:
+1. `Quote request`_  - get the policy price.
+2. `Offer`_ - create an offer.
+3. `Payment`_ requests - covert offer to a paid policy.
 
 Quote request
 -------------
@@ -56,10 +54,9 @@ Example Request
        -d subscription_plan_id=sp_965a0917e8c77eaff35e7699fea8b \
        -d data='{"cart_value":50000,"duration":"P5D","private_liability":true,"comprehensive_damage":true,"deductible_insurance":true,"car_interior":true,"luggage":true,"luggage_insured_sum":500000,"annulation_cost":true,"breakdown":true,"policy_start_date":"2019-08-01"}'
 
-.. _QuoteResponse:
-
 Example response
 ~~~~~~~~~~~~~~~~
+.. _QuoteResponse:
 
 .. code:: bash
 
@@ -81,10 +78,10 @@ Example response
         }
     }
 
-.. _Offer:
 
 Create an offer (unpaid policy)
 -------------------------------
+.. _Offer:
 
 This request stores policy holder information that is related to offer. Following information can be stored in offer:
 
@@ -131,12 +128,11 @@ Example Request
           "language": "en"
       }'
 
-NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
-
-.. _OfferResponse:
+NOTE. You should use ``<QUOTE TOKEN>`` value from `QuoteResponse`_.
 
 Example response
 ~~~~~~~~~~~~~~~~
+.. _OfferResponse:
 
 .. code:: bash
 
@@ -151,10 +147,10 @@ Example response
         }
     }
 
-.. _Payment:
 
 Convert offer to policy (payment)
 ---------------------------------
+.. _Payment:
 
 To create a policy you should convert offer to policy. In other words - make payment for the offer.
 This can be done by making following request:
@@ -163,8 +159,8 @@ This can be done by making following request:
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by OfferResponse_."
-   "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
+   "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by `OfferResponse`_."
+   "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by `OfferResponse`_."
    "method",    "yes", "``string``", "Payment method ``distributor``."
    "provider",  "yes", "``string``", "Payment provider ``distributor``."
 
@@ -184,12 +180,11 @@ Example Request
             "provider": "distributor"
         }'
 
-NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
-
-.. _Show:
+NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from `OfferResponse`_. After payment is made, policy creation is asynchronous.
 
 Show policy by id
 -----------------
+.. _Show:
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -200,4 +195,4 @@ Example Request
         -u sk_test_SECRET_KEY: \
         -H 'Content-Type: application/json'
 
-Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve policy data.
+Note you should use ``<POLICY ID>`` from `OfferResponse`_ in order to retrieve policy data.
