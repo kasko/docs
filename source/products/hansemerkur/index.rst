@@ -1,5 +1,5 @@
 HanseMerkur Products
-===============
+====================
 
 List of HanseMerkur insurance products.
 
