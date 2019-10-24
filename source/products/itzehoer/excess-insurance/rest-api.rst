@@ -64,7 +64,7 @@ JSON data posted to /policies on creation of unpaid policy.
    "street",                          "string", Yes,   "Street name of the policyholder's address.",   "Main street"
    "city",                            "string", Yes,   "City name.",  "Hamburg"
    "postcode",                        "string", Yes,   "Postcode of the policyholder's address.",   "10115"
-   "license_plate",                   "string", Yes,   "Vehicle License Plate",   "B-AA-1234"
+   "license_plate",                   "string", Yes,   "Vehicle License Plate",   "B-AA 1234"
    "manufacture_number",              "string", No,   "Manufactorer code",   "1234"
    "serial_number",                   "string", Yes,   "Vehicle Serial Number",   "1234abnd1234abdn2"
    "model_code",                      "string", No,   "Identifier of the type/model of the car",   "1234"
@@ -88,7 +88,7 @@ Example Request
               "house_number": "12",
               "postcode": "10115",
               "street": "Some street",
-              "license_plate": "B-AA-1234",
+              "license_plate": "B-AA 1234",
               "manufacture_number": "12345",
               "serial_number": "1234abnd1234abdn2",
               "model_code": "1234"             
