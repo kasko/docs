@@ -1,5 +1,5 @@
 REST API - Private Liablity
-========
+===========================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
 
@@ -80,20 +80,20 @@ Example Response
 
 .. code:: javascript
 
-      {
-      "token": <Quote Token>,
-      "gross_payment_amount": 22995,
-      "extra_data": {
-        "gross_premium": 22995,
-        "premium_tax": 1095,
-        "net_premium": 21900,
-        "tax_rate": 0.05,
-        "suggested_insured_sum_hr": 0,
-        "lock_change": 0,
-        "private_liability_gross_premium": 22995,
-        "yearly_private_liability_gross_premium": 7665
-     } 
-}
+    {
+        "token": <Quote Token>,
+        "gross_payment_amount": 22995,
+        "extra_data": {
+            "gross_premium": 22995,
+            "premium_tax": 1095,
+            "net_premium": 21900,
+            "tax_rate": 0.05,
+            "suggested_insured_sum_hr": 0,
+            "lock_change": 0,
+            "private_liability_gross_premium": 22995,
+            "yearly_private_liability_gross_premium": 7665
+        }
+    }
 
 Create Unpaid Policy Request
 ----------------------------
@@ -152,6 +152,7 @@ Example Request
 
 Example Response
 ~~~~~~~~~~~~~~~~
+.. _OfferResponse:
 
 .. code:: javascript
 
@@ -195,12 +196,8 @@ Example Request
         -d '{
             "token": "<PAYMENT TOKEN>",
             "policy_id": "<POLICY ID>",
-            "method": "invoice",
-            "provider": "invoice",
-            "metadata": {
-                  "iban": "IBAN",
-                  "bic": "BIC"
-            }
+            "method": "distributor",
+            "provider": "distributor"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
