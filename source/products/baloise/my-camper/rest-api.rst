@@ -19,6 +19,11 @@ To purchase a policy at least 3 requests are required in the following order:
 1. `Quote request`_  - get the policy price.
 2. `Offer`_ - create an offer.
 3. `Payment`_ requests - covert offer to a paid policy.
+4. `MediaCreate`_ requests - create media record.
+5. `MediaUpload`_ requests - upload media.
+6. `MediaAttach`_ requests - attach media to policy.
+
+.. _Quote:
 
 Quote request
 -------------
@@ -181,6 +186,83 @@ Example Request
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from `OfferResponse`_. After payment is made, policy creation is asynchronous.
+
+.. _MediaCreate:
+
+Create media record
+---------------------------------
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "designation",     "yes", "``string``", "Media designation ``baloise_mycamper``."
+   "name", "yes", "``string``", "Your media name."
+   "mime_type",    "yes", "``string``", "Type of file."
+   "file_size",  "yes", "``integer``", "File size in bytes, for example ``66423``."
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl https://api.kasko.io/media \
+        -X POST \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "designation": "baloise_mycamper",
+            "name": "My pdf file",
+            "mime_type": "application/pdf",
+            "file_size": 66423
+        }'
+
+.. _MediaUpload:
+
+Upload media record
+---------------------------------
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "file",     "yes", "``file``", "File to upload."
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl \
+      -F "file=@/path/to/file/file.pdf" \
+      https://api.kasko.io/media/<MEDIA ID>/content
+
+NOTE. You should use ``<MEDIA ID>`` from MediaCreate_.
+
+.. _MediaAttach:
+
+Attach media to policy
+---------------------------------
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "id",     "yes", "``string``", "Use uploaded media id"
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl https://api.kasko.io/policies/<POLICY ID>/media \
+        -X POST \
+        -u sk_test_SECRET_KEY: \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "id": "<MEDIA ID>",
+        }'
+
+NOTE. You should use ``<MEDIA ID>`` from MediaCreate_ and  ``<POLICY ID>`` from OfferResponse_.
 
 Show policy by id
 -----------------
