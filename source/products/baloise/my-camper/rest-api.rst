@@ -257,9 +257,10 @@ Example Request
     curl https://api.kasko.io/policies/<POLICY ID>/media \
         -X POST \
         -u sk_test_SECRET_KEY: \
+        -H 'Accept: application/vnd.kasko.v2+json' \
         -H 'Content-Type: application/json' \
         -d '{
-            "id": "<MEDIA ID>",
+            "id": "<MEDIA ID>"
         }'
 
 NOTE. You should use ``<MEDIA ID>`` from MediaCreate_ and  ``<POLICY ID>`` from OfferResponse_.
