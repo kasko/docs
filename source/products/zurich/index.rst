@@ -8,3 +8,4 @@ List of Zurich insurance products.
    :maxdepth: 1
 
    cyber-sme/index
+   zurich-do/index
