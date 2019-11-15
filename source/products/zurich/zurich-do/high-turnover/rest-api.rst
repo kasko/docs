@@ -11,7 +11,7 @@ Headers
 
 1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in `Quote request`_, `Offer`_, `Show`_ requests.
 
-Quote Data for ZEP and Makler High Turnover
+Quote Data For High Turnover
 -------------------------------------------
 This request calculates how much policyholder should pay for the policy.
 Following factors are considered while calculating policy price:
@@ -22,7 +22,7 @@ Following factors are considered while calculating policy price:
 
    "incorporation_date",                                "string",  "Incorporation date in ISO date format and range from 1850-01-01 until tomorrow from the current day", "yyyy-mm-dd"
    "damage_claim",                                      "bool",    "Damage claim, true or false", "true"
-   "sector",                                            "string",  "A dataset id corresponding to sector number always starting with `dai_", "dai_some_id_32_chars_long_______"
+   "sector",                                            "string",  "A dataset id corresponding to sector number always starting with '``dai_``'", "``dai_some_id_32_chars_long_______``"
    "single_damage",                                     "bool",    "Single damage required if damage claim = true, true or false", "true"
    "damage",                                            "integer", "Damage, required if single damage = false. Min:0 Max:100000000000", "400000"
    "turnover",                                          "integer", "A numeric value from the following list: 7499999900,9999999900,12499999900,14999999900,17499999900,19999999900,24999999900,29999999900,34999999900,39999999900", "34999999900"
@@ -57,7 +57,7 @@ Example Request
        -d data='{
             "incorporation_date": "1989-02-03",
             "damage_claim":false,
-            "sector":"dai_some_id_32_chars_long_______",
+            "sector":"dai-some-id-32-chars-long-------",
             "single_damage":false,
             "damage":"0",
             "turnover":14999999900,
@@ -186,8 +186,8 @@ This can be done by making following request:
 
    "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by `OfferResponse`_."
    "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by `OfferResponse`_."
-   "method",    "yes", "``string``", "Payment method ``invoice``."
-   "provider",  "yes", "``string``", "Payment provider ``zurich_invoice``."
+   "method",    "yes", "``string``", "Payment method ``distributor``."
+   "provider",  "yes", "``string``", "Payment provider ``distributor``."
    "metadata.account_holder_name",  "yes", "``string``", "Account name ``Kasko``."
    "metadata.iban",  "yes", "``string``", "Account IBAN ``NO9386011117947``."
    "metadata.bic",  "yes", "``string``", "Account BIC ``12345678``."
@@ -204,8 +204,8 @@ Example Request
         -d '{
             "token": "<PAYMENT_TOKEN>",
             "policy_id": "<policy_id>",
-            "method": "invoice",
-            "provider": "zurich_invoice",
+            "method": "distributor",
+            "provider": "distributor",
             "metadata": {
                   "account_holder_name": "Kasko",
                   "iban": "NO9386011117947",
