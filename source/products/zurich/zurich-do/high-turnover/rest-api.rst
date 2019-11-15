@@ -108,19 +108,19 @@ This request stores policy holder information that is related to offer. Followin
    :widths: 20, 20, 80, 20
 
    "company_name_with_legal_form", "string", "Company name", "Kasko LTD"
-   "company_street", "string", "Street name of the companies address", "Green street"
-   "company_house_number", "string", "House number of the companies address", "1"
-   "company_postcode", "string", "Post code of the companies address, 5 numbers long", "10115"
-   "company_city", "string", "Country of company", "London"
-   "phone", "string", "Phone number", "+11111111"
-   "salutation", "string", "Salutation, ms or mr", "mr"
-   "agent_company", "string", "Agent company name", "AgentCompanyName"
-   "agent_salutation", "string", "Agent salutation ms or mr", "ms"
-   "agent_first_name", "string", "First name of the agent", "FirstName"
-   "agent_last_name", "string", "Last name of the agent", "LastName"
-   "agent_number", "string", "Agent number, 9 numbers long", "123456789"
-   "agent_email", "string", "Agent email", "example@kasko.io"
-   "agent_phone", "string", "Agent phone number", "+11111111"
+   "company_street",               "string", "Street name of the companies address", "Green street"
+   "company_house_number",         "string", "House number of the companies address", "1"
+   "company_postcode",             "string", "Post code of the companies address, 5 numbers long", "10115"
+   "company_city",                 "string", "Country of company", "London"
+   "phone",                        "string", "Phone number", "+11111111"
+   "salutation",                   "string", "Salutation, ms or mr", "mr"
+   "agent_company",                "string", "Agent company name", "AgentCompanyName"
+   "agent_salutation",             "string", "Agent salutation ms or mr", "ms"
+   "agent_first_name",             "string", "First name of the agent", "FirstName"
+   "agent_last_name",              "string", "Last name of the agent", "LastName"
+   "agent_number",                 "string", "Agent number, 9 numbers long", "123456789"
+   "agent_email",                  "string", "Agent email", "example@kasko.io"
+   "agent_phone",                  "string", "Agent phone number", "+11111111"
    
 Example Request
 ~~~~~~~~~~~~~~~
