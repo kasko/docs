@@ -31,5 +31,3 @@ Integration methods
 
    high-turnover/rest-api
    low-turnover/rest-api
-   zep-webapp
-   makler-webapp
