@@ -18,7 +18,7 @@ Product IDs
 .. csv-table::
    :header: "Item Title", "Item ID"
 
-   "Baloise - Cyber SME", "``item_2179228df6ee9af663179f41048``"
+   "Baloise - Cyber SME", "``item_8a1a7b996dbb0a4bded2c00a461``"
 
 Integration methods
 ^^^^^^^^^^^^^^^^^^^
