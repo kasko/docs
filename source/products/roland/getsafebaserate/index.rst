@@ -1,5 +1,5 @@
-Getsafe
-=======
+Getsafe Base Rate
+=================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^
@@ -7,7 +7,7 @@ Product Information
 .. csv-table::
    :widths: 25, 75
 
-   "Name",      "Getsafe"
+   "Name",      "Getsafe Base Rate"
    "Insurer",   "Roland"
    "Region",    "Germany"
    "Languages", "``DE``"
@@ -19,7 +19,7 @@ Product IDs
    :widths: 20, 40, 40
    :header: "Language", "Product ID", "Touchpoint ID"
 
-   "``DE``", "``item_b22001a5cb67ddc81ce7db58647``", "``tp_0153a5c5367f391d5db3c536b664b``"
+   "``DE``", "``item_bbfc9651fd4559d5672179422c5``", "``tp_dea2add3535afaf2192d91041f624``"
 
 Integration methods
 ^^^^^^^^^^^^^^^^^^^

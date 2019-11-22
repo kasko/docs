@@ -8,3 +8,4 @@ List of Roland insurance products.
    :maxdepth: 1
 
    getsafe/index
+   getsafebaserate/index
