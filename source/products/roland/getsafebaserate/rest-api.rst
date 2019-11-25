@@ -230,7 +230,7 @@ Example Request
 
 .. code-block:: bash
 
-    curl https://api.qa-4.legacykaskoqa.com/policies/POLICY_ID \
+    curl https://api.kasko.io/policies/POLICY_ID \
         -X PUT \
         -u YOUR_SECRET_API_KEY: \
         -H 'Accept: application/vnd.kasko.v2+json' \

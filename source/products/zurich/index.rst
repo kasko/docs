@@ -9,3 +9,4 @@ List of Zurich insurance products.
 
    cyber-sme/index
    zurich-do/index
+   smarthome/index
