@@ -130,7 +130,11 @@ Example Request
           "first_name": "Test",
           "last_name": "Person",
           "email": "test@kasko.io",
-          "language": "en"
+          "language": "en",
+          "metadata": {
+                "subagent_id": "123456",
+                "subagent_name": "Name"
+          }
       }'
 
 NOTE. You should use ``<QUOTE TOKEN>`` value from `QuoteResponse`_.
