@@ -16,7 +16,7 @@ Definition
 Parameters
 ~~~~~~~~~~
 +----------------------------+------------+---------------+---------------------------------------------------------+
-| Parameter                  | required   | Type          | Description                                             |
+| Parameter                  | Required   | Type          | Description                                             |
 +============================+============+===============+=========================================================+
 | quote_token                | yes        | string        |  Quote token provided in quote object                   |
 +----------------------------+------------+---------------+---------------------------------------------------------+
@@ -30,7 +30,7 @@ Parameters
 +----------------------------+------------+---------------+---------------------------------------------------------+
 | distributor_traffic_source | no         | string        |  Distributor reference of traffic source.  e.g. Email   |
 +----------------------------+------------+---------------+---------------------------------------------------------+
-| data                       | maybe      | JSON          |  Refer to the product section here for required data    |
+| data                       | no         | JSON          |  Refer to the product section here for required data    |
 +----------------------------+------------+---------------+---------------------------------------------------------+
 
 Example Request
