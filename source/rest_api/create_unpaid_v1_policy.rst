@@ -4,7 +4,7 @@ Create an unpaid v1 policy
 ---------------------------------
 Create an unpaid policy on the Kasko platform.
 
-Why do we do this 2 step mechanism?   We want to ensure that there is no problem with the quote or details before you charge your customers for the policy.  After this point we can ensure that the policy can be purchased.
+Why do we do this 2 step mechanism?   We need to ensure that there is no problem with quote or policy details before a charge can be made for the customer.  With this we ensure that a policy can be purchased.
 
 Definition
 ~~~~~~~~~~
@@ -20,9 +20,9 @@ Parameters
 +============================+============+===============+=========================================================+
 | quote_token                | yes        | string        |  Quote token provided in quote object                   |
 +----------------------------+------------+---------------+---------------------------------------------------------+
-| first_name                 | yes        | string        |  First Name of the customer                             |
+| first_name                 | yes        | string        |  First name of the customer                             |
 +----------------------------+------------+---------------+---------------------------------------------------------+
-| last_name                  | yes        | string        |  Last Name of the customer                              |
+| last_name                  | yes        | string        |  Last name of the customer                              |
 +----------------------------+------------+---------------+---------------------------------------------------------+
 | email                      | yes        | string        |  Email address of the customer                          |
 +----------------------------+------------+---------------+---------------------------------------------------------+
@@ -45,8 +45,6 @@ Example Request
 	    -d last_name=SURNAME \
 	    -d email=EMAIL_ADDRESS \
 	    -d data=DATA
-
-
 
 Example Response
 ~~~~~~~~~~~~~~~~

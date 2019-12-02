@@ -102,7 +102,7 @@ Depending if you are using v1 policy or v2 policy, there will be a different app
 Get specific policy
 --------------------
 
-Depending if you are using v1 policy or v2 policy, there will be a different approach to this step
+Depending wether you are using v1 policy or v2 policy, there will be a different approach to this step.
 
 - :ref:`Get v1 policy <get_v1_policy>`
 - :ref:`Get v2 policy <get_v2_policy>`
