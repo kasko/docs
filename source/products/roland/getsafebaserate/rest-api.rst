@@ -41,8 +41,9 @@ Following factors are considered while calculating policy price:
    "partner_coverage",  "bool",   "Coverage for Partner",                                              "false"
    "main_module",       "string", "Insurance module from the following two: PBVIM or PBV",             "PBVIM"
    "postcode",          "string", "Postcode of the policy holders address. Must be 5 characters long", "99869"
+   "duration",          "string", "Duration, always P1Y",                                              "P1Y"
    "dob",               "string", "Policy holders date of birth. Must use ISO Date format",            "yyyy-mm-dd"
-   "policy_start_date", "string", "Policy start date. Must use ISO Date format",                       "yyyy-mm-dd"
+   "start_date", "string", "Policy start date. Must use ISO Date format",                              "yyyy-mm-dd"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -59,8 +60,9 @@ Example Request
                 "partner_coverage":false,
                 "main_module":"PBV",
                 "postcode":"99869",
+                "duration": "PY1",
                 "dob":"1993-02-12",
-                "policy_start_date": "2019-11-15"
+                "start_date": "2019-11-15"
         }'
 
 Example response
