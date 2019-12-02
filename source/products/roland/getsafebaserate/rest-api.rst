@@ -60,7 +60,7 @@ Example Request
                 "partner_coverage":false,
                 "main_module":"PBV",
                 "postcode":"99869",
-                "duration": "PY1",
+                "duration": "P1Y",
                 "dob":"1993-02-12",
                 "start_date": "2019-11-15"
         }'
