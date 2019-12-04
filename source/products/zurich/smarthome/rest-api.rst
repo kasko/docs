@@ -202,7 +202,7 @@ Example Request
             "token": "PAYMENT_TOKEN",
             "policy_id": "POLICY_ID",
             "method": "distributor",
-            "provider": "distributor",
+            "provider": "distributor"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
