@@ -148,7 +148,7 @@ Example response
         "payment_token": "<PAYMENT TOKEN>",
         "_links": {
             "_self": {
-                "href": "https://qa-0-api.kasko.io/policies/<POLICY ID>"
+                "href": "https://api.kasko.io/policies/<POLICY ID>"
             }
         }
     }
@@ -200,7 +200,7 @@ Example Request
 
     curl -X GET https://api.kasko.io/policies/<POLICY ID> \
         -H 'Accept: application/vnd.kasko.v2+json' \
-        -H <YOUR SECRET API KEY> \
+        -H <YOUR SECRET API KEY>: \
         -H 'Content-Type: application/json'
 
 Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve policy data.

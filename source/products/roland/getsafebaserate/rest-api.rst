@@ -198,7 +198,7 @@ Example Request
 
     curl -X GET https://api.kasko.io/policies/POLICY_ID \
         -H 'Accept: application/vnd.kasko.v2+json' \
-        -H 'Authorization: Bearer <YOUR_SECRET_AI_KEY>' \
+        -H <YOUR SECRET API KEY>: \
         -H 'Content-Type: application/json'
 
 Note you should use ``<POLICY ID>`` from OfferResponse_ in order to retrieve policy data.
