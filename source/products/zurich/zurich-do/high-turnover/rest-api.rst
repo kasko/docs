@@ -49,7 +49,7 @@ Example Request
 .. code:: bash
 
     curl -X post  https://api.kasko.io/quotes \
-       -u <sk_test_SECRET_KEY>: \
+       -u sk_test_SECRET_KEY: \
        -H 'Accept: application/vnd.kasko.v2+json' \
        -d touchpoint_id=<TOUCHPOINT ID> \
        -d item_id=<ITEM ID> \
@@ -137,7 +137,7 @@ Example Request
                 "company_name_with_legal_form": "Kasko LTD",
                 "company_street": "Green Street",
                 "company_house_number": "11",
-                "company_postcode": "1011",
+                "company_postcode": "10115",
                 "company_city": "London",
                 "phone": "+11111111",
                 "salutation": "ms",
@@ -153,7 +153,7 @@ Example Request
           "first_name": "FirstName",
           "last_name": "LastName",
           "email": "example@kasko.io",
-          "language": "en"
+          "language": "de"
       }'
 
 Example response
@@ -164,8 +164,8 @@ Example response
 
     {
         "id":"Policy ID"
-        "insurer_policy_id":"Insurer policy ID,
-        "payment_token":"<QUOTE_TOKEN>",
+        "insurer_policy_id":"Insurer policy ID",
+        "payment_token":"QUOTE_TOKEN",
         "_links":{
             "_self":{
                 "href":"https:\/\/api.kasko.io\/policies\/<policy_id>"
@@ -199,11 +199,11 @@ Example Request
 
     curl https://api.kasko.io/payments \
         -X POST \
-        -u <YOUR SECRET API KEY>: \
+        -u YOUR SECRET API KEY: \
         -H 'Content-Type: application/json' \
         -d '{
-            "token": "<PAYMENT_TOKEN>",
-            "policy_id": "<policy_id>",
+            "token": "PAYMENT_TOKEN",
+            "policy_id": "policy_id",
             "method": "distributor",
             "provider": "distributor",
             "metadata": {
