@@ -149,7 +149,7 @@ Example Request
           "first_name": "FirstName",
           "last_name": "LastName",
           "email": "example@kasko.io",
-          "language": "en"
+          "language": "de"
       }'
 
 Example response
