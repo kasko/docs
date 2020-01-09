@@ -113,7 +113,7 @@ Convert unpaid policy to paid policy
 
 Convert an already created policy to a paid policy.
 
-This API request should be made after payment has been taken for the policy by the distirbutor.   This will trigger the KASKO platform to email the customer the Policy Documents.
+This API request should be made after payment has been taken for the policy by the distributor.   This will trigger the KASKO platform to email the customer the Policy Documents.
 
 Definition
 ~~~~~~~~~~
@@ -143,6 +143,11 @@ Example Request
 	    -d token=PAYMENT_TOKEN \
 	    -d policy_id=POLICY_ID
 
+
+Fetch additional data
+---------------------
+
+When a product's web application, quote, or policy requires some additional domain-related data, use the :ref:`domain_data`.
 
 Testing
 -------
