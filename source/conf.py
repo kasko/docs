@@ -15,6 +15,7 @@
 
 import sys
 import os
+import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -50,7 +51,9 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Kasko Docs'
-copyright = '2016 - 2017, Kasko LTD'
+today = str(datetime.date.today())
+curr_year = today[:4]
+copyright = '2016 - %s, Kasko LTD' % (curr_year)
 author = 'Kasko LTD'
 
 # The version info for the project you're documenting, acts as replacement for
