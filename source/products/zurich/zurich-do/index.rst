@@ -1,4 +1,4 @@
-Zurich D&O
+D&O
 =============================
 
 Product Information
