@@ -1,4 +1,4 @@
-Zurich Smarthome
+Smarthome
 ================
 
 Product Information

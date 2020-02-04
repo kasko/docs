@@ -1,4 +1,4 @@
-Zurich Cyber SME Insurance
+Cyber SME
 ==========================
 
 Product Information

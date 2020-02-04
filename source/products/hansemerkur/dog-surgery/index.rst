@@ -1,4 +1,4 @@
-HanseMerkur - Dog Surgery Insurance
+Dog Surgery
 ============================================
 
 Product Information
