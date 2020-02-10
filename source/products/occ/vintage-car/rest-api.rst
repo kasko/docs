@@ -16,9 +16,9 @@ Possible requests
 
 To purchase a policy at least 3 requests are required in the following order:
 
-1. `Quote request`_  - get the policy price.
+1. `Quote`_  - get the policy price.
 2. `Offer`_ - create an offer.
-3. `Payment`_ requests - covert offer to a paid policy.
+3. `Payment`_ convert offer to a paid policy.
 
 .. _Quote:
 
