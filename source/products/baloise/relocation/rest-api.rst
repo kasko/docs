@@ -36,3 +36,31 @@ JSON data posted to /policies on creation of policy
    "phone",               "string", "Free text string up to 255 characters.",     "2222222222"
    "dob",                 "string", "Optional date of birth. Format: YYYY-MM-DD", "1990-07-21"
    "salutation",          "string", "Allowed values: mr, ms",                     "mr"
+
+Cancel policy request
+---------------------
+
+JSON data sent in policy cancellation request.
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "status",              "yes", "string",   "Policy status ``cancelled``."
+   "cancellation_reason", "yes", "string",   "Reason why policy is being cancelled."
+   "termination_date",    "no", "string",    "Date on which policy was terminated in ISO 8601 format (YYYY-mm-dd)."
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl https://api.kasko.io/policies/<POLICY ID> \
+        -X PUT \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "status": "cancelled",
+            "cancellation_reason": "Specify your reason here",
+            "termination_date": "2018-12-18"
+        }'
