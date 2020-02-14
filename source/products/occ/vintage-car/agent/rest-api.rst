@@ -1,5 +1,5 @@
 ========
-REST API
+REST API (AGENT)
 ========
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for more complete documentation regarding the necessary requests before performing and building your own.
@@ -61,7 +61,7 @@ Example Request
        -u sk_test_SECRET_KEY: \
        -H 'Accept: application/vnd.kasko.v2+json' \
        -d touchpoint_id=tp_e7c93465988011b6cd655c287098a \
-       -d item_id=item_6302c29ba4654b5b147c7fb123d \
+       -d item_id=item_b225a8996423029bb0c677207bf \
        -d subscription_plan_id=sp_c1a356222a3e987c683ba6094a08f \
        -d data='{"built_year":"1995","car_type":"dai_bZ61xAv4zRErXeornq5Y41IS7LZ3","coverage_type":"full","daily_usage":false,"daily_usage_car":true,"damages":false,"deductible_a1":"15000","deductible_b1":"50000","deductible_b2":"15000","dob":"1985-01-01","driving_license_year":"2000","first_registration":"1995-01-01","garage":"single","insured_sum":"270000","lost_license":false,"max_horse_power":false,"policy_start_date":"2020-02-06","recovery_cost":false,"usage":"3000km","vehicle_type":"car","young_driver":false}'
 
@@ -105,7 +105,7 @@ This request stores policy holder information that is related to offer. Followin
     "postcode",                    "string", "Postcode of the first residence owner's address.", "1234"
     "newsletter_optin",            "bool",   "Agree of newsletter.", "true"
     "title",                       "string", "Title.", "dr_jur"
-    "user",                        "string", "User", "customer"
+    "user",                        "string", "User", "agent"
     "car_id",                      "string", "Required if:new_client = false.", "test"
     "miles_value",                 "string", "Miles value.", "1234"
     "miles",                       "string", "Miles or km", "km"
@@ -116,6 +116,7 @@ This request stores policy holder information that is related to offer. Followin
     "horse_power",                 "string", "Horse power.", "1234"
     "maker_model",                 "string", "Maker model.", "1234"
     "maker",                       "string", "Maker.", "1234"
+    "agent_number"                 "string", "Agent number.", "dai_9maMZaFURnLGrUzgNXDyUcPoIMIP"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -147,7 +148,8 @@ Example Request
                 "salutation": "mr",
                 "street": "test",
                 "title": "ohne",
-                "user": "customer"
+                "user": "agent",
+                "agent_number": "dai_9maMZaFURnLGrUzgNXDyUcPoIMIP"
             },
             "quote_token":"<QUOTE TOKEN>",
             "first_name": "Test",
