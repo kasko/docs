@@ -29,4 +29,6 @@ Integration methods
    :maxdepth: 1
 
    webapp
-   rest-api
+   user/rest-api
+   agent/rest-api
+   broker/rest-api
