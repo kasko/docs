@@ -29,5 +29,6 @@ Integration methods
 .. toctree::
    :maxdepth: 1
 
+   webapp
    high-turnover/rest-api
    low-turnover/rest-api
