@@ -38,12 +38,12 @@ Following factors are considered while calculating policy price:
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "partner_coverage",  "bool",   "Coverage for Partner",                                              "false"
-   "main_module",       "string", "Insurance module from the following two: PBVIM or PBV",             "PBVIM"
-   "postcode",          "string", "Postcode of the policy holders address. Must be 5 characters long", "99869"
-   "duration",          "string", "Duration, always P1Y",                                              "P1Y"
-   "dob",               "string", "Policy holders date of birth. Must use ISO Date format",            "yyyy-mm-dd"
-   "start_date", "string", "Policy start date. Must use ISO Date format",                              "yyyy-mm-dd"
+   "partner_coverage_type",  "string", "Coverage Type for Partner in:single,spouse,partner",                "single"
+   "main_module",            "string", "Insurance module from the following two: PBVIM or PBV",             "PBVIM"
+   "postcode",               "string", "Postcode of the policy holders address. Must be 5 characters long", "99869"
+   "duration",               "string", "Duration, always P1Y",                                              "P1Y"
+   "dob",                    "string", "Policy holders date of birth. Must use ISO Date format",            "yyyy-mm-dd"
+   "start_date",             "string", "Policy start date. Must use ISO Date format",                       "yyyy-mm-dd"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -57,11 +57,11 @@ Example Request
        -d item_id=ITEM_ID \
        -d subscription_plan_id=SUBSCRIPTION_ID \
        -d data='{
-                "partner_coverage":false,
-                "main_module":"PBV",
-                "postcode":"99869",
+                "partner_coverage_type": "single",
+                "main_module": "PBV",
+                "postcode": "99869",
                 "duration": "P1Y",
-                "dob":"1993-02-12",
+                "dob": "1993-02-12",
                 "start_date": "2019-11-15"
         }'
 
@@ -102,9 +102,9 @@ This request stores policy holder information that is related to offer. Followin
    "previous_insurance_cancellation", "integer|optional",  "Previous cancellation reason.",   "2"
    "previous_insurance_start_date",   "string|optional",   "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
    "previous_insurance_end_date",     "string|optional",   "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
-   "partner_coverage",                "bool",              "Partner coverage.",   "true"
-   "coinsured_first_name",            "string|optional",   "Co-insured First name. Required if ``partner_coverage`` is ``true``.",   "FirstName"
-   "coinsured_last_name",             "string|optional",   "Co-insured Last name. Required if ``partner_coverage`` is ``true``.",   "LastName"
+   "partner_coverage_type",           "string",            "Partner coverage type. in:single,spouse,partner",     "single"
+   "coinsured_first_name",            "string|optional",   "Co-insured First name. Required if ``partner_coverage_type`` is ``partner``.",   "FirstName"
+   "coinsured_last_name",             "string|optional",   "Co-insured Last name. Required if ``partner_coverage_type`` is ``partner``.",   "LastName"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -118,12 +118,12 @@ Example Request
 	  -H 'Content-Type: application/json' \
 	  -d '{
           "data": {
-                "phone":"+11111111",
+                "phone":"+44 117 496 0123",
                 "salutation": "mr",
                 "house_number": "1A",
                 "street": "Test Street",
                 "state": "Test State",
-                "partner_coverage": false
+                "partner_coverage_type": "spouse"
           },
           "quote_token":"<QUOTE TOKEN>",
           "first_name": "Test",
@@ -176,11 +176,11 @@ Example Request
 
     curl https://api.kasko.io/payments \
         -X POST \
-        -u <YOUR SECRET API KEY>: \
+        -u YOUR SECRET API KEY: \
         -H 'Content-Type: application/json' \
         -d '{
-            "token": "<PAYMENT TOKEN>",
-            "policy_id": "<POLICY ID>",
+            "token": "PAYMENT TOKEN",
+            "policy_id": "POLICY ID",
             "method": "distributor",
             "provider": "distributor"
         }'
@@ -244,12 +244,12 @@ Example Request
             "last_name": "Holder last name",
             "email": "example@kasko.io",
             "data": {
-                "phone":"+2222222",
+                "phone":"+44 117 496 0123",
                 "salutation": "mr",
                 "house_number": "5A",
                 "street": "new test Street",
                 "state": "new test State",
-                "partner_coverage": false
+                "partner_coverage_type": "single"
             },
             "quote_token":"QUOTE_TOKEN"
         }'
