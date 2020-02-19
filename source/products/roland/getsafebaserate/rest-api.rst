@@ -103,8 +103,8 @@ This request stores policy holder information that is related to offer. Followin
    "previous_insurance_start_date",   "string|optional",   "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
    "previous_insurance_end_date",     "string|optional",   "Previous insurance start date in ISO 8601 format.",   "YYYY-mm-dd"
    "partner_coverage_type",           "string",            "Partner coverage type. in:single,spouse,partner",     "single"
-   "coinsured_first_name",            "string|optional",   "Co-insured First name. Required if ``partner_coverage_type`` is ``partner``.",   "FirstName"
-   "coinsured_last_name",             "string|optional",   "Co-insured Last name. Required if ``partner_coverage_type`` is ``partner``.",   "LastName"
+   "coinsured_first_name",            "string|optional",   "Co-insured first name. Required if ``partner_coverage_type`` is ``partner``.",   "FirstName"
+   "coinsured_last_name",             "string|optional",   "Co-insured fast name. Required if ``partner_coverage_type`` is ``partner``.",   "LastName"
 
 Example Request
 ~~~~~~~~~~~~~~~
