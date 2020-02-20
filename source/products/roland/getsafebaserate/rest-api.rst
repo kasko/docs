@@ -57,7 +57,7 @@ Example Request
        -d item_id=ITEM_ID \
        -d subscription_plan_id=SUBSCRIPTION_ID \
        -d data='{
-                "partner_coverage_type": "single",
+                "partner_coverage_type": "partner",
                 "main_module": "PBV",
                 "postcode": "99869",
                 "duration": "P1Y",
@@ -92,7 +92,7 @@ This request stores policy holder information that is related to offer. Followin
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 35, 20, 75, 20
 
-   "phone",                           "string|optional",   "Free text string up to 255 characters.",   "+417304200"
+   "phone",                           "string|optional",   "A valid phone number",   "+417304200"
    "salutation",                      "string",            "Customer title. Available values: mr, ms.",   "mr"
    "house_number",                    "string",            "House number of the policyholder's address.",   "12"
    "street",                          "string",            "Street name of the policyholder's address.",   "Main street"
@@ -118,12 +118,14 @@ Example Request
 	  -H 'Content-Type: application/json' \
 	  -d '{
           "data": {
-                "phone":"+44 117 496 0123",
+                "phone": "+44 117 496 0123",
                 "salutation": "mr",
                 "house_number": "1A",
                 "street": "Test Street",
                 "state": "Test State",
-                "partner_coverage_type": "spouse"
+                "partner_coverage_type": "partner",
+                "coinsured_first_name": "firstName",
+                "coinsured_last_name": "lastName"
           },
           "quote_token":"<QUOTE TOKEN>",
           "first_name": "Test",
@@ -249,7 +251,9 @@ Example Request
                 "house_number": "5A",
                 "street": "new test Street",
                 "state": "new test State",
-                "partner_coverage_type": "single"
+                "partner_coverage_type": "partner",
+                "coinsured_first_name": "anotherFirstName",
+                "coinsured_last_name": "anotherLastName"
             },
             "quote_token":"QUOTE_TOKEN"
         }'
