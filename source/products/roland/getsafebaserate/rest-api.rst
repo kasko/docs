@@ -118,7 +118,7 @@ Example Request
 	  -H 'Content-Type: application/json' \
 	  -d '{
           "data": {
-                "phone":"+44 117 496 0123",
+                "phone": "+44 117 496 0123",
                 "salutation": "mr",
                 "house_number": "1A",
                 "street": "Test Street",
