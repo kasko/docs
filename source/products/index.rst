@@ -15,4 +15,4 @@ List of KASKO insurance products with required data to quote and purchase a poli
    hansemerkur/index
    roland/index
    occ/index
-   signal_iduna/index
+   signal-iduna/index
