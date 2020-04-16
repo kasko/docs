@@ -45,7 +45,7 @@ Following factors are considered while calculating policy price:
    "annulation_cost",      "bool",   "Annulation cost.", "TRUE"
    "breakdown",            "bool",   "Breakdown.", "TRUE"
    "policy_start_date",    "string", "Policy start date `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD).", "2019-08-01"
-   "pricing_type",         "string", "Typo if pricing", "daily or hourly"
+   "pricing_type",         "string", "Type of pricing", "daily or hourly"
 
 Example Request
 ~~~~~~~~~~~~~~~
