@@ -45,6 +45,7 @@ Following factors are considered while calculating policy price:
    "annulation_cost",      "bool",   "Annulation cost.", "TRUE"
    "breakdown",            "bool",   "Breakdown.", "TRUE"
    "policy_start_date",    "string", "Policy start date `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD).", "2019-08-01"
+   "pricing_type",         "string", "Typo if pricing", "daily or hourly"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -57,7 +58,7 @@ Example Request
        -d touchpoint_id=tp_7db25312d7e45d3d45618eba5bb74 \
        -d item_id=item_33e03cd6862c15059e83642a045 \
        -d subscription_plan_id=sp_965a0917e8c77eaff35e7699fea8b \
-       -d data='{"cart_value":50000,"duration":"P5D","private_liability":true,"comprehensive_damage":true,"deductible_insurance":true,"car_interior":true,"luggage":true,"luggage_insured_sum":500000,"annulation_cost":true,"breakdown":true,"policy_start_date":"2019-08-01"}'
+       -d data='{"cart_value":50000,"duration":"P5D","private_liability":true,"comprehensive_damage":true,"deductible_insurance":true,"car_interior":true,"luggage":true,"luggage_insured_sum":500000,"annulation_cost":true,"breakdown":true,"policy_start_date":"2019-08-01","pricing_type":"daily"}'
 
 Example response
 ~~~~~~~~~~~~~~~~
