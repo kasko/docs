@@ -17,3 +17,4 @@ List of KASKO insurance products with required data to quote and purchase a poli
    occ/index
    signal-iduna/index
    basler/index
+   pnv/index
