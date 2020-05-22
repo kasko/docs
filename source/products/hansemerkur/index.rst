@@ -8,3 +8,4 @@ List of HanseMerkur insurance products.
    :maxdepth: 1
 
    dog-surgery/index
+   tchibo/index

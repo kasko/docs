@@ -204,10 +204,10 @@ Example Request
         -u sk_test_SECRET_KEY: \
         -H 'Content-Type: application/json' \
         -d '{
-            "token": "<PAYMENT TOKEN>",
+            "token": "<PAYMENT_TOKEN>",
             "policy_id": "<POLICY ID>",
-            "method": "invoice",
-            "provider": "ergo_invoice"
+            "method": "distributor",
+            "provider": "distributor"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from `OfferResponse`_. After payment is made, policy creation is asynchronous.

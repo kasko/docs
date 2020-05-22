@@ -116,16 +116,17 @@ This request stores policy holder information that is related to offer. Followin
     "horse_power",                 "string", "Horse power.", "1234"
     "maker_model",                 "string", "Maker model.", "1234"
     "maker",                       "string", "Maker.", "1234"
-    "broker_salutation",           "string", "Broker salutation.", "mr",
-    "broker_company_name",         "string", "Broker company name.", "LTD KASKO",
-    "broker_first_name",           "string", "Broker first name.", "Arturs",
-    "broker_last_name",            "string", "Broker last name.", "King",
-    "broker_email",                "string", "Broker email.", "arturs.king@kasko.io",
-    "broker_phone",                "string", "Broker phone number", "+0041111111",
-    "broker_postcode",             "string", "Broker post code", "12345",
-    "broker_city",                 "string": "Broker city", "dai_xLIA1Wd5nqgt9jM7wi498Peq5BpR",
-    "broker_street",               "string": "Broker street", "London street 25",
-    "broker_house_number",         "string": "Broker house number", "255",
+    "broker_salutation",           "string", "Broker salutation.", "mr"
+    "broker_company_name",         "string", "Broker company name.", "LTD KASKO"
+    "broker_first_name",           "string", "Broker first name.", "Arturs"
+    "broker_last_name",            "string", "Broker last name.", "King"
+    "broker_email",                "string", "Broker email.", "arturs.king@kasko.io"
+    "broker_phone",                "string", "Broker phone number", "+0041111111"
+    "broker_postcode",             "string", "Broker post code", "12345"
+    "broker_city",                 "string", "Broker city", "dai_xLIA1Wd5nqgt9jM7wi498Peq5BpR"
+    "broker_street",               "string", "Broker street", "London street 25"
+    "broker_house_number",         "string", "Broker house number", "255"
+    "broker_number",               "string", "Broker number", "1231231"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -168,7 +169,8 @@ Example Request
                 "broker_postcode": "12345",
                 "broker_city": "dai_xLIA1Wd5nqgt9jM7wi498Peq5BpR",
                 "broker_street": "street",
-                "broker_house_number": "2555"
+                "broker_house_number": "2555",
+                "broker_number": "123321"
             },
             "quote_token":"<QUOTE TOKEN>",
             "first_name": "Test",
@@ -222,10 +224,10 @@ Example Request
         -u sk_test_SECRET_KEY: \
         -H 'Content-Type: application/json' \
         -d '{
-            "token": "<PAYMENT TOKEN>",
+            "token": "<PAYMENT_TOKEN>",
             "policy_id": "<POLICY ID>",
-            "method": "invoice",
-            "provider": "ergo_invoice"
+            "method": "distributor",
+            "provider": "distributor"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from `OfferResponse`_. After payment is made, policy creation is asynchronous.

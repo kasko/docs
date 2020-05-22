@@ -1,4 +1,4 @@
-Baloise - My Camper Insurance
+Baloise - Travel Layer Cover Insurance
 =============================
 
 Product Information
@@ -7,7 +7,7 @@ Product Information
 .. csv-table::
    :widths: 25, 75
 
-   "Name",      "Baloise - My Camper"
+   "Name",      "Baloise - Travel Layer Cover"
    "Insurer",   "Baloise"
    "Region",    "Switzerland"
    "Languages", "``DE``, ``FR``, ``IT``"
