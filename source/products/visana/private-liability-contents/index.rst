@@ -30,3 +30,4 @@ Integration methods
 
    private-liability/index
    private-liability-and-contents/index
+   hausrat/index

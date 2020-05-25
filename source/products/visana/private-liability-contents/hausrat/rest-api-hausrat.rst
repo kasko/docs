@@ -1,5 +1,5 @@
-REST API - Private Liability & Contents
-=======================================
+REST API - Visana - Hausrat
+===========================
 
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
@@ -25,18 +25,6 @@ An industry type must be selected but it can have more than one.
 
    existing_customer,boolean,true,Does the customer have health insurance with Visana
    existing_insurance,boolean,true,Does the customer have an existing insurance
-   persons,string,true,"How many people are living in the property, value (single, family)"
-   ownership,string,true,"Ownership of the property, value (owner, renter)"
-   more_than_one_person,boolean,true,Module to insure additional people in the same property
-   person_count,integer,"required_if:more_than_one_person,true","The amount of people to insure additionally, value (min, max:3)"
-   renters_damage,integer,"required_if:ownership,renter","Deductible for renter damages, value (0, 20000)"
-   insured_sum,integer,true,"Insured sum of renter damages, value (500000000, 1000000000)"
-   optional_modules1,boolean,true,Insure optional module: liability of driving a car that's not owned by you
-   optional_modules2,boolean,true,Insure optional module: model aircraft
-   optional_modules3,boolean,true,Insure optional module: participation of horse riding sport activities
-   optional_modules4,boolean,true,Insure optional module: damages of riding a horse that's not owned by you
-   optional_modules4_guarantee,string,"required_if:optional_modules4,true","Insured sum (damages of the horse), value (10_20, 10_30, 20_20, 20_30, 30_30, 30_40, 30_50)"
-   optional_modules4_equestrian,boolean,"required_if:optional_modules4,true",Insure horse riding event
    adults,string,true,"Amount of adults, value (1,1_5,2,2_5,3,3_5,4,4_5,5,5_5,6,6_5,7,7_5,8,8_5,9)"
    rooms,string,true,"Amount of rooms, value (1,1_5,2,2_5,3,3_5,4,4_5,5,5_5,6,6_5,7,7_5,8,8_5,9)"
    insured_sum_hr,integer,true,"Amount of rooms, value (min:2000000, max:999999900)"
@@ -76,18 +64,6 @@ Example Request
         -d data='{
            "existing_customer":false,
            "existing_insurance":false,
-           "persons":"single",
-           "ownership":"owner",
-           "more_than_one_person":false,
-           "person_count":1,
-           "renters_damage":20000,
-           "insured_sum":500000000,
-           "optional_modules1":false,
-           "optional_modules2":false,
-           "optional_modules3":false,
-           "optional_modules4":false,
-           "optional_modules4_guarantee":"10_20",
-           "optional_modules4_equestrian":false,
            "adults":"1",
            "rooms":"1_5",
            "insured_sum_hr":999999900,
@@ -121,18 +97,15 @@ Example Response
 
     {
        "token":"QUOTE_TOKEN",
-       "gross_payment_amount":5917905,
+       "gross_payment_amount":5894910,
        "extra_data":{
-          "gross_premium":5917905,
-          "premium_tax":281805,
-          "net_premium":5636100,
+          "gross_premium":5894910,
+          "premium_tax":280710,
+          "net_premium":5614200,
           "tax_rate":0.05,
           "suggested_insured_sum_hr":39300,
           "lock_change":15000,
-          "private_liability_gross_premium":22995,
-          "yearly_contents_gross_premium":7665,
-          "yearly_private_liability_gross_premium":1964970,
-          "yearly_gross_premium":1972635
+          "yearly_gross_premium":1964970
        }
     }
 
@@ -161,10 +134,6 @@ JSON data posted to /policies on creation of unpaid policy.
    agent_details,string,false,Agent Details
    no_damages,boolean,true,Opt-in confirming that the customers have not been rejected/cancelled  by other insurance companies or received special conditions due to damages
    flexible_cancellation,boolean,true,Does the customer want to have flexible cancellation term for his/her policy
-   persons_details,array,"required_if:more_than_one_person,true","If there is more then one person, his details are in this array"
-   persons_details.first_name,string,"required_if:more_than_one_person,true",First Name
-   person_details.last_name,string,"required_if:more_than_one_person,true",Last Name
-   person_details.dob,string,"required_if:more_than_one_person,true",Date of birth
    comments,string,false,Any additional comments
 
 Example Request
@@ -195,11 +164,7 @@ Example Request
               "sales_agent": 5,
               "no_damages": true,
               "flexible_cancellation": false,
-              "persons_details":{
-              	"first_name":"first_name",
-              	"last_name":"last_name",
-              	"dob":"2000-01-01"
-              	}
+              "comments": "test comment"
     },
     "quote_token":"QUOTE_TOKEN",
     "first_name": "Test",
@@ -220,7 +185,7 @@ Example Response
        "payment_token":"PAYMENT_TOKEN",
        "_links":{
           "_self":{
-             "href":"https:\/\/https://api.kasko.io\/policies\/POLICY_ID"
+             "href":"https:\/\/api.eu1.kaskocloud.com\/policies\/POLICY_ID"
           }
        }
     }
@@ -248,11 +213,11 @@ Example Request
 
     curl https://api.eu1.kaskocloud.com/payments \
         -X POST \
-        -u <YOUR SECRET API KEY>: \
+        -u SECRET_KEY: \
         -H 'Content-Type: application/json' \
         -d '{
-            "token": "<PAYMENT TOKEN>",
-            "policy_id": "<POLICY ID>",
+            "token": "PAYMENT_TOKEN",
+            "policy_id": "POLICY_ID",
             "method": "distributor",
             "provider": "distributor"
         }'
