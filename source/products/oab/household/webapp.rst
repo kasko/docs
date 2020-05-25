@@ -1,7 +1,7 @@
 Webapp
 ======
 
-Example Kasko JS embed code (OAB - OAB - Hausrat)
+Example Kasko JS embed code (OAB - Hausrat)
 ---------------------------
 
 .. code:: html
