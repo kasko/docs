@@ -141,7 +141,7 @@ JSON data posted to /policies on creation of unpaid policy.
    :header: "Name", "Type", "Required", "Description"
    :widths: 20, 20, 20, 80
 
-   policy_start_date,string,true,"Policy start date, value (iso_date, after_or_equal:today)"
+   policy_start_date,string,true,"Policy start date value (iso date, after:yesterday|before:+18 months)"
    duration,string,true,"Policy duration, value (P3Y,P4Y,P5Y,P6Y,P7Y,P8Y,P9Y,P10Y)"
    salutation,string,required,"Policy owner salutation, value (ms,mr)"
    house_number,string,false,House number
@@ -153,7 +153,6 @@ JSON data posted to /policies on creation of unpaid policy.
    sales_agent,string,true,"Sales agent, value (agent,friend,advertisement,search_engine,social_media,other)"
    agent_details,string,"required_if:sales_agent,agent","Agent details"
    save_for_later_email,string,false,"Save for later email, value (regex:/\\S+@\\S+\\.\\S+/)"
-   policy_start_date,string,true,"Policy start date value (iso date, after:yesterday|before:+18 months)"
    no_damages,boolean,true,Opt-in confirming that the customers have not been rejected/cancelled  by other insurance companies or received special conditions due to damages
    flexible_cancellation,boolean,true,Does the customer want to have flexible cancellation term for his/her policy
    comments,string,false,Any additional comments
@@ -186,7 +185,6 @@ Example Request
               "no_damages": true,
               "flexible_cancellation": false,
               "comments": "test comment",
-              "policy_start_date":"2020-09-09"
     },
     "quote_token":"QUOTE_TOKEN",
     "first_name": "Test",
