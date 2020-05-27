@@ -8,3 +8,4 @@ List of Visana insurance products.
    :maxdepth: 1
 
    private-liability-contents/index
+   building/index

@@ -1,5 +1,5 @@
-REST API - Private Liablity
-===========================
+REST API - Private Liability
+============================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
 
@@ -16,23 +16,23 @@ Quote Data
 ----------
 Query string data appended to the quote request.
 
-An industry type must be selected but it can have more than one.   
+An industry type must be selected but it can have more than one.
 
 .. csv-table::
    :header: "Name", "Type", "Required", "Description"
    :widths: 20, 20, 20, 80
 
    existing_customer,boolean,true,Does the customer have health insurance with Visana
-   existing_insurance,boolean,true,Does the customer have an exisiting insurance (private liability & content)
+   existing_insurance,boolean,true,Does the customer have an existing insurance (private liability & content)
    persons,string,true,"How many people are living in the property, value (single, family)"
    ownership,string,true,"Ownership of the property, value (owner, renter)"
    more_than_one_person,boolean,true,Module to insure additional people in the same property
    person_count,integer,"required_if:more_than_one_person,true","The amount of people to insure additionally, value (min, max:3)"
-   renters_damage,integer,"required_if:ownership,renter","Deductible for renter damanges, value (0, 20000)"
+   renters_damage,integer,"required_if:ownership,renter","Deductible for renter damages, value (0, 20000)"
    insured_sum,integer,true,"Insured sum of renter damages, value (500000000, 1000000000)"
    optional_modules1,boolean,true,Insure optional module: liability of driving a car that's not owned by you
    optional_modules2,boolean,true,Insure optional module: model aircraft
-   optional_modules3,boolean,true,Insure optional module: participation of horseriding sport activities
+   optional_modules3,boolean,true,Insure optional module: participation of horse riding sport activities
    optional_modules4,boolean,true,Insure optional module: damages of riding a horse that's not owned by you
    optional_modules4_guarantee,string,"required_if:optional_modules4,true","Insured sum (damages of the horse), value (10_20, 10_30, 20_20, 20_30, 30_30, 30_40, 30_50)"
    optional_modules4_equestrian,boolean,"required_if:optional_modules4,true",Insure horse riding event
@@ -104,7 +104,7 @@ JSON data posted to /policies on creation of unpaid policy.
    :widths: 20, 20, 20, 80
 
    existing_customer,boolean,true,Does the customer have health insurance with Visana
-   existing_insurance,boolean,true,Does the customer have an exisiting insurance (private liability & content)
+   existing_insurance,boolean,true,Does the customer have an existing insurance (private liability & content)
    salutation,string,true,"Salutation of the policyholder, value (ms, mr)"
    dob,string,true,"Date of birth od the policyholder, value (iso_date, before:18 years ago, after:100 years ago)"
    phone,string,true,"Phone number of the policyholder, value (regex:/^\\+?[0-9\\s]+$/)"

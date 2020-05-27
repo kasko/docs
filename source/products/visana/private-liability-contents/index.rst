@@ -28,5 +28,6 @@ Integration methods
 .. toctree::
    :maxdepth: 1
 
-   webapp
-   rest-api-private-liability
+   private-liability/index
+   private-liability-and-contents/index
+   hausrat/index
