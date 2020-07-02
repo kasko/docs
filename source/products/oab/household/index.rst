@@ -28,3 +28,4 @@ Integration methods
    :maxdepth: 1
 
    webapp
+   rest-api
