@@ -49,7 +49,7 @@ Following factors are considered while calculating policy price:
    "element_module",          "bool", "YES", "true"
    "previous_damages_element", "bool", "YES", "true"
    "postcode",                "string", "YES", "64277"
-   "duration",                "string", "YES", "P1Y"
+   "duration",                "string", "YES", "in:P1Y,P3Y"
    "previous_damages_true",   "bool", "YES", "true"
    "payment_frequency",       "string", "YES", "frequency"
    "policy_start_date",       "string","YES", "Policy start date `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format (YYYY-MM-DD). 2020-07-01"
