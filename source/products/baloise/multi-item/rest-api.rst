@@ -253,7 +253,7 @@ File should be less than ``5MB``. It can be one of: ``pdf``, ``gif``, ``jpeg``, 
     curl -X POST \
       https://api.kasko.io/services/baloise_receipt_upload \
           -u sk_test_SECRET_KEY: \
-          -F receipt=<path-to-file.pdf>
+          -F 'receipt=<path-to-file.pdf>'
 
 Sample response
 
