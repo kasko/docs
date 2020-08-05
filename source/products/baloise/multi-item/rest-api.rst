@@ -246,7 +246,7 @@ Sample offer response:
 Receipt upload
 --------------
 Receipt upload allows to upload receipt file, that confirms purchase of specific product. This request is optional.
-File should be less than ``5MB``. It can be one of: ``pdf``, ``gif``, ``jpeg``, ``gif`` formats.
+File should be less than ``5MB``. It can be one of: ``pdf``, ``gif``, ``jpeg``, ``png`` formats.
 
 .. code:: bash
 
