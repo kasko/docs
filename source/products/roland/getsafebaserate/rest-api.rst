@@ -26,6 +26,7 @@ When a policy is created, the following actions can be taken:
 
 4. Update_ request - update the policy quote ( price sensitive ) or other ( price insensitive ) information.
 5. Cancel_ request - cancel the policy. Note: when the policy is cancelled, no more modification requests can be made.
+6. Reactivate_ request - reactivate cancelled policy.
 
 .. _Quote:
 
@@ -296,3 +297,17 @@ Example Request
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
 
+.. _Reactivate::
+
+Reactivate policy request
+---------------------
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl https://api.kasko.io/policies/<POLICY ID>/reactivate \
+        -X POST \
+        -u <YOUR SECRET API KEY>: \
+        -H 'Accept: application/vnd.kasko.v2+json'
