@@ -297,7 +297,7 @@ Example Request
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
 
-.. _Reactivate::
+.. _Reactivate:
 
 Reactivate policy request
 ---------------------
