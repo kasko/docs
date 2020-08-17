@@ -14,6 +14,7 @@ List of KASKO insurance products with required data to quote and purchase a poli
    baloise/index
    zurich/index
    hansemerkur/index
+   renault/index
    roland/index
    occ/index
    signal-iduna/index
