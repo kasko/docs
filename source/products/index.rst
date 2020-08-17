@@ -11,6 +11,7 @@ List of KASKO insurance products with required data to quote and purchase a poli
    probefahrten_schutz
    xtra_fahrer_schutz
    ATI_travel
+   baloise/index
    zurich/index
    hansemerkur/index
    roland/index

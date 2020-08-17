@@ -26,4 +26,5 @@ Integration methods
 .. toctree::
    :maxdepth: 1
 
+   webapp
    rest-api
