@@ -22,6 +22,7 @@ List of KASKO insurance products with required data to quote and purchase a poli
    friday/index
    hansemerkur/index
    itzehoer/index
+   neodigital/index
    oab/index
    occ/index
    pnv/index
@@ -30,4 +31,3 @@ List of KASKO insurance products with required data to quote and purchase a poli
    signal-iduna/index
    visana/index
    zurich/index
-   neodigital/index
