@@ -9,9 +9,7 @@ REST API
 Headers
 =======
 
-1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in Quote_, Offer_, Show_, Update_, Cancel_ requests.
-2. ``If-Match: <ETag>`` - This header should be sent along with Update_ and Cancel_ requests. Value  for this header is ``etag`` headers value, it comes along with Show_ response. Use flag ``-v`` in your Show_ request to see it.
-3. ``If-Unmodified-Since: <Date>`` - This header should be sent along with Update_ and Cancel_ requests. Value for this header is ``Last-Modified`` headers value,  it comes along with Show_ response as (RFC7232) Date. Use flag ``-v`` in your Show_ request to see it.
+``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in Quote_, Offer_ requests.
 
 Possible requests
 =================
@@ -22,14 +20,10 @@ At least 3 requests required in following order to buy policy:
 2. Offer_ requests - create an offer.
 3. Payment_ requests - covert offer to policy.
 
-When a policy is created, the following actions can be taken:
-
-4. Update_ request - update the policy quote ( price sensitive ) or other ( price insensitive ) information.
-5. Cancel_ request - cancel the policy. Note: when the policy is cancelled, no more modification requests can be made.
-6. Reactivate_ request - reactivate cancelled policy.
-
 Quote Data For Low Turnover
 -------------------------------------------
+.. _Quote:
+
 This request calculates how much policyholder should pay for the policy.
 Following factors are considered while calculating policy price:
 
