@@ -208,7 +208,6 @@ Example Response
 
 Show Lead
 ~~~~~~~~~
-Show lead data
 
 Example Request
 ~~~~~~~~~~~~~~~
