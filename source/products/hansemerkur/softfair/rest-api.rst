@@ -522,8 +522,8 @@ Example Request
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
 
-Show Lead
-~~~~~~~~~
+Show Policy
+~~~~~~~~~~~
 
 Example Request
 ~~~~~~~~~~~~~~~
