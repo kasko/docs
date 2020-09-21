@@ -521,3 +521,114 @@ Example Request
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
+
+Show Lead
+~~~~~~~~~
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl -X GET https://api.kasko.io/policies/<POLICY_ID> \
+    -u <SECRET_KEY>: \
+    -H 'Accept: application/vnd.kasko.v2+json' \
+    -H 'Content-Type: application/json'
+
+Example Response
+~~~~~~~~~~~~~~~~
+
+.. code:: javascript
+
+    {
+        "id": "<POLICY_ID>",
+        "version_id": "<POLICY_VERSION_ID>",
+        "distributor_id": "<DISTRIBUTOR_ID>",
+        "insurer_id": "<INSURER_ID>",
+        "touchpoint_id": "<TOUCHPOINT_ID>",
+        "integration_version_id": null,
+        "item_id": "<ITEM_ID>",
+        "customer_id": "<CUSTOMER_ID>",
+        "subscription_plan_id": "<SUBSCRIPTION_PLAN_ID>",
+        "insurer_policy_id": "<INSURER_POLICY_ID>",
+        "insurer_external_policy_id": null,
+        "linked_policy_id": null,
+        "expired": false,
+        "first_name": "First name",
+        "last_name": "Last name",
+        "email": "test@kasko.io",
+        "currency": "eur",
+        "policy_created_date": "2020-09-20T10:21:10+00:00",
+        "start_date": "2019-12-31T23:00:00+00:00",
+        "end_date": "2020-01-31T23:00:00+00:00",
+        "termination_date": null,
+        "language": "de",
+        "status": "paid",
+        "data": {
+            "payment_metadata": []
+        },
+        "quote": {
+            "version": 2,
+            "customer_input": {
+                "gross_premium": "100000",
+                "policy_start_date": "2020-01-01",
+                "policy_end_date": "2020-02-01"
+            },
+            "touchpoint_id": "<TOUCHPOINT_ID>",
+            "item_id": "<ITEM_ID>",
+            "subscription_plan_id": "<SUBSCRIPTION_PLAN_ID>",
+            "gross_payment_amount": 100000,
+            "payment_data": {
+                "gross_premium": 100000,
+                "premium_tax": 15966,
+                "net_premium": 84034,
+                "net_net_premium": 62185,
+                "net_commission_total": 21849,
+                "tax_rate": 0.19
+            },
+            "data": [],
+            "duration_strategy": "fixed_start_and_end_date",
+            "duration_data": {
+                "policy_start_date": "2019-12-31T23:00:00+00:00",
+                "policy_end_date": "2020-01-31T23:00:00+00:00"
+            },
+            "billing_cycles": 1,
+            "quote_created_at": "2020-09-20T10:16:11+00:00"
+        },
+        "metadata": {},
+        "cancellation_reason": null,
+        "cancelled_by": "",
+        "cancelled_at": null,
+        "distributor_traffic_source": null,
+        "referrer_url": null,
+        "whitelisted_referrer_url": null,
+        "deleted_at": null,
+        "deleted_by": "",
+        "assets": [],
+        "media": [],
+        "is_locked": false,
+        "localized_dates": {
+            "start_date": "2020-01-01T00:00:00+01:00",
+            "end_date": "2020-02-01T00:00:00+01:00",
+            "termination_date": null,
+            "policy_created_date": "2020-09-20T12:21:10+02:00",
+            "time_zone": "Europe\/Berlin"
+        },
+        "_links": {
+            "_self": {
+                "href": "https:\/\/api.kasko.io\/policies\/<POLICY_ID>"
+            },
+            "distributor": {
+                "href": "https:\/\/api.kasko.io\/accounts\/<DISTRIBUTOR_ID>"
+            },
+            "insurer": {
+                "href": "https:\/\/api.kasko.io\/accounts\/<INSURER_ID>"
+            },
+            "item": {
+                "href": "https:\/\/api.kasko.io\/items\/<ITEM_ID>"
+            },
+            "touchpoint": {
+                "href": "https:\/\/api.kasko.io\/touchpoints\/<TOUCHPOINT_ID>"
+            }
+        }
+    }
