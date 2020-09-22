@@ -1,5 +1,5 @@
-REST API - Dog Surgery
-======================
+REST API - Animal Surgery Insurance
+===================================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
 
@@ -330,7 +330,7 @@ JSON data posted to /policies on creation of unpaid policy.
    "phone_number", "string", "+999 233445566"
    "email", "string", "kasko@kasko.io"
    "martial_status", "string", "single"
-   "different_contributor", "boolean", "true"
+   "different_contributor", "boolean", true
    "iban", "string", "DE89370400440532013000"
    "sepa_issued_date", "string", "2020-01-01"
    "payment_frequency", "string", "monthly"
@@ -341,22 +341,22 @@ JSON data posted to /policies on creation of unpaid policy.
    "old_policy_number", "string", "oldPolicyNumber"
    "policy_start_date", "string", "2020-02-01"
    "policy_end_date", "string", "2020-03-01"
-   "insured_dog", "boolean", "true"
-   "insured_cat", "boolean", "true"
+   "insured_dog", "boolean", true
+   "insured_cat", "boolean", true
    "deductible", "string", "250"
    "insured_module", "string", "best"
-   "dental_module", "boolean", "true"
+   "dental_module", "boolean", true
    "pet_name", "string", "petName"
    "pet_gender", "string", "Male"
    "pet_dob", "string", "2001-01-01"
    "pet_breed", "string", "doberman"
-   "mixed_breed", "boolean", "true"
+   "mixed_breed", "boolean", true
    "dog_shoulder_height", "string", "above_45"
    "cat_type", "string", "home"
    "pet_id", "string", "tattoo"
    "pet_id_number", "string", "123123123"
    "net_premium", "string", "10000"
-   "operation_in_3_years", "boolean", "true"
+   "operation_in_3_years", "boolean", true
    "type_of_operation_1", "string", "operationType1"
    "vet_name_1", "string", "vetName1"
    "operation_date_1", "string", "2020-03-01"
@@ -366,7 +366,7 @@ JSON data posted to /policies on creation of unpaid policy.
    "type_of_operation_3", "string", "operationType3"
    "vet_name_3", "string", "vetName3"
    "operation_date_3", "string", "2020-03-10"
-   "previous_insurance", "boolean", "true"
+   "previous_insurance", "boolean", true
    "previous_insurance_detail", "string", "dog_surgery"
    "previous_insurer_1", "string", "previousInsurer1"
    "previous_insurance_number_1", "string", "insuranceNumber1"
@@ -407,27 +407,27 @@ Example Request
                "nationality": "Latvian",
                "phone_number": "+999 233445566",
                "martial_status": "single",
-               "different_contributor": "true",
+               "different_contributor": true,
                "iban": "DE89370400440532013000",
                "sepa_issued_date": "2020-01-01",
                "payment_frequency": "monthly",
                "payment_method": "invoice",
-               "tax_office": "true",
-               "new_application": "true",
+               "tax_office": true,
+               "new_application": true,
                "replacement_policy": "false",
                "old_policy_number": "oldPolicyNumber",
                "policy_start_date": "2020-01-01",
                "policy_end_date": "2020-03-01",
-               "insured_dog": "true",
-               "insured_cat": "true",
+               "insured_dog": true,
+               "insured_cat": true,
                "deductible": "250",
                "insured_module": "best",
-               "dental_module": "true",
+               "dental_module": true,
                "pet_name": "petName",
                "pet_gender": "male",
                "pet_dob": "2001-01-01",
                "pet_breed": "doberman",
-               "mixed_breed": "true",
+               "mixed_breed": true,
                "dog_shoulder_height": "above_45",
                "cat_type": "home",
                "pet_id": "tattoo",
@@ -489,6 +489,100 @@ Example Response
 
 .. _OfferResponse:
 
+Show Offer
+~~~~~~~~~~~
+
+Example Request
+~~~~~~~~~~~~~~~
+
+.. code-block:: bash
+
+    curl -X GET https://api.kasko.io/offers/<POLICY_ID> \
+    -u <SECRET_KEY>: \
+    -H 'Accept: application/vnd.kasko.v2+json' \
+    -H 'Content-Type: application/json'
+
+Example Response
+~~~~~~~~~~~~~~~~
+
+.. code:: javascript
+
+        {
+        "id": "<TOUCHPOINT_ID>",
+        "distributor_id": "<DISTRIBUTOR_ID>",
+        "insurer_id": "<INSURER_ID>",
+        "item_id": "<ITEM_ID>",
+        "touchpoint_id": "<TOUCHPOINT_ID>",
+        "integration_version_id": null,
+        "insurer_policy_id": "<INSURER_POLICY_ID>",
+        "first_name": "First name",
+        "last_name": "Last name",
+        "email": "test@kasko.io",
+        "currency": "eur",
+        "language": "de",
+        "flow": "default",
+        "status": "ready",
+        "quote": {
+            "version": 2,
+            "customer_input": {
+                "gross_premium": "1000000",
+                "policy_start_date": "2020-01-01",
+                "policy_end_date": "2020-02-01"
+            },
+            "touchpoint_id": "<TOUCHPOINT_ID>",
+            "item_id": "<ITEM_ID>",
+            "subscription_plan_id": "<SUBSCRIPTION_ID_PLAN>",
+            "gross_payment_amount": 1000000,
+            "payment_data": {
+                "gross_premium": 1000000,
+                "premium_tax": 159664,
+                "net_premium": 840336,
+                "net_net_premium": 621849,
+                "net_commission_total": 218487,
+                "tax_rate": 0.19
+            },
+            "data": [],
+            "duration_strategy": "fixed_start_and_end_date",
+            "duration_data": {
+                "policy_start_date": "2019-12-31T23:00:00+00:00",
+                "policy_end_date": "2020-01-31T23:00:00+00:00"
+            },
+            "billing_cycles": 1,
+            "quote_created_at": "2020-09-21T10:19:50+00:00"
+        },
+        "data": [],
+        "media": [],
+        "metadata": {},
+        "distributor_traffic_source": null,
+        "referrer_url": null,
+        "payment_token": "<PAYMENT_TOKEN>",
+        "whitelisted_referrer_url": null,
+        "linked_policy_id": null,
+        "accepted_at": null,
+        "created_at": "2020-09-21T10:21:36+00:00",
+        "assets": [
+            {
+                "name": "Tier-OP_Versicherung",
+                "extension": "pdf",
+                "url": "https://<ASSET_URL>",
+                "designation": "offer",
+                "attachment_date": "2020-09-21T10:21:37+00:00",
+                "version": null
+            }
+        ],
+        "_links": {
+            "_self": {
+                "href": "https:\/\/api.kasko.io\/offers\/<POLICY_ID>"
+            },
+            "item": {
+                "href": "https:\/\/api.kasko.io\/items\/<ITEM_ID>"
+            },
+            "touchpoint": {
+                "href": "https:\/\/api.kasko.io\/touchpoints\/<TOUCHPOINT_ID>"
+            }
+        }
+    }
+
 Convert offer to policy (payment)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -511,7 +605,7 @@ Example Request
 
     curl https://api.kasko.io/payments \
         -X POST \
-        -u <YOUR SECRET API KEY>: \
+        -u <SECRET_KEY>: \
         -H 'Content-Type: application/json' \
         -d '{
             "token": "<PAYMENT TOKEN>",
@@ -521,114 +615,3 @@ Example Request
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from OfferResponse_. After payment is made, policy creation is asynchronous.
-
-Show Policy
-~~~~~~~~~~~
-
-Example Request
-~~~~~~~~~~~~~~~
-
-.. code-block:: bash
-
-    curl -X GET https://api.kasko.io/policies/<POLICY_ID> \
-    -u <SECRET_KEY>: \
-    -H 'Accept: application/vnd.kasko.v2+json' \
-    -H 'Content-Type: application/json'
-
-Example Response
-~~~~~~~~~~~~~~~~
-
-.. code:: javascript
-
-    {
-        "id": "<POLICY_ID>",
-        "version_id": "<POLICY_VERSION_ID>",
-        "distributor_id": "<DISTRIBUTOR_ID>",
-        "insurer_id": "<INSURER_ID>",
-        "touchpoint_id": "<TOUCHPOINT_ID>",
-        "integration_version_id": null,
-        "item_id": "<ITEM_ID>",
-        "customer_id": "<CUSTOMER_ID>",
-        "subscription_plan_id": "<SUBSCRIPTION_PLAN_ID>",
-        "insurer_policy_id": "<INSURER_POLICY_ID>",
-        "insurer_external_policy_id": null,
-        "linked_policy_id": null,
-        "expired": false,
-        "first_name": "First name",
-        "last_name": "Last name",
-        "email": "test@kasko.io",
-        "currency": "eur",
-        "policy_created_date": "2020-09-20T10:21:10+00:00",
-        "start_date": "2019-12-31T23:00:00+00:00",
-        "end_date": "2020-01-31T23:00:00+00:00",
-        "termination_date": null,
-        "language": "de",
-        "status": "paid",
-        "data": {
-            "payment_metadata": []
-        },
-        "quote": {
-            "version": 2,
-            "customer_input": {
-                "gross_premium": "100000",
-                "policy_start_date": "2020-01-01",
-                "policy_end_date": "2020-02-01"
-            },
-            "touchpoint_id": "<TOUCHPOINT_ID>",
-            "item_id": "<ITEM_ID>",
-            "subscription_plan_id": "<SUBSCRIPTION_PLAN_ID>",
-            "gross_payment_amount": 100000,
-            "payment_data": {
-                "gross_premium": 100000,
-                "premium_tax": 15966,
-                "net_premium": 84034,
-                "net_net_premium": 62185,
-                "net_commission_total": 21849,
-                "tax_rate": 0.19
-            },
-            "data": [],
-            "duration_strategy": "fixed_start_and_end_date",
-            "duration_data": {
-                "policy_start_date": "2019-12-31T23:00:00+00:00",
-                "policy_end_date": "2020-01-31T23:00:00+00:00"
-            },
-            "billing_cycles": 1,
-            "quote_created_at": "2020-09-20T10:16:11+00:00"
-        },
-        "metadata": {},
-        "cancellation_reason": null,
-        "cancelled_by": "",
-        "cancelled_at": null,
-        "distributor_traffic_source": null,
-        "referrer_url": null,
-        "whitelisted_referrer_url": null,
-        "deleted_at": null,
-        "deleted_by": "",
-        "assets": [],
-        "media": [],
-        "is_locked": false,
-        "localized_dates": {
-            "start_date": "2020-01-01T00:00:00+01:00",
-            "end_date": "2020-02-01T00:00:00+01:00",
-            "termination_date": null,
-            "policy_created_date": "2020-09-20T12:21:10+02:00",
-            "time_zone": "Europe\/Berlin"
-        },
-        "_links": {
-            "_self": {
-                "href": "https:\/\/api.kasko.io\/policies\/<POLICY_ID>"
-            },
-            "distributor": {
-                "href": "https:\/\/api.kasko.io\/accounts\/<DISTRIBUTOR_ID>"
-            },
-            "insurer": {
-                "href": "https:\/\/api.kasko.io\/accounts\/<INSURER_ID>"
-            },
-            "item": {
-                "href": "https:\/\/api.kasko.io\/items\/<ITEM_ID>"
-            },
-            "touchpoint": {
-                "href": "https:\/\/api.kasko.io\/touchpoints\/<TOUCHPOINT_ID>"
-            }
-        }
-    }
