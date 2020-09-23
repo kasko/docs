@@ -214,6 +214,7 @@ Example Request
     curl https://api.kasko.io/media \
         -X POST \
         -H 'Content-Type: application/json' \
+        -u sk_test_SECRET_KEY: \
         -d '{
             "designation": "baloise_mycamper",
             "name": "My pdf file",
@@ -239,6 +240,7 @@ Example Request
 
     curl \
       -F "file=@/path/to/file/file.pdf" \
+      -u sk_test_SECRET_KEY: \
       https://api.kasko.io/media/<MEDIA ID>/content
 
 NOTE. You should use ``<MEDIA ID>`` from MediaCreate_.
