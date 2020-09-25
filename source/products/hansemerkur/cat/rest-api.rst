@@ -24,9 +24,9 @@ Query string data appended to the quote request
    "cat_breed", "string", "A dataset_id that represents a specific cat_breed", "dai_some_id_32_chars_long_______"
    "cat_dob", "string", "Cats date of birth", "2017-11-06"
    "dental_surgery", "boolean", "Is dental surgery coverage required", "false"
-   "payment_frequency", "string", "monthly,quarterly,half_yearly,yearly", "half_yearly"
-   "policy_start_date", "string", "Policy start date", "2019-12-27"
-   "deductibles", "integer" "Deductible - 0, 25000", "25000"
+   "payment_frequency", "string", "Payment frequency - monthly, quarterly, half_yearly, yearly", "half_yearly"
+   "policy_start_date", "string", "Policy start date, ISO date format", "2019-12-27"
+   "deductibles", "integer", "Deductible - 0, 25000", "25000"
    "cat_type", "string", "Type - home, outdoor", "home"
 
 Example Request
