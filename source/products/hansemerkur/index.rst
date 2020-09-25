@@ -10,3 +10,4 @@ List of HanseMerkur insurance products.
    dog-surgery/index
    tchibo/index
    softfair/index
+   cat/index
