@@ -76,8 +76,8 @@ JSON data posted to /leads to create a lead
    "dob", "string", "1993-12-02"
    "policy_start_date", "string", "2020-01-01"
    "policy_end_date", "string", "2020-02-01"
-   "pet_name", "string", "dogName"
-   "pet_hybrid", "string", "dog hybrid"
+   "pet_name", "string", "petName"
+   "pet_hybrid", "string", "pet hybrid"
    "pet_breed", "string", "doberman"
    "pet_dangerous", "string", "No"
    "registration", "string", "Yes"
@@ -109,9 +109,9 @@ Example Request
                 "policy_start_date": "2020-01-01",
                 "policy_end_date": "2020-02-01",
                 "dog_name": "dogName",
-                "dog_hybrid": "no",
-                "dog_breed": "doberman",
-                "dog_dangerous": "no",
+                "pet_hybrid": "no",
+                "pet_breed": "doberman",
+                "pet_dangerous": "no",
                 "registration": "yes",
                 "coverage": "no",
                 "deductible": "yes",
@@ -166,10 +166,10 @@ Example Response
             "dob": "1993-12-02",
             "policy_start_date": "2020-01-01",
             "policy_end_date": "2020-02-01",
-            "dog_name": "dogName",
-            "dog_hybrid": "no",
-            "dog_breed": "doberman",
-            "dog_dangerous": "no",
+            "pet_name": "dogName",
+            "pet_hybrid": "no",
+            "pet_breed": "doberman",
+            "pet_dangerous": "no",
             "registration": "yes",
             "coverage": "no",
             "deductible": "yes",
@@ -262,10 +262,10 @@ Example Response
             "dob": "1993-12-02",
             "policy_start_date": "2020-01-01",
             "policy_end_date": "2020-02-01",
-            "dog_name": "dogName",
-            "dog_hybrid": "no",
-            "dog_breed": "doberman",
-            "dog_dangerous": "no",
+            "pet_name": "dogName",
+            "pet_hybrid": "no",
+            "pet_breed": "doberman",
+            "pet_dangerous": "no",
             "registration": "yes",
             "coverage": "no",
             "deductible": "yes",
