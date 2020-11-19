@@ -12,7 +12,7 @@ Example Kasko JS embed code
       Kasko.Setup({
         container: "kasko-widget-container",
         key: "KEY",
-        touchpoint: "tp_0d65cd1ebdecb251627b360770269",
+        touchpoint: "tp_d0f608514295b1a6f2ae07e769b34",
         mode: "fullscreen",
         language: "de",
         config: {
