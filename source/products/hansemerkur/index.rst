@@ -11,3 +11,5 @@ List of HanseMerkur insurance products.
    tchibo/index
    softfair/index
    cat/index
+   cancer-insurance/index
+   advigon/index
