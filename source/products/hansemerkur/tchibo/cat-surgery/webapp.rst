@@ -6,7 +6,7 @@ Example Kasko JS embed code
 
 .. code:: html
 
-    <script type="text/javascript" src="https://js.kasko.io"></script>
+    <script type="text/javascript" src="https://eu1.kaskojs.com/v2"></script>
     <div id="kasko-widget-container"></div>
     <script>
       Kasko.Setup({
