@@ -11,3 +11,4 @@ List of Zurich insurance products.
    zurich-do/index
    smarthome/index
    car-contents/index
+   makler/index
