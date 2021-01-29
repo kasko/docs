@@ -25,7 +25,7 @@ Query string data appended to the quote request
    "data_backup", "boolean", "true"
    "data_privacy", "boolean", "true"
    "deductible", "integer", "100000"
-   "distributor", "string", "zurich"
+   "distributor", "string", "makler_de"
    "foreign_subsidiary", "boolean", "false"
    "insured_sum", "integer", "50000000"
    "password_update", "boolean", "true"
@@ -54,19 +54,19 @@ Example Request
         "subscription_plan_id": "SUBSCRIPTION_ID",
         "data": {
             "card_payment": true,
-            "cyber_fraud": true,
+            "cyber_fraud": false,
             "data_backup": true,
             "data_privacy": true,
-            "deductible": 200000,
-            "distributor": "zep",
+            "deductible": 100000,
+            "distributor": "makler_de",
             "foreign_subsidiary": true,
             "insured_sum": 50000000,
             "password_update": true,
             "sector": "dai_some_id_32_chars_long_______",
-            "security_issues": false,
+            "security_issues": true,
             "security_software": true,
-            "start_date": "2021-01-09",
-            "tax_country": "at",
+            "start_date": "2021-02-09",
+            "tax_country": "de",
             "turnover": 24999900,
             "cyber_circumstances": true,
             "duration": "P1Y"

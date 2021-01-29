@@ -1,5 +1,5 @@
-Makler Products
-===============
+Cyber SME V2
+============
 
 List of Zurich insurance products.
 
