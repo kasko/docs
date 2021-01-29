@@ -54,9 +54,9 @@ Example Request
         "touchpoint_id": "TOUCHPOINT_ID",
         "subscription_plan_id": "SUBSCRIPTION_ID",
         "data": {
-            "distributor": "zep",
+            "distributor": "makler_de",
             "turnover": 299999900,
-            "tax_country": "at",
+            "tax_country": "de",
             "sector": "dai_some_id_32_chars_long_______",
             "foreign_subsidiary": true,
             "duration": "P1Y",
@@ -66,12 +66,12 @@ Example Request
             "data_backup": true,
             "encryption": true,
             "card_payment": true,
-            "security_issues": false,
+            "security_issues": true,
             "cyber_circumstances": true,
             "cyber_fraud": false,
-            "insured_sum": 50000000,
+            "insured_sum": 300000000,
             "deductible": 200000,
-            "start_date": "2021-01-10"
+            "start_date": "2021-02-10"
         }
     }'
 
@@ -144,6 +144,45 @@ JSON data posted to /policies on creation of unpaid policy.
 
 Example Request
 ~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+   curl -X POST \
+    'https://api.kasko.io/policies' \
+    -H 'Accept: application/vnd.kasko.v2+json' \
+    -H 'Content-Type: application/json' \
+    -u <SECRET KEY>: \
+    -d '{
+        "data": {
+	    "social_engineering_fraud": true,
+	    "bank_transfer_policy": true,
+	    "company_name": "VN Firma",
+	    "company_legal_form": "Aktiengesellschaft",
+	    "company_street": "Musterweg",
+	    "company_house_number": "12",
+	    "company_postcode": "10115",
+	    "company_city": "Berlin",
+	    "company_website": "www.kasko.io",
+	    "salutation": "ms",
+	    "phone": "+496123123123",
+	    "agent_email": "vermittler@kasko.io",
+	    "agent_company_name": "Vermittler AG",
+	    "agent_salutation": "mr",
+	    "agent_first_name": "Volker",
+	    "agent_last_name": "Vermittlermann",
+	    "agent_number": "123123123",
+	    "svb_number": "1231",
+	    "agent_phone": "+496123123123"
+        },
+        "email": "test@kasko.io",
+        "first_name": "Maxima",
+        "language": "de",
+        "last_name": "Kundenfrau",
+        "quote_token": "TOKEN"
+    }'
+
+Example Response
+~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
