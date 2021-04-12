@@ -19,6 +19,7 @@ List of KASKO insurance products with required data to quote and purchase a poli
    barmenia/index
    basler/index
    bavaria-direkt/index
+   foyer/index
    friday/index
    hansemerkur/index
    itzehoer/index
