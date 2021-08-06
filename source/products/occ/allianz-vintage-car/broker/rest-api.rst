@@ -362,8 +362,8 @@ Example Request
         -d '{
             "token": "<PAYMENT_TOKEN>",
             "policy_id": "<POLICY ID>",
-            "method": "distributor",
-            "provider": "distributor"
+            "method": "invoice",
+            "provider": "allianz_invoice"
         }'
 
 NOTE. You should use ``<POLICY ID>`` and ``<PAYMENT TOKEN>`` from `OfferResponse`_. After payment is made, policy creation is asynchronous.
