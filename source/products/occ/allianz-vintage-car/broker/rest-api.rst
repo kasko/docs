@@ -130,7 +130,7 @@ This request stores policy holder information that is related to offer. Followin
 
     "account_owner", "string", "Phone number.", "+44222222222"
     "agent_city", "string", "Agent city", "dai_hi3kQ6yg2CsPTExeHUAKLBXrqbqx",
-    "agent_email", "string", "Agent email", "neglitis@kasko.io",
+    "agent_email", "string", "Agent email", "test@kasko.io",
     "agent_first_name", "string", "Agent first name", "Tewt",
     "agent_house_number", "string", "Agent house number", "123",
     "agent_id", "string", "Agent ID", "8878788",
@@ -189,7 +189,7 @@ Example Request
             "data": {
                 "account_owner": "Max Mustermann",
                 "agent_city": "dai_hi3kQ6yg2CsPTExeHUAKLBXrqbqx",
-                "agent_email": "neglitis@kasko.io",
+                "agent_email": "test@kasko.io",
                 "agent_first_name": "Tewt",
                 "agent_house_number": "123",
                 "agent_id": "8878788",
@@ -299,7 +299,7 @@ Example Request
                     "2": "Anhänger"
                 },
                 "newsletter_optin": false,
-                "offers_recipient": "neglitis@kasko.io",
+                "offers_recipient": "test@kasko.io",
                 "payment_method": "invoice",
                 "phone": "+4322222222",
                 "postcode": "1120",
