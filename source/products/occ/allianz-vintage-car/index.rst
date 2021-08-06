@@ -1,4 +1,4 @@
-Vintage Car
+Allianz Vintage Car
 ==========================
 
 Product Information
