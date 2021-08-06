@@ -273,8 +273,8 @@ Example Request
                     "2": "Anhänger"
                 },
                 "newsletter_optin": false,
-                "offer_recipient": "neglitis@kasko.io",
-                "offers_recipient": "neglitis@kasko.io",
+                "offer_recipient": "test@kasko.io",
+                "offers_recipient": "test@kasko.io",
                 "payment_method": "invoice",
                 "phone": "+43222222222",
                 "postcode": "1130",

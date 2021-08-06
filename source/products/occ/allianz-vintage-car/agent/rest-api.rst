@@ -176,7 +176,7 @@ Example Request
             "data": {
                 "account_owner": "Max Mustermann",
                 "agent_city": "dai_xLIA1Wd5nqgt9jM7wi498Peq5BpR",
-                "agent_email": "neglitis@kasko.io",
+                "agent_email": "test@kasko.io",
                 "agent_first_name": "Tewt",
                 "agent_house_number": "Street 1",
                 "agent_id": "2245356",
@@ -283,8 +283,8 @@ Example Request
                   "2": "Anhänger"
                 },
                 "newsletter_optin": false,
-                "offer_recipient": "neglitis@kasko.io",
-                "offers_recipient": "neglitis@kasko.io",
+                "offer_recipient": "test@kasko.io",
+                "offers_recipient": "test@kasko.io",
                 "payment_method": "invoice",
                 "phone": "+4322222222",
                 "postcode": "1200",
