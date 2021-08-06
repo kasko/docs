@@ -347,8 +347,8 @@ This can be done by making following request:
 
    "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by `OfferResponse`_."
    "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by `OfferResponse`_."
-   "method",    "yes", "``string``", "Payment method ``distributor``."
-   "provider",  "yes", "``string``", "Payment provider ``distributor``."
+   "method",    "yes", "``string``", "Payment method ``invoice``."
+   "provider",  "yes", "``string``", "Payment provider ``allianz_invoice``."
 
 Example Request
 ~~~~~~~~~~~~~~~
