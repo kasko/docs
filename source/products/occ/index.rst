@@ -8,3 +8,4 @@ List of OCC insurance products.
    :maxdepth: 1
 
    vintage-car/index
+   allianz-vintage-car/index
