@@ -67,7 +67,7 @@ Example Request
             "data_privacy": true,
             "deductible": 100000,
             "distributor": "makler_de",
-            "foreign_subsidiary": false,
+            "foreign_subsidiary": true,
             "insured_sum": 50000000,
             "password_update": true,
             "sector": "dai_some_id_32_chars_long_______",
