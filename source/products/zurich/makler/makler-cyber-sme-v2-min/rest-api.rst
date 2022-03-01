@@ -20,7 +20,10 @@ Query string data appended to the quote request
    :header: "Name", "Type", "Example Value"
    :widths: 20, 20, 20
 
+   "cover", "string", "basis"
    "card_payment", "boolean", "true"
+   "payment_frequency", "string", "yearly"
+   "second_company", "boolean", "false"
    "cyber_fraud", "boolean", "true"
    "data_backup", "boolean", "true"
    "data_privacy", "boolean", "true"
@@ -30,11 +33,13 @@ Query string data appended to the quote request
    "insured_sum", "integer", "50000000"
    "password_update", "boolean", "true"
    "sector", "string", "dai_some_id_32_chars_long_______"
+   "second_company_sector", "string|optional", "dai_some_id_33_chars_long_______"
    "security_issues", "boolean", "false"
    "security_software", "boolean", "false"
    "start_date", "string", "2021-01-01"
    "tax_country", "string", "at"
    "turnover", "integer", "24999900"
+   "second_company_turnover", "integer", "199999900"
    "cyber_circumstances", "boolean", "true"
    "duration", "string", "P1Y"
 
@@ -53,13 +58,16 @@ Example Request
         "touchpoint_id": "TOUCHPOINT_ID",
         "subscription_plan_id": "SUBSCRIPTION_ID",
         "data": {
+            "cover": "basis",
             "card_payment": true,
+            "payment_frequency": "yearly",
+            "second_company": false,
             "cyber_fraud": false,
             "data_backup": true,
             "data_privacy": true,
             "deductible": 100000,
             "distributor": "makler_de",
-            "foreign_subsidiary": true,
+            "foreign_subsidiary": false,
             "insured_sum": 50000000,
             "password_update": true,
             "sector": "dai_some_id_32_chars_long_______",
