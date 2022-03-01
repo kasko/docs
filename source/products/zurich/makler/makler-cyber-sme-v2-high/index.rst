@@ -1,4 +1,4 @@
-Zurich - Cyber SME V2 low (Makler/ZEP)
+Zurich - Cyber SME V2 high (Makler/ZEP)
 ======================================
 
 Product Information
@@ -18,7 +18,7 @@ Product IDs
 .. csv-table::
    :header: "Item Title", "Item ID"
 
-   "Zurich - Cyber SME V2 low (Makler/ZEP)", "``item_ec44e77438cd5aafb18d5cc79ab``"
+   "Zurich - Cyber SME V2 high (Makler/ZEP)", "``item_ec44e77438cd5aafb18d5cc79ab``"
 
 Integration methods
 ^^^^^^^^^^^^^^^^^^^
