@@ -1,4 +1,4 @@
-REST API - Zurich - Cyber SME V2 low (Makler/ZEP)
+REST API - Zurich - Cyber SME V2 high (Makler/ZEP)
 =================================================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
@@ -21,14 +21,9 @@ Query string data appended to the quote request
    :widths: 20, 20, 20
 
    "distributor", "string", "makler_de"
-   "cover", "string", "basis"
-   "payment_frequency", "string", "yearly"
-   "second_company", "boolean", "true"
    "turnover", "integer", "299999900"
-   "second_company_turnover", "integer", "199999900"
    "tax_country", "string", "at"
    "sector", "string", "dai_some_id_32_chars_long_______"
-   "second_company_sector", "string", "dai_some_id_33_chars_long_______"
    "foreign_subsidiary", "boolean", "false"
    "duration", "string", "P1Y"
    "data_privacy", "boolean", "true"
@@ -60,10 +55,7 @@ Example Request
         "subscription_plan_id": "SUBSCRIPTION_ID",
         "data": {
             "distributor": "makler_de",
-            "second_company": false,
             "turnover": 299999900,
-            "cover": "basis",
-            "payment_frequency": "yearly",
             "tax_country": "de",
             "sector": "dai_some_id_32_chars_long_______",
             "foreign_subsidiary": true,
