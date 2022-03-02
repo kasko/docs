@@ -8,4 +8,5 @@ List of Zurich insurance products.
 
    makler-cyber-sme-v2-min/index
    makler-cyber-sme-v2-low/index
+   makler-cyber-sme-v2-high/index
 

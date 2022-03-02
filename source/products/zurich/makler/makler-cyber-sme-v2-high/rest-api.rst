@@ -1,4 +1,4 @@
-REST API - Zurich - Cyber SME V2 low (Makler/ZEP)
+REST API - Zurich - Cyber SME V2 high (Makler/ZEP)
 =================================================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
@@ -23,23 +23,53 @@ Query string data appended to the quote request
    "distributor", "string", "makler_de"
    "cover", "string", "basis"
    "payment_frequency", "string", "yearly"
-   "second_company", "boolean", "true"
+   "second_company", "boolean", "false"
    "turnover", "integer", "299999900"
    "second_company_turnover", "integer", "199999900"
-   "tax_country", "string", "at"
+   "security_issues_damage", "string|optional", "123456"
+   "tax_country", "string", "de"
    "sector", "string", "dai_some_id_32_chars_long_______"
    "second_company_sector", "string", "dai_some_id_33_chars_long_______"
    "foreign_subsidiary", "boolean", "false"
-   "duration", "string", "P1Y"
+   "duration", "string", "P1Y",
+   "online_turnover", "boolean", "false"
+   "online_turnover_value", "string|optional", "49"
+   "us_turnover", "string", "0"
+   "foreign_subsidiary_high", "boolean", "false"
+   "firewall_update", "boolean", "true"
+   "foreign_subsidiary_eu", "boolean|optional", "true"
+   "controlled_company", "boolean", "true"
+   "young_company", "boolean", "false"
+   "young_company_date", "string|optional", "2022-01-01"
+   "information_security_system", "boolean", "true"
+   "security_software_high", "boolean", "false"
+   "ids_ips_software", "boolean", "true"
+   "mfa_authentication", "boolean", "true"
+   "control_system", "boolean", "false"
+   "patch_process_management", "boolean", "true"
+   "encrypted_endpoints", "boolean", "true"
+   "control_system_network", "boolean|optional", "false"
+   "control_system_firewall", "boolean|optional", "false"
+   "control_system_patch", "boolean|optional", "false"
+   "control_system_enclosed", "boolean|optional", "false"
    "data_privacy", "boolean", "true"
    "password_update", "boolean", "true"
    "security_software", "boolean", "false"
    "data_backup", "boolean", "true"
+   "data_records", "boolean", "true"
+   "encryption_high", "boolean", "true"
+   "data_privacy_compliance", "boolean", "true"
+   "data_emergency_plan", "boolean", "true"
+   "disaster_recovery_plan", "boolean", "true"
    "encryption", boolean, "true"
    "card_payment", "boolean", "true"
+   "external_it_services", "boolean", "false"
+   "external_it_services_description", "boolean|optional", "false"
+   "employee_training", "boolean", "true"
+   "security_issues_high", "boolean", "false"
    "security_issues", "boolean", "false"
    "cyber_circumstances", "boolean", "true"
-   "cyber_fraud", "boolean", "true"
+   "cyber_fraud", "boolean|optional", "false"
    "insured_sum", "integer", "10000000"
    "deductible", "integer", "200000"
    "start_date", "string", "2021-01-01"
@@ -68,15 +98,35 @@ Example Request
             "sector": "dai_some_id_32_chars_long_______",
             "foreign_subsidiary": true,
             "duration": "P1Y",
+            "online_turnover": "true",
+            "us_turnover": "0",
+            "foreign_subsidiary_high": "true",
+            "firewall_update": "true",
+            "controlled_company": "true",
+            "young_company": "false",
+            "information_security_system": "true",
+            "security_software_high": "false",
+            "ids_ips_software": "true",
+            "mfa_authentication": "true",
+            "control_system": "false",
+            "patch_process_management": "true",
+            "encrypted_endpoints": "true",
             "data_privacy": true,
-            "password_update": true,
+            "password_update": false,
             "security_software": true,
             "data_backup": true,
+            "data_records": true,
+            "encryption_high": true,
+            "data_privacy_compliance": true,
+            "data_emergency_plan": true,
+            "disaster_recovery_plan": true,
             "encryption": true,
             "card_payment": true,
+            "external_it_services": false,
+            "employee_training": true,
+            "security_issues_high": false,
             "security_issues": true,
             "cyber_circumstances": true,
-            "cyber_fraud": false,
             "insured_sum": 300000000,
             "deductible": 200000,
             "start_date": "2021-02-10"
@@ -121,13 +171,13 @@ Create Unpaid Policy Request
 JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
-   :header: "Name", "Type", "Example Value"
-   :widths: 20, 20, 20
+   :header: "Name", "Type", "Description", "Example Value"
+   :widths: 35, 20, 75, 20
 
     "social_engineering_fraud", "boolean", "true"
     "bank_transfer_policy", "boolean", "true"
     "security_issues_description", "string", "Issue description"
-    "security_issues_damage", "integer", "50"
+    "security_issues_damage", "false|string|regex:/^[0-9]+$", "false"
     "security_issues_actions", "string", "Actions taken"
     "authorisation", "string", "Authorization"
     "company_name", "string", "KASKO"
