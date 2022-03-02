@@ -171,7 +171,7 @@ Create Unpaid Policy Request
 JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
+   :header: "Name", "Type", "Example Value"
    :widths: 35, 20, 75, 20
 
     "social_engineering_fraud", "boolean", "true"
