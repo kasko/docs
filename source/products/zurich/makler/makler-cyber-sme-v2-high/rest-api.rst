@@ -31,7 +31,7 @@ Query string data appended to the quote request
    "sector", "string", "dai_some_id_32_chars_long_______"
    "second_company_sector", "string", "dai_some_id_33_chars_long_______"
    "foreign_subsidiary", "boolean", "false"
-   "duration", "string", "P1Y",
+   "duration", "string", "P1Y"
    "online_turnover", "boolean", "false"
    "online_turnover_value", "string|optional", "49"
    "us_turnover", "string", "0"
@@ -171,7 +171,7 @@ Create Unpaid Policy Request
 JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
+   :header: "Name", "Type", "Example Value"
    :widths: 35, 20, 75, 20
 
     "social_engineering_fraud", "boolean", "true"
