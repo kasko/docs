@@ -3,14 +3,14 @@ REST API - Zurich - Cyber SME V2 high (Makler/ZEP)
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
 
-**Please remember to use the API specific item and touchpoint .**
+**Please remember to use the API specific item and integration.**
 
 V2 Header
 ----------
 
-The API requests must use the V2 header as show in the examples below:
+The API requests must use the V3 header as show in the examples below:
 
-``Accept: application/vnd.kasko.v2+json``
+``Accept: application/vnd.kasko.v3+json``
 
 Quote Data
 ^^^^^^^^^^
@@ -81,13 +81,13 @@ Example Request
 
     curl -X GET \
       'https://api.kasko.io/quotes' \
-      -H 'Accept: application/vnd.kasko.v2+json' \
+      -H 'Accept: application/vnd.kasko.v3+json' \
       -H 'Content-Type: application/json' \
-      -u SECRET_KEY: \
       -d '{
         "item_id": "ITEM_ID",
-        "touchpoint_id": "TOUCHPOINT_ID",
         "subscription_plan_id": "SUBSCRIPTION_ID",
+        "key":"PUBLIC KEY"
+        "integration_id": "INTEGRATION_ID",
         "data": {
             "distributor": "makler_de",
             "second_company": false,
