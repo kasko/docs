@@ -224,40 +224,23 @@ JSON data sent in policy update request.
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "first_name",  "yes", "string", "Policy holder name."
-   "last_name",   "yes", "string", "Policy holder surname"
-   "email",       "yes", "string", "Policy holder email address."
-   "data",        "yes", "object", "Policy data object see _Offer."
-   "quote_token", "no",  "string", "for more details see Quote data Quote_."
+   "first_name",  "no", "string", "Policy holder name."
+   "last_name",   "no", "string", "Policy holder surname"
+   "email",       "no", "string", "Policy holder email address."
 
 Example Request
 ~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
-    curl https://api.kasko.io/policies/POLICY_ID \
-        -X PUT \
-        -u YOUR_SECRET_API_KEY: \
-        -H 'Accept: application/vnd.kasko.v2+json' \
-        -H 'If-Match: ETAG_HEADER' \
-        -H 'If-Unmodified-Since: LAST_MODIFIED_HEADER' \
-        -H 'Content-Type: application/json' \
-        -d '{
-            "first_name": "Holder name",
-            "last_name": "Holder last name",
-            "email": "example@kasko.io",
-            "data": {
-                "phone":"+44 117 496 0123",
-                "salutation": "mr",
-                "house_number": "5A",
-                "street": "new test Street",
-                "state": "new test State",
-                "partner_coverage_type": "partner",
-                "coinsured_first_name": "anotherFirstName",
-                "coinsured_last_name": "anotherLastName"
-            },
-            "quote_token":"QUOTE_TOKEN"
-        }'
+ curl --location --request PATCH https://api.kasko.io/policies/<POLICY ID> \
+--header 'Accept: application/vnd.kasko.v2+json' \
+--header 'Authorization: Bearer <YOUR SECRET API KEY>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "first_name": "John",
+    "email": "test+2@kasko.io"
+}'
 
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
