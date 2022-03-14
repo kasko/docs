@@ -233,14 +233,14 @@ Example Request
 
 .. code-block:: bash
 
- curl --location --request PATCH https://api.kasko.io/policies/<POLICY ID> \
---header 'Accept: application/vnd.kasko.v2+json' \
---header 'Authorization: Bearer <YOUR SECRET API KEY>' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "first_name": "John",
-    "email": "test+2@kasko.io"
-}'
+     curl --location --request PATCH https://api.kasko.io/policies/<POLICY ID> \
+        --header 'Accept: application/vnd.kasko.v2+json' \
+        --header 'Authorization: Bearer <YOUR SECRET API KEY>' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+            "first_name": "John",
+            "email": "test+2@kasko.io"
+        }'
 
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
