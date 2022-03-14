@@ -224,40 +224,23 @@ JSON data sent in policy update request.
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "first_name", "yes", "string", "Policy holder name."
-   "last_name", "yes", "string", "Policy holder surname"
-   "email", "yes", "string", "Policy holder email address."
-   "data", "yes", "object", "Policy data object see _Offer."
-   "quote_token", "no", "string", "for more details see Quote data Quote_."
+   "first_name", "no", "string", "Policy holder name."
+   "last_name", "no", "string", "Policy holder surname"
+   "email", "no", "string", "Policy holder email address."
 
 Example Request
 ~~~~~~~~~~~~~~~
 
 .. code-block:: bash
 
-    curl https://api.kasko.io/policies/<POLICY ID> \
-        -X PUT \
-        -u <YOUR SECRET API KEY>: \
-        -H 'Accept: application/vnd.kasko.v2+json' \
-        -H 'If-Match: <Etag>' \
-        -H 'If-Unmodified-Since: <Last-Modified>' \
-        -H 'Content-Type: application/json' \
-        -d '{
-            "first_name": "Holder name",
-            "last_name": "Holder last name",
-            "email": "test+2@kasko.io",
-            "data": {
-                "phone":"+11111111",
-                "salutation": "mr",
-                "dob": "1991-10-31",
-                "house_number": "1A",
-                "street": "Test Street",
-                "state": "Test State",
-                "postcode": "1001",
-                "partner_coverage": false
-            },
-            "quote_token":"<QUOTE TOKEN>"
-        }'
+ curl --location --request PATCH https://api.kasko.io/policies/<POLICY ID> \
+--header 'Accept: application/vnd.kasko.v2+json' \
+--header 'Authorization: Bearer <YOUR SECRET API KEY>' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "first_name": "John",
+    "email": "test+2@kasko.io"
+}'
 
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
