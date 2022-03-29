@@ -48,14 +48,14 @@ Example Request
 
 .. code:: bash
 
-    curl -X GET \
+    curl -X POST \
       'https://api.kasko.io/quotes' \
       -H 'Accept: application/vnd.kasko.v3+json' \
       -H 'Content-Type: application/json' \
       -d '{
         "item_id": "ITEM_ID",
         "subscription_plan_id": "SUBSCRIPTION_ID",
-        "key":"PUBLIC KEY"
+        "key":"PUBLIC KEY",
         "integration_id": "INTEGRATION_ID",
         "data": {
             "cover": "basis",
