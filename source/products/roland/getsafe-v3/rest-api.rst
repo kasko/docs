@@ -21,7 +21,7 @@ At least 3 requests required in following order to buy policy:
 
 1. Quote_ requests - get an estimate of policy costs.
 2. Offer_ requests - create an offer.
-3. Payment_ requests - covert offer to policy.
+3. Payment_ requests - convert offer to policy.
 
 When there is a policy created, the following actions can be taken:
 
