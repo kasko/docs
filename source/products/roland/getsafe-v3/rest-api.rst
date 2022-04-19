@@ -43,13 +43,13 @@ Following factors are considered while calculating policy price:
    "duration",              "string", "Insurance duration. Available values:", "P1Y"
    "start_date",            "iso_date", "Start date of policy  ISO date", "yyyy-mm-dd"
    "main_module",           "string",  "Which insurance module", "PBV|PBVIM"
-   "criminal_law",          "bool",  "TBD", "true|false"
-   "module",                "string", "TBD", "base"
-   "familystatus",          "string", "TBD", "single"
-   "employmentstatus",      "string", "TBD", "employee"
+   "criminal_law",          "bool",  "Extra module for criminal law", "true|false"
+   "module",                "string", "Which Tarif", "base"
+   "familystatus",          "string", "Family status", "single"
+   "employmentstatus",      "string", "Employment status", "employee"
    "dob",                   "string", "Date of birth", "1984-01-02"
    "postcode",              "string", "Postcode", "69115"
-   "credit_scode_external", "integer", "TBD", "999"
+   "credit_score_external", "integer", "Credit rating", "999"
 
 
 
