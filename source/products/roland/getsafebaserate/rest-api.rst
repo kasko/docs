@@ -261,7 +261,19 @@ Example Request
         --header 'Content-Type: application/json' \
         --data-raw '{
             "first_name": "John",
-            "email": "test+2@kasko.io"
+            "last_name": "Doe",
+            "email": "test+2@kasko.io",
+            "quote_token":<YOUR QUOTE TOKEN>,
+            "data": {
+                "street":"Bergheimer Str.",
+                "house_number":"147",
+                "state":"Heidelberg",
+                "salutation":"mr",
+                "partner_coverage_type":"single",
+                "previous_insurance_insurer":"Test insurer",
+                "previous_insurance_end_date":"2021-02-08",
+                "previous_insurance_claims_count":0
+            }
         }'
 
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
