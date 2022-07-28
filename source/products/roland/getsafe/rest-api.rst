@@ -239,7 +239,7 @@ Data object parameters if included in the policy update request.
    "phone",                           "no",                                     "string",  "Free text string up to 255 characters."
    "salutation",                      "yes",                                    "string",  "Customer title. Available values: mr, ms."
    "dob",                             "yes",                                    "string",  "Date of birth of the policyholder in ISO 8601 format."
-   "house_number",                    "yes",                                    "string",  "string",   "House number of the policyholder's address."
+   "house_number",                    "yes",                                    "string",  "House number of the policyholder's address."
    "street",                          "yes",                                    "string",  "Street name of the policyholder's address."
    "state",                           "yes",                                    "string",  "State of the policyholder's address."
    "postcode",                        "yes",                                    "string",  "Postcode of the policyholder's address."
@@ -248,7 +248,7 @@ Data object parameters if included in the policy update request.
    "previous_insurance_cancellation", "no",                                     "integer", "Previous cancellation reason."
    "previous_insurance_start_date",   "no",                                     "string",  "Previous insurance start date in ISO 8601 format."
    "previous_insurance_end_date",     "yes if ``previous_insurance_insurer``.", "string",  "Previous insurance end date in ISO 8601 format."
-   "partner_coverage",                "yes",                                    "bool",    "Partner coverage.",   "true"
+   "partner_coverage",                "yes",                                    "bool",    "Partner coverage."
    "coinsured_first_name",            "yes if ``partner_coverage``.",           "string",  "Co-insured First name."
    "coinsured_last_name",             "yes if ``partner_coverage``.",           "string",  "Co-insured Last name."
 
