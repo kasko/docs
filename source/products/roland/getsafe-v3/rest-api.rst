@@ -100,15 +100,15 @@ This request stores policy holder information that is related to offer. Followin
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 35, 20, 75, 20
 
-   "phone",                           "string|optional",   "Free text string up to 255 characters.",   "+417304200"
-   "salutation",                      "string",   "Customer title. Available values: mr, ms.",   "mr"
-   "dob",                             "string",   "Date of birth of the policyholder.",   "1989-02-04"
-   "house_number",                    "string",   "House number of the policyholder's address.",   "12"
-   "street",                          "string",   "Street name of the policyholder's address.",   "Main street"
-   "state",                           "string",   "State of the policyholder's address.",   "State"
-   "postcode",                        "string",   "Postcode of the policyholder's address.",   "1234"
-   "partner_coverage",                "bool",     "Partner coverage.",   "true"
-   "familystatus",                    "string",   "Family status." "single"
+   "phone",                           "string|optional",   "Free text string up to 255 characters.",        "+417304200"
+   "salutation",                      "string",            "Customer title. Available values: mr, ms.",     "mr"
+   "dob",                             "string",            "Date of birth of the policyholder.",            "1989-02-04"
+   "house_number",                    "string",            "House number of the policyholder's address.",   "12"
+   "street",                          "string",            "Street name of the policyholder's address.",    "Main street"
+   "state",                           "string",            "State of the policyholder's address.",          "State"
+   "postcode",                        "string",            "Postcode of the policyholder's address.",       "1234"
+   "partner_coverage",                "bool",              "Partner coverage.",                             "true"
+   "familystatus",                    "string",            "Family status.",                                "single"
 
 Example Request
 ~~~~~~~~~~~~~~~

@@ -17,15 +17,25 @@ Quote Data
 Query string data appended to the quote request
 
 .. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "token",     "yes", "``string``", "The ``<PAYMENT TOKEN>`` returned by OfferResponse_."
+   "policy_id", "yes", "``string``", "The 33 character long ``<POLICY ID>`` returned by OfferResponse_."
+   "method",    "yes", "``string``", "Payment method ``distributor``."
+   "provider",  "yes", "``string``", "Payment provider ``distributor``."
+
+.. csv-table::
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
-   "coverage_type", "string", "Type - smart_2000, top_5000", "smart_2000"
-   "dog_breed", "string", "Dog breed", "boxer"
-   "dog_dob", "string", "Dogs date of birth", "2017-11-06"
-   "dental_surgery", "boolean", "Is dental surgery coverage required", "false"
-   "payment_frequency", "string", "yearly, half_yearly, quarterly, monthly", "half_yearly"
-   "policy_start_date", "string", "Policy start date", "2019-12-27"
-   "deductibles", "string", "Type - 0, 25000", "25000"
+
+   "coverage_type",     "string",   "Type - smart_2000,top_5000",             "smart_2000"
+   "dog_breed",         "string",   "Dog breed",                               "boxer"
+   "dog_dob",           "string",   "Dogs date of birth",                      "2017-11-06"
+   "dental_surgery",    "boolean",  "Is dental surgery coverage required",     "false"
+   "payment_frequency", "string",   "yearly,half_yearly,quarterly,monthly",    "half_yearly"
+   "policy_start_date", "string",   "Policy start date",                       "2019-12-27"
+   "deductibles",       "string",   "Type - 0",                                 "25000"
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -56,6 +66,7 @@ Example Response
 ~~~~~~~~~~~~~~~~
 
 .. code:: javascript
+
       {
         "extra_data": {
             "gross_premium": 48123,
@@ -65,7 +76,7 @@ Example Response
             "gross_premium_dental_surgery": 2281,
             "gross_premium_dog": 45842,
             "dog_age": 0
-        ],
+        },
         "gross_payment_amount": 48123,
         "token": "encrypted_token"
       }
