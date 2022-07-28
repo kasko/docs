@@ -224,9 +224,33 @@ JSON data sent in policy update request.
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "first_name", "no", "string", "Policy holder name."
-   "last_name", "no", "string", "Policy holder surname"
-   "email", "no", "string", "Policy holder email address."
+   "first_name",   "no",    "string",    "Policy holder name."
+   "last_name",    "no",    "string",    "Policy holder surname"
+   "email",        "no",    "string",    "Policy holder email address."
+   "quote_token",  "no",    "string",    "Quote token".
+   "data",         "no",    "json",      "Data object".
+
+Data object parameters if included in the policy update request.
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 20, 20, 80
+
+   "phone",                           "no",                                     "string",  "Free text string up to 255 characters."
+   "salutation",                      "yes",                                    "string",  "Customer title. Available values: mr, ms."
+   "dob",                             "yes",                                    "string",  "Date of birth of the policyholder in ISO 8601 format."
+   "house_number",                    "yes",                                    "string",  "string",   "House number of the policyholder's address."
+   "street",                          "yes",                                    "string",  "Street name of the policyholder's address."
+   "state",                           "yes",                                    "string",  "State of the policyholder's address."
+   "postcode",                        "yes",                                    "string",  "Postcode of the policyholder's address."
+   "previous_insurance_insurer",      "no",                                     "string",  "Previous insurer name."
+   "previous_insurance_claims_count", "yes if ``previous_insurance_insurer``.", "integer", "Previous insurance claim count."
+   "previous_insurance_cancellation", "no",                                     "integer", "Previous cancellation reason."
+   "previous_insurance_start_date",   "no",                                     "string",  "Previous insurance start date in ISO 8601 format."
+   "previous_insurance_end_date",     "yes if ``previous_insurance_insurer``.", "string",  "Previous insurance end date in ISO 8601 format."
+   "partner_coverage",                "yes",                                    "bool",    "Partner coverage.",   "true"
+   "coinsured_first_name",            "yes if ``partner_coverage``.",           "string",  "Co-insured First name."
+   "coinsured_last_name",             "yes if ``partner_coverage``.",           "string",  "Co-insured Last name."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -239,7 +263,18 @@ Example Request
         --header 'Content-Type: application/json' \
         --data-raw '{
             "first_name": "John",
-            "email": "test+2@kasko.io"
+            "last_name": "Doe",
+            "email": "test+2@kasko.io",
+            "quote_token":<YOUR QUOTE TOKEN>,
+            "data": {
+                "dob":"1984-01-01",
+                "street":"Bergheimer Str.",
+                "house_number":"147",
+                "state":"Heidelberg",
+                "postcode":"69115",
+                "salutation":"mr",
+                "partner_coverage":false
+            }
         }'
 
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
