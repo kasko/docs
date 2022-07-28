@@ -227,8 +227,8 @@ JSON data sent in policy update request.
    "first_name",   "no",    "string",    "Policy holder name."
    "last_name",    "no",    "string",    "Policy holder surname"
    "email",        "no",    "string",    "Policy holder email address."
-   "quote_token",  "no",    "string",    "Quote token".
-   "data",         "no",    "json",      "Data object".
+   "quote_token",  "no",    "string",    "Quote token."
+   "data",         "no",    "json",      "Data object."
 
 Data object parameters if included in the policy update request.
 
