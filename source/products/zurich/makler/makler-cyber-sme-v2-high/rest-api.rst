@@ -172,7 +172,7 @@ JSON data posted to /policies on creation of unpaid policy.
 
 .. csv-table::
    :header: "Name", "Type", "Example Value"
-   :widths: 35, 20, 75, 20
+   :widths: 35, 20, 75
 
     "social_engineering_fraud", "boolean", "true"
     "bank_transfer_policy", "boolean", "true"

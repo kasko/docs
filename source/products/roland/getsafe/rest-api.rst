@@ -244,13 +244,13 @@ Data object parameters if included in the policy update request.
    "state",                           "yes",                                    "string",  "State of the policyholder's address."
    "postcode",                        "yes",                                    "string",  "Postcode of the policyholder's address."
    "previous_insurance_insurer",      "no",                                     "string",  "Previous insurer name."
-   "previous_insurance_claims_count", "yes if ``previous_insurance_insurer``",  "integer", "Previous insurance claim count."
+   "previous_insurance_claims_count", "yes if ``previous_insurance_insurer``.", "integer", "Previous insurance claim count."
    "previous_insurance_cancellation", "no",                                     "integer", "Previous cancellation reason."
    "previous_insurance_start_date",   "no",                                     "string",  "Previous insurance start date in ISO 8601 format."
-   "previous_insurance_end_date",     "yes if ``previous_insurance_insurer``",  "string",  "Previous insurance end date in ISO 8601 format."
+   "previous_insurance_end_date",     "yes if ``previous_insurance_insurer``.", "string",  "Previous insurance end date in ISO 8601 format."
    "partner_coverage",                "yes",                                    "bool",    "Partner coverage."
-   "coinsured_first_name",            "yes if ``partner_coverage``",            "string",  "Co-insured First name."
-   "coinsured_last_name",             "yes if ``partner_coverage``",            "string",  "Co-insured Last name."
+   "coinsured_first_name",            "yes if ``partner_coverage``.",           "string",  "Co-insured First name."
+   "coinsured_last_name",             "yes if ``partner_coverage``.",           "string",  "Co-insured Last name."
 
 Example Request
 ~~~~~~~~~~~~~~~
