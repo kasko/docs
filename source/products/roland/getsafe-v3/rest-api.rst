@@ -97,18 +97,24 @@ Create an offer (unpaid policy)
 This request stores policy holder information that is related to offer. Following information can be stored in offer:
 
 .. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
-   :widths: 35, 20, 75, 20
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 100, 20, 80
 
-   "phone",                           "string|optional",   "Free text string up to 255 characters.",        "+417304200"
-   "salutation",                      "string",            "Customer title. Available values: mr, ms.",     "mr"
-   "dob",                             "string",            "Date of birth of the policyholder.",            "1989-02-04"
-   "house_number",                    "string",            "House number of the policyholder's address.",   "12"
-   "street",                          "string",            "Street name of the policyholder's address.",    "Main street"
-   "state",                           "string",            "State of the policyholder's address.",          "State"
-   "postcode",                        "string",            "Postcode of the policyholder's address.",       "1234"
-   "partner_coverage",                "bool",              "Partner coverage.",                             "true"
-   "familystatus",                    "string",            "Family status.",                                "single"
+   "phone",                           "no",                                                 "string",  "Free text string up to 255 characters."
+   "paymentperiod",                   "no",                                                 "string",  "``in:yearly,monthly``."
+   "salutation",                      "yes",                                                "string",  "Customer title. Available values: mr, ms."
+   "house_number",                    "yes",                                                "string",  "House number of the policyholder's address."
+   "street",                          "yes",                                                "string",  "Street name of the policyholder's address."
+   "state",                           "yes",                                                "string",  "State of the policyholder's address."
+   "previous_insurance_insurer",      "no",                                                 "string",  "Previous insurer name."
+   "previous_insurance_claims_count", "yes if ``previous_insurance_insurer``",             "integer", "Previous insurance claim count."
+   "previous_insurance_cancellation", "no",                                                 "integer", "Previous cancellation reason."
+   "previous_insurance_start_date",   "no",                                                 "string",  "Previous insurance start date in ISO 8601 format."
+   "previous_insurance_end_date",     "yes if ``previous_insurance_insurer``",             "string",  "Previous insurance end date in ISO 8601 format."
+   "coinsured_first_name",            "no",                                                 "string",  "Co-insured First name."
+   "coinsured_last_name",             "no",                                                 "string",  "Co-insured Last name."
+   "is_married",                      "yes if ``familystatus_in:couple,familywithchild``", "string",  "Marital status."
+   "familystatus",                    "yes",                                                "string",  "``in:single,singlewithchild,couple,familywithchild``."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -128,7 +134,6 @@ Example Request
                 "house_number": "1A",
                 "street": "Test Street",
                 "state": "Test State",
-                "postcode": "1001",
                 "partner_coverage": false,
                 "familystatus": "single"
           },
@@ -136,7 +141,6 @@ Example Request
           "first_name": "Test",
           "last_name": "Person",
           "email": "test@kasko.io",
-          "language": "de",
           "metadata": {}
       }'
 
@@ -230,9 +234,33 @@ JSON data sent in policy update request.
    :header: "Parameter", "Required", "Type", "Description"
    :widths: 20, 20, 20, 80
 
-   "first_name", "no", "string", "Policy holder name."
-   "last_name", "no", "string", "Policy holder surname"
-   "email", "no", "string", "Policy holder email address."
+   "first_name",   "no",    "string",    "Policy holder name."
+   "last_name",    "no",    "string",    "Policy holder surname"
+   "email",        "no",    "string",    "Policy holder email address."
+   "quote_token",  "no",    "string",    "Quote token."
+   "data",         "no",    "json",      "Data object."
+
+Data object parameters if included in the policy update request.
+
+.. csv-table::
+   :header: "Parameter", "Required", "Type", "Description"
+   :widths: 20, 100, 20, 80
+
+   "phone",                           "no",                                                 "string",  "Free text string up to 255 characters."
+   "paymentperiod",                   "no",                                                 "string",  "``in:yearly,monthly``."
+   "salutation",                      "yes",                                                "string",  "Customer title. Available values: mr, ms."
+   "house_number",                    "yes",                                                "string",  "House number of the policyholder's address."
+   "street",                          "yes",                                                "string",  "Street name of the policyholder's address."
+   "state",                           "yes",                                                "string",  "State of the policyholder's address."
+   "previous_insurance_insurer",      "no",                                                 "string",  "Previous insurer name."
+   "previous_insurance_claims_count", "yes if ``previous_insurance_insurer``",             "integer", "Previous insurance claim count."
+   "previous_insurance_cancellation", "no",                                                 "integer", "Previous cancellation reason."
+   "previous_insurance_start_date",   "no",                                                 "string",  "Previous insurance start date in ISO 8601 format."
+   "previous_insurance_end_date",     "yes if ``previous_insurance_insurer``",             "string",  "Previous insurance end date in ISO 8601 format."
+   "coinsured_first_name",            "no",                                                 "string",  "Co-insured First name."
+   "coinsured_last_name",             "no",                                                 "string",  "Co-insured Last name."
+   "is_married",                      "yes if ``familystatus_in:couple,familywithchild``", "string",  "Marital status."
+   "familystatus",                    "yes",                                                "string",  "``in:single,singlewithchild,couple,familywithchild``."
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -245,8 +273,22 @@ Example Request
         --header 'Content-Type: application/json' \
         --data-raw '{
             "first_name": "John",
-            "email": "test+2@kasko.io"
-        }'
+            "email": "test@kasko.io",
+            "quote_token":<YOUR QUOTE TOKEN>,
+            "data":{
+                "street":"Amselstr.",
+                "house_number":"48",
+                "state":"Herford",
+                "salutation":"ms",
+                "coinsured_first_name":"Test name",
+                "coinsured_last_name":"Test surname",
+                "paymentperiod":"yearly",
+                "familystatus":"couple",
+                "is_married":true,
+                "previous_insurance_insurer": "test",
+                "previous_insurance_claims_count": 0,
+                "previous_insurance_end_date": "2021-10-10"
+            }'
 
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
