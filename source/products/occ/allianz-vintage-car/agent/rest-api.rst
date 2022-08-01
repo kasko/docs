@@ -124,42 +124,42 @@ Create an offer (unpaid policy)
 
 This request stores policy holder information that is related to offer. Following information can be stored in offer:
 
-.. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
-   :widths: 20, 20, 80, 20
-
-    "account_owner",            "string",   "Phone number.",                    "+44222222222"
-    "bank_name",                "string",   "Bank name.",                       "Test"
-    "car_body_list",            "array",    "Car body list",                    {\"0\":\"Cabriolet 2-Sitze\"\\\,\"1\":\"Landaulet\"}
-    "car_id",                   "string",   "Required if:new_client = false.", "test"
-    "car_tariff_list",          "array",    "Car tariff list",
-    "city",                     "string",   "City.",                            "dai_Q9bJSeYxIuhv1Vo903cCLPb4pIE0"
-    "condition_2_min",          "integer",  "Condition 2 min",                  0
-    "condition_3_min",          "integer",  "Condition 2 min",                  0
-    "flag_purchase_lead",       "bool",     "Purhase lead flag",                true
-    "horse_power",              "string",   "Horse power.",                     "1234"
-    "house_number",             "string",   "House number.",                    "1234"
-    "iban",                     "string",   "Iban",                             "GB29NWBK60161331926819"
-    "insured_before",           "string",   "Insured before",                   true
-    "license_plate_type",       "string",   "License plate type.",              "shared"
-    "main_driver",              "bool",     "Main driver",                      true
-    "main_driver_title",        "string",   "Main driver title",                "Test"
-    "maker",                    "string",   "Maker.",                           "1234"
-    "maker_model",              "string",   "Maker model.",                     "1234"
-    "miles",                    "string",   "Miles or km",                      "km"
-    "miles_value",              "string",   "Miles value.",                     "1234"
-    "motorcycle_body_list",     "array",    "Motorcycle body list",
-    "motorcycle_tariff_list",   "array",    "Motorcylce tariff list",
-    "newsletter_optin",         "bool",     "Agree of newsletter.",             "true"
-    "offer_recipient",          "string",   "Offer recipient",                  "test@test.lv"
-    "offers_recipient",         "string",   "Offer recipient",                  "test@test.lv"
-    "payment_method",           "string",   "Payment method",                   "invoice"
-    "phone",                    "string",   "Phone number",                     "+43222222222"
-    "postcode",                 "string",   "Postcode",                         "1130"
-    "purchase_lead",            "bool",     "Purchase lead",                    true
-    "salutation",               "string",   "Salutation",                       "mr"
-    "street",                   "string",   "Street",                           "Street"
-    "title",                    "string",   "Title",                            "dr"
+======================  =======  =====================================  ================================================
+Name                    Type     Description                            Example Value
+======================  =======  =====================================  ================================================
+account_owner           string   Phone number                           +44222222222
+bank_name               string   Bank name                              Test
+car_body_list           string   Car body list                          {"0":"Cabriolet 2-Sitze","1":"Landaulet"}
+car_id                  string   Required if:new_client = false         test
+car_tariff_list         array    Car tariff list                        {"0":"PKW offen","1":"PKW geschlossen","2":"LKW","3":"Wohnmobile","4":"Bus"}
+city                    string   City                                   dai_Q9bJSeYxIuhv1Vo903cCLPb4pIE0
+condition_2_min         integer  Condition 2 min"                       0
+condition_3_min         integer  Condition 3 min                        0
+flag_purchase_lead      bool     Purhase lead flag                      true
+horse_power             string   Horse power                            1234
+house_number            string   House number                           1234
+iban                    string   Iban                                   GB29NWBK60161331926819
+insured_before          string   Insured before                         true
+license_plate_type      string   License plate type                     shared
+main_driver             bool     Main driver                            true
+main_driver_title       string   Main driver title                      Test
+maker                   string   Maker                                  1234
+maker_model             string   Maker model                            1234
+miles                   string   Miles or km                            km
+miles_value             string   Miles value                            1234
+motorcycle_body_list    array    Motorcycle body list                   {"0":"Kraftrad","1":"Schlepper","2":"Zugmaschine","3":"Roller","4":"Traktor","5":"Gespann"}
+motorcycle_tariff_list  array    Motorcylce tariff list                 {"0":"Traktor","1":"Krad","2":"Anhänger"}
+newsletter_optin        bool     Agree of newsletter                    true
+offer_recipient         string   Offer recipient                        test@test.lv
+offers_recipient        string   Offer recipient                        test@test.lv
+payment_method          string   Payment method                         invoice
+phone                   string   Phone number                           +43222222222
+postcode                string   Postcode                               1130
+purchase_lead           bool     Purchase lead                          true
+salutation              string   Salutation                             mr
+street                  string   Street                                 Street
+title                   string   Title                                  dr
+======================  =======  =====================================  ================================================
 
 
 Example Request
