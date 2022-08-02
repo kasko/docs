@@ -2,7 +2,7 @@ Webapp
 ======
 
 Example Kasko JS embed code (P&V Bike)
----------------------------
+--------------------------------------
 
 .. code:: html
 
@@ -20,7 +20,7 @@ Example Kasko JS embed code (P&V Bike)
 
 
 Example Kasko JS embed code (Vivium Bike)
----------------------------
+-----------------------------------------
 
 .. code:: html
 

@@ -1,5 +1,5 @@
 Signal Iduna Products
-===============
+=====================
 
 List of Signal Iduna insurance products.
 

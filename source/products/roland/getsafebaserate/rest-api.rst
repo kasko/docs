@@ -135,7 +135,7 @@ Example Request
           "language": "de"
       }'
 
-NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
+NOTE. You should use ``<QUOTE TOKEN>`` value from Quote_ response.
 
 .. _OfferResponse:
 
@@ -317,7 +317,7 @@ NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from Sh
 .. _Reactivate:
 
 Reactivate policy request
----------------------
+-------------------------
 
 Example Request
 ~~~~~~~~~~~~~~~

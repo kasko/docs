@@ -1,5 +1,5 @@
 Baloise - Travel Layer Cover Insurance
-=============================
+======================================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^

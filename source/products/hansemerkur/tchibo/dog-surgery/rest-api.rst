@@ -1,5 +1,5 @@
 REST API - Tchibo Dog Surgery
-======================
+=============================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for a more complete documentation regarding the necessary requests before performing and building your own.
 

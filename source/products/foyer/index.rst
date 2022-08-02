@@ -1,5 +1,5 @@
 Groupe Foyer Products
-===============
+=====================
 
 List of Groupe Foyer insurance products.
 

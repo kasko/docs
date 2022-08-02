@@ -1,6 +1,6 @@
-========
+===============
 REST API (USER)
-========
+===============
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for more complete documentation regarding the necessary requests before performing and building your own.
 

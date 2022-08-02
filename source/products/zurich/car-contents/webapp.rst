@@ -2,7 +2,7 @@ Webapp
 ======
 
 Example Kasko JS embed code (Zurich)
----------------------------
+------------------------------------
 
 .. code:: html
 
@@ -19,7 +19,7 @@ Example Kasko JS embed code (Zurich)
     </script>
 
 Example Kasko JS embed code (Makler)
----------------------------
+------------------------------------
 
 .. code:: html
 
@@ -36,7 +36,7 @@ Example Kasko JS embed code (Makler)
     </script>
 
 Example Kasko JS embed code (ZEP)
----------------------------
+---------------------------------
 
 .. code:: html
 
