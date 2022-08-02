@@ -1,6 +1,6 @@
-========
+=================
 REST API (BROKER)
-========
+=================
 
 .. note::  Refer to :ref:`REST API page<rest_api>` for more complete documentation regarding the necessary requests before performing and building your own.
 
@@ -27,35 +27,35 @@ Quote request
 This request calculates how much policyholder should pay for the policy.
 Following factors are considered while calculating policy price:
 
-.. csv-table::
-   :header: "Name", "Type", "Required", "Example Value"
-   :widths: 20, 20, 80, 20
-
-   "vehicle_type",         "string", "YES", "car"
-   "built_year",           "string", "YES", "1890"
-   "insured_sum",          "integer","YES",  "150000"
-   "coverage_type",        "string", "YES", "half"
-   "deductible_a1",        "string", "YES if:coverage_type = half", "15000"
-   "deductible_b1",        "string", "YES if:coverage_type = full", "30000"
-   "deductible_b2",        "string", "YES if:coverage_type = full", "50000"
-   "deductible_c1",        "string", "YES if:coverage_type = full_plus", "50000"
-   "deductible_c2",        "string", "YES if:coverage_type = full_plus", "50000"
-   "garage",               "string", "YES", "underground"
-   "usage",                "string", "YES", "3000km"
-   "car_type",             "string", "YES",  "dai_0a585zcVzbe9YhdmPzAxE82Kri3z"
-   "max_horse_power",      "bool",   "YES", "true"
-   "recovery_cost",        "bool",   "YES", "true"
-   "daily_usage",          "bool",   "YES", "true"
-   "daily_usage_car",      "bool",   "YES", "true"
-   "driving_license_year", "string", "YES", "1996"
-   "dob",                  "string", "YES", "1985-01-01"
-   "young_driver",         "bool",   "YES", "true"
-   "damages",              "bool",   "YES", "true"
-   "lost_license",         "bool",   "YES", "true"
-   "first_registration",   "string", "YES", "1995-01-01"
-   "car_tuning",           "string", "YES", "true"
-   "optin1",               "string", "NO",  "true"
-   "payment_frequency",    "string", "YES", "yearly"
+======================  =======  =====================================  ================================================
+Name                    Type     Required                               Example Value
+======================  =======  =====================================  ================================================
+vehicle_type            string   YES"                                   car
+built_year              string   YES"                                   1890
+insured_sum             integer  YES"                                   150000
+coverage_type           string   YES"                                   half
+deductible_a1           string   YES if:coverage_type = half            15000
+deductible_b1           string   YES if:coverage_type = full            30000
+deductible_b2           string   YES if:coverage_type = full            50000
+deductible_c1           string   YES if:coverage_type = full_plus       50000
+deductible_c2           string   YES if:coverage_type = full_plus       50000
+garage                  string   YES                                    underground
+usage                   string   YES                                    3000km
+car_type                string   YES                                    dai_0a585zcVzbe9YhdmPzAxE82Kri3z
+max_horse_power         bool     YES                                    true
+recovery_cost           bool     YES                                    true
+daily_usage             bool     YES                                    true
+daily_usage_car         bool     YES                                    true
+driving_license_year    string   YES                                    1996
+dob                     string   YES                                    1985-01-01
+young_driver            bool     YES                                    true
+damages                 bool     YES                                    true
+lost_license            bool     YES                                    true
+first_registration      string   YES                                    1995-01-01
+car_tuning              string   YES                                    true
+optin1                  string   NO                                     true
+payment_frequency       string   YES                                    yearly
+======================  =======  =====================================  ================================================
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -124,55 +124,55 @@ Create an offer (unpaid policy)
 
 This request stores policy holder information that is related to offer. Following information can be stored in offer:
 
-.. csv-table::
-   :header: "Name", "Type", "Description", "Example Value"
-   :widths: 20, 20, 80, 20
-
-    "account_owner", "string", "Phone number.", "+44222222222"
-    "agent_city", "string", "Agent city", "dai_hi3kQ6yg2CsPTExeHUAKLBXrqbqx",
-    "agent_email", "string", "Agent email", "test@kasko.io",
-    "agent_first_name", "string", "Agent first name", "Tewt",
-    "agent_house_number", "string", "Agent house number", "123",
-    "agent_id", "string", "Agent ID", "8878788",
-    "agent_last_name", "string", "Agent last name", "TST",
-    "agent_mobile_number", "string", "Agent mobile phone number", "+4322222222",
-    "agent_postcode", "string", "Agent postcode", "1120",
-    "agent_salutation", "string", "Agent saluatiton", "mr",
-    "agent_street", "string", "Agemt Street", "Street",
-    "bank_name", "string", "Bank name.", "Test"
-    "car_body_list", "array", "Car body list", {"0":"Cabriolet 2-Sitze","1":"Landaulet"}
-    "car_id", "string", "Required if:new_client = false.", "test"
-    "car_tariff_list", "array", "Car tariff list", {"0":"PKW offen","1":"PKW geschlossen","2":"LKW","3":"Wohnmobile","4":"Bus"}
-    "city", "string", "City.", "dai_Q9bJSeYxIuhv1Vo903cCLPb4pIE0"
-    "condition_2_min", "integer", "Condition 2 min", 0
-    "condition_3_min", "integer", "Condition 2 min", 0
-    "flag_purchase_lead", "bool", "Purhase lead flag", true
-    "horse_power", "string", "Horse power.", "1234"
-    "house_number", "string", "House number.", "1234"
-    "iban", "string", "Iban", "GB29NWBK60161331926819"
-    "insured_before", "string", "Insured before", true
-    "license_plate_type", "string", "License plate type.", "shared"
-    "main_driver", "bool", "Main driver", true
-    "main_driver_first_name", "string", "Main driver first name", "Test"
-    "main_driver_last_name", "string", "Main driver last name", "Test"
-    "main_driver_salutation", "string", "Main driver salutation", "Test"
-    "main_driver_title", "string", "Main driver title", "Test"
-    "maker", "string", "Maker.", "1234"
-    "maker_model", "string", "Maker model.", "1234"
-    "miles", "string", "Miles or km", "km"
-    "miles_value", "string", "Miles value.", "1234"
-    "motorcycle_body_list", "array", "Motorcycle body list", {"0":"Kraftrad","1":"Schlepper","2":"Zugmaschine","3":"Roller","4":"Traktor","5":"Gespann"}
-    "motorcycle_tariff_list", "array", "Motorcylce tariff list", {"0":"Traktor","1":"Krad","2":"Anhänger"}
-    "newsletter_optin", "bool", "Agree of newsletter.", "true"
-    "offer_recipient", "string", "Offer recipient", "test@test.lv"
-    "offers_recipient", "string", "Offer recipient", "test@test.lv"
-    "payment_method", "string", "Payment method", "invoice"
-    "phone", "string", "Phone number", "+43222222222"
-    "postcode", "string", "Postcode", "1130"
-    "purchase_lead", "bool", "Purchase lead", true
-    "salutation", "string", "Salutation", "mr"
-    "street", "string", "Street", "Street"
-    "title", "string", "Title", "dr"
+======================  =======  =====================================  ================================================
+Name                    Type     Required                               Example Value
+======================  =======  =====================================  ================================================
+account_owner           string   Phone number                           +44222222222
+agent_city              string   Agent city                             dai_hi3kQ6yg2CsPTExeHUAKLBXrqbqx
+agent_email             string   Agent email                            test@kasko.io
+agent_first_name        string   Agent first name                       Tewt
+agent_house_number      string   Agent house number                     123
+agent_id                string   Agent ID                               8878788
+agent_last_name         string   Agent last name                        TST
+agent_mobile_number     string   Agent mobile phone number              +4322222222
+agent_postcode          string   Agent postcode                         1120
+agent_salutation        string   Agent saluatiton                       mr
+agent_street            string   Agemt Street                           Street
+bank_name               string   Bank name                              Test
+car_body_list           array    Car body list                          {"0":"Cabriolet 2-Sitze","1":"Landaulet"}
+car_id                  string   Required if:new_client = false         test
+car_tariff_list         array    Car tariff list                        {"0":"PKW offen","1":"PKW geschlossen","2":"LKW","3":"Wohnmobile","4":"Bus"}
+city                    string   City                                   dai_Q9bJSeYxIuhv1Vo903cCLPb4pIE0
+condition_2_min         integer  Condition 2 min                        0
+condition_3_min         integer  Condition 2 min                        0
+flag_purchase_lead      bool     Purhase lead flag                      true
+horse_power             string   Horse power                            1234
+house_number            string   House number                           1234
+iban                    string   Iban                                   GB29NWBK60161331926819
+insured_before          string   Insured before                         true
+license_plate_type      string   License plate type                     shared
+main_driver             bool     Main driver                            true
+main_driver_first_name  string   Main driver first name                 Test
+main_driver_last_name   string   Main driver last name                  Test
+main_driver_salutation  string   Main driver salutation                 Test
+main_driver_title       string   Main driver title                      Test
+maker                   string   Maker                                  1234
+maker_model             string   Maker model                            1234
+miles                   string   Miles or km                            km
+miles_value             string   Miles value                            1234
+motorcycle_body_list    array    Motorcycle body list                   {"0":"Kraftrad","1":"Schlepper","2":"Zugmaschine","3":"Roller","4":"Traktor","5":"Gespann"}
+motorcycle_tariff_list  array    Motorcylce tariff list                 {"0":"Traktor","1":"Krad","2":"Anhänger"}
+newsletter_optin        bool     Agree of newsletter                    true
+offer_recipient         string   Offer recipient                        test@test.lv
+offers_recipient        string   Offer recipient                        test@test.lv
+payment_method          string   Payment method                         invoice"
+phone                   string   Phone number                           +43222222222"
+postcode                string   Postcode                               1130"
+purchase_lead           bool     Purchase lead                          rue
+salutation              string   Salutation                             mr
+street                  string   Street                                 Street
+title                   string   Title                                  dr
+======================  =======  =====================================  ================================================
 
 Example Request
 ~~~~~~~~~~~~~~~
@@ -192,7 +192,7 @@ Example Request
                 "agent_email": "test@kasko.io",
                 "agent_first_name": "Tewt",
                 "agent_house_number": "123",
-                "agent_id": "8878788",
+                "agent_id": "8878788"
                 "agent_last_name": "TST",
                 "agent_mobile_number": "+4322222222",
                 "agent_postcode": "1120",

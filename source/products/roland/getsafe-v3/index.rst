@@ -1,5 +1,5 @@
 Getsafe Legal v3-quote
-=======
+======================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^

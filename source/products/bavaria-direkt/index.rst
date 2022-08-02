@@ -1,5 +1,5 @@
 Bavaria Direkt Products
-================
+=======================
 
 List of Bavaria Direkt insurance products.
 

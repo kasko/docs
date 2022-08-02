@@ -1,5 +1,5 @@
 Baloise - Holiday V2 Insurance
-=============================
+==============================
 
 Product Information
 ^^^^^^^^^^^^^^^^^^^

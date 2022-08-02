@@ -9,7 +9,7 @@ REST API
 Headers
 =======
 
-1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in `Quote request`_, `Offer`_, `Show`_ requests.
+1. ``Accept: application/vnd.kasko.v2+json`` - V2 header. The API requests must include the V2 header in `Quote request`_, `Offer`_, `Payment`_ requests.
 
 Possible requests
 =================

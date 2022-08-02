@@ -13,7 +13,7 @@ Product Information
    "Languages", "``DE``"
 
 Touchpoint IDs
-^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 .. csv-table::
    :header: "Touchpoint Title", "Touchpoint ID"
