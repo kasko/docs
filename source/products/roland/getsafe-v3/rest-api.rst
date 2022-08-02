@@ -130,11 +130,9 @@ Example Request
           "data": {
                 "phone":"+4915209121603",
                 "salutation": "mr",
-                "dob": "1991-10-31",
                 "house_number": "1A",
                 "street": "Test Street",
                 "state": "Test State",
-                "partner_coverage": false,
                 "familystatus": "single"
           },
           "quote_token":"<QUOTE TOKEN>",
