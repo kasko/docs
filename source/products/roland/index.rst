@@ -10,4 +10,5 @@ List of Roland insurance products.
    getsafe/index
    getsafebaserate/index
    haus-und-grund/index
+   getsafe-v2/index
    getsafe-v3/index
