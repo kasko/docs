@@ -1,4 +1,4 @@
-Getsafe
+Getsafe Comfort Rate
 =======
 
 Product Information

@@ -39,10 +39,10 @@ Following factors are considered while calculating policy price:
    :widths: 20, 20, 80, 20
 
     "module",                 "string",              "Insurance module from the following two: base and comfort",                "base"
-    "noclaimscategory",       "integer|optional",    "No claims category",                                                        ""
+    "noclaimscategory",       "integer|optional",    "No claims category",                                                        "3"
     "employmentstatus",       "string",              "in:publicservice,employee,selfemployed,student,pensioner,unemployed",       "selfemployed"
     "familystatus",           "string",              "in:single,singlewithchild,couple,familywithchild",                          "familywithchild"
-    "credit_score_external",  "integer|optional",    "Credit score",                                                              ""
+    "credit_score_external",  "integer|optional",    "Credit score",                                                              "373"
     "main_module",            "string",              "in:PBV,PBVIM",                                                              "PBV"
     "postcode",               "string",              "Post code",                                                                 "69115"
     "duration",               "string",              "Duration. in:P1Y",                                                          "P1Y"
