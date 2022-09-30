@@ -60,13 +60,13 @@ Example Request
 
    curl -X POST \
         'https://api.kasko.io/quotes' \
+        -u sk_test_SECRET_KEY: \
         -H 'Accept: application/vnd.kasko.v3+json' \
         -H 'Content-Type: application/json' \
         -d '{
         "item_id": "item_2aa907bf7dbafb8a596468ddb43",
         "integration_id": "tp_970ae312b91606f28ba1f9873a0a9",
         "subscription_plan_id": "sp_65b68199141576fb1d65ba326c93c",
-        "key": "sk_test_10p4DsBJyZloewSxpMSA9W0ObQejKu9l",
         "data":
             {"duration":"P1Y","start_date":"2021-11-25","main_module":"PBV","criminal_law":false,"module":"base","familystatus":"single","employmentstatus":"employee","dob":"1984-01-02","postcode":"69115","credit_score_external":999}
         }'
