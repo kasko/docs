@@ -30,5 +30,6 @@ List of KASKO insurance products with required data to quote and purchase a poli
    renault/index
    roland/index
    signal-iduna/index
+   ticketplan/index
    visana/index
    zurich/index
