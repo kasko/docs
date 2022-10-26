@@ -65,14 +65,14 @@ Example Request
         "integration_version_id": "inv_25a563c290aa1de79cf2a2bcd943",
         "product_version_id": "prv_85e1452f080cd604dc597b4b66e1",
         "data": {
-        "protected_element": {
-            "0":{
-                "price":3000
-            }
-        },
-        "pem_exclusion": true,
-        "sports_inclusion": false
-    }
+            "pem_exclusion": 1,
+            "sports_inclusion": 0,
+            "protected_element": {
+                "0": {
+                    "price": 3000
+                }
+            },
+        }
 }'
 
 .. _QuoteResponse:
