@@ -41,9 +41,8 @@ Following factors are considered while calculating policy price:
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "module",                            "string",       "Insurance duration. Available values:", "banded"
    "protected_element.*.price",         "integer",      "If module is ``banded``",               "3000"
-   "max_ticket_price.*.single_banded",  "string",       "If module is ``single``",               "45000"
+   "max_ticket_price.*.single_banded",  "integer",      "If module is ``single``",               "45000"
    "pem_exclusion",                     "bool",  "",                                             "true|false"
    "sports_inclusion",                  "bool", "",                                              "true|false"
 
@@ -59,18 +58,22 @@ Example Request
         -H 'Accept: application/vnd.kasko.v3+json' \
         -H 'Content-Type: application/json' \
         -d '{
-        "key": "pk_live_public_key",
+        "key": "pk_test_e3c5e76e8bee4e0fb241e92e539ac258",
         "integration_id": "in_10ed87330bfabac47938858feeb85",
-        "subscription_plan_id": "tp_970ae312b91606f28ba1f9873a0a9",
+        "subscription_plan_id": "pp_575c17bb5bb298bdef8e5ca49f0ca",
         "item_id": "ins_7ce99aa9ffe9d26b627cf7735f74",
-        "data":
-            {
-                "module": "banded",
-                "protected_element.0.price": 3000,
-                "pem_exclusion": true,
-                "sports_inclusion: "false"
-            }
-        }'
+        "integration_version_id": "inv_25a563c290aa1de79cf2a2bcd943",
+        "product_version_id": "prv_a61d1f1e3fe59e7510315c28ccef",
+        "data": {
+            "pem_exclusion": 1,
+            "sports_inclusion": 0,
+            "protected_element": {
+                "0": {
+                    "price": 3000
+                }
+            },
+        }
+}'
 
 .. _QuoteResponse:
 
