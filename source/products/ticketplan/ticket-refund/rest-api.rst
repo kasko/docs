@@ -42,7 +42,7 @@ Following factors are considered while calculating policy price:
    :widths: 20, 20, 80, 20
 
    "protected_element.*.price",         "integer",      "If module is ``banded``",               "3000"
-   "max_ticket_price.*.single_banded",  "string",       "If module is ``single``",               "45000"
+   "max_ticket_price.*.single_banded",  "integer",      "If module is ``single``",               "45000"
    "pem_exclusion",                     "bool",  "",                                             "true|false"
    "sports_inclusion",                  "bool", "",                                              "true|false"
 
@@ -63,7 +63,7 @@ Example Request
         "subscription_plan_id": "pp_575c17bb5bb298bdef8e5ca49f0ca",
         "item_id": "ins_7ce99aa9ffe9d26b627cf7735f74",
         "integration_version_id": "inv_25a563c290aa1de79cf2a2bcd943",
-        "product_version_id": "prv_85e1452f080cd604dc597b4b66e1",
+        "product_version_id": "prv_a61d1f1e3fe59e7510315c28ccef",
         "data": {
             "pem_exclusion": 1,
             "sports_inclusion": 0,
