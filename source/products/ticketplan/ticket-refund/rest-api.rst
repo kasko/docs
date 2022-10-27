@@ -136,15 +136,17 @@ Example Request
 	  -H 'Accept: application/vnd.kasko.v2+json' \
 	  -H 'Content-Type: application/json' \
 	  -d '{
-          "data": {
+            "data": {
                 "booking_date": "2022-02-02",
                 "payment_date": "2022-02-02",
                 "ticket_quantity": 3,
                 "order_number": 4,
+                "order_value": 100000,
+                "order_currency": "str",
                 "event_name": "Test Name",
                 "event_date": "2022-02-02",
                 "venue_name": "Venue Name",
-                "venue_location": "Venue Location,
+                "venue_location": "Venue Location",
                 "venue_country": "UK",
                 "ticket_distributor": "Test Distributor",
                 "customer_email": "example@test.com",
@@ -156,14 +158,13 @@ Example Request
                 "customer_postcode": "1234",
                 "protected_elements_value": 1234,
                 "unprotected_elements_value": 1234,
-                "insurance_quantity": 1,
-          },
-          "quote_token":"<QUOTE TOKEN>",
-          "first_name": "Test",
-          "last_name": "Person",
-          "email": "test@kasko.io",
-          "metadata": {}
-      }'
+                "insurance_quantity": 1
+            },
+            "quote_token":"<QUOTE TOKEN>",
+            "first_name": "Test",
+            "last_name": "Person",
+            "email": "test@kasko.io"
+        }'
 
 NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
 
