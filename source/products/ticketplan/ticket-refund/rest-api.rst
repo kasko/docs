@@ -160,9 +160,10 @@ Example Request
                 "unprotected_elements_value": 1234,
                 "insurance_quantity": 1
             },
+            "quote_token":"<QUOTE TOKEN>",
             "first_name": "Test",
             "last_name": "Person",
-            "email": "test@kasko.io"
+            "email": "test@kasko.io",
         }'
 
 NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
