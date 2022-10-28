@@ -160,7 +160,6 @@ Example Request
                 "unprotected_elements_value": 1234,
                 "insurance_quantity": 1
             },
-            "quote_token":"<QUOTE TOKEN>",
             "first_name": "Test",
             "last_name": "Person",
             "email": "test@kasko.io"
@@ -298,22 +297,34 @@ Example Request
         --header 'Authorization: Bearer <YOUR SECRET API KEY>' \
         --header 'Content-Type: application/json' \
         --data-raw '{
-            "first_name": "John",
-            "email": "test@kasko.io",
-            "data":{
-                "street":"Amselstr.",
-                "house_number":"48",
-                "state":"Herford",
-                "salutation":"mr",
-                "coinsured_first_name":"Test name",
-                "coinsured_last_name":"Test lastname",
-                "paymentperiod":"yearly",
-                "familystatus":"couple",
-                "is_married":true,
-                "previous_insurance_insurer": "test",
-                "previous_insurance_claims_count": 0,
-                "previous_insurance_end_date": "2021-10-10"
-            }'
+            "data": {
+                "booking_date": "2022-02-02",
+                "payment_date": "2022-02-02",
+                "ticket_quantity": 3,
+                "order_number": 4,
+                "order_value": 100000,
+                "order_currency": "str",
+                "event_name": "Test Name",
+                "event_date": "2022-02-02",
+                "venue_name": "Venue Name",
+                "venue_location": "Venue Location",
+                "venue_country": "UK",
+                "ticket_distributor": "Test Distributor",
+                "customer_email": "example@test.com",
+                "customer_first_name": "First",
+                "customer_last_name": "Last",
+                "customer_house_number": "123",
+                "customer_street": "Street",
+                "customer_city": "City",
+                "customer_postcode": "1234",
+                "protected_elements_value": 1234,
+                "unprotected_elements_value": 1234,
+                "insurance_quantity": 1
+            },
+            "first_name": "Test",
+            "last_name": "Person",
+            "email": "test@kasko.io"
+        }'
 
 NOTE. You should use ``<POLICY ID>``, ``<Etag>`` and ``<Last-Modified>`` from ShowResponse_.
 
