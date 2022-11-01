@@ -9,14 +9,15 @@ The KASKO SFTP API is used for purchasing policies by providing a CSV file that 
 Getting started
 ---------------
 
+.. note:: You must have FTP client (like FileZilla) installed on you environment.
+`FileZilla <http://www.filezilla-project.org/>`_
+
+
 There are only two steps involved to create policies.
 
 1) Create a CSV file, which contains all necessary data, that are needed to create policies.
 
 2) Place this file in the SFTP test or live folders (corresponding mode policies will be created)
-
-
-.. note::
 
 Once the first file is processed, you will find the ``imports_processed`` folder on the same level as the test and live folders.
 It will contain the same files, you placed in previously (their are moved here after processing is done. It may take a few minutes).
