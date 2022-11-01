@@ -28,3 +28,4 @@ Integration methods
    :maxdepth: 1
 
    rest-api
+   sftp-api
