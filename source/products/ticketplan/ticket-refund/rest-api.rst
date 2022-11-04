@@ -48,7 +48,7 @@ Following factors are considered while calculating policy price:
 
 
 
-Example Request 1
+Example Request banded
 ~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -77,7 +77,7 @@ Example Request 1
 
 .. _QuoteResponse:
 
-Example response 1
+Example response banded
 ~~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -93,7 +93,7 @@ Example response 1
         }
     }
 
-Example Request 2
+Example Request single
 ~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -123,7 +123,7 @@ Example Request 2
 
 .. _QuoteResponse:
 
-Example response 2
+Example response single
 ~~~~~~~~~~~~~~~~
 
 .. code:: bash
