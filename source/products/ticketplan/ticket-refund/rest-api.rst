@@ -45,8 +45,6 @@ Following factors are considered while calculating policy price:
    "live_product",                      "string",       "Use live or test product (root path)",     "true|false"
    "protected_element.*.price",         "integer",      "If module is ``banded``",                  "3000"
    "max_ticket_price.*.single_banded",  "integer",      "If module is ``single``",                  "45000"
-   "pem_exclusion",                     "bool",  "",                                                "true|false"
-   "sports_inclusion",                  "bool", "",                                                 "true|false"
 
 
 
