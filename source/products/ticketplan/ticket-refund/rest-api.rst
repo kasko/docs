@@ -109,7 +109,8 @@ This request stores policy holder information that is related to offer. Followin
    "ticket_quantity",                 "yes",                                                "integer",  "Ticket quantity."
    "order_number",                    "yes",                                                "integer",  "Order number."
    "event_name",                      "yes",                                                "string",  "Event name."
-   "event_date",                      "yes",                                                "string",  "Event date string."
+   "event_start_date",                "yes",                                                "string",  "Event start date string."
+   "event_end_date",                  "yes",                                                "string",  "Event end date string."
    "venue_name",                      "yes",                                                "string",  "Venue name."
    "venue_location",                  "yes",                                                "string", "Venue location"
    "venue_country",                   "yes",                                                "string", "Venue country."
@@ -144,7 +145,8 @@ Example Request
                 "order_value": 100000,
                 "order_currency": "str",
                 "event_name": "Test Name",
-                "event_date": "2022-02-02",
+                "event_start_date": "2022-02-02",
+                "event_end_date": "2022-02-03",
                 "venue_name": "Venue Name",
                 "venue_location": "Venue Location",
                 "venue_country": "UK",
