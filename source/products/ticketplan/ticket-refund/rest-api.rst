@@ -48,7 +48,7 @@ Following factors are considered while calculating policy price:
 
 
 
-Example Request
+Example Request 1
 ~~~~~~~~~~~~~~~
 
 .. code:: bash
@@ -77,7 +77,53 @@ Example Request
 
 .. _QuoteResponse:
 
-Example response
+Example response 1
+~~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    {
+        "token": "<QUOTE TOKEN>",
+        "gross_payment_amount": 2056,
+        "extra_data": {
+            "gross_premium": 2056,
+            "premium_tax": 328,
+            "net_premium": 1728,
+            "tax_rate": 0.19
+        }
+    }
+
+Example Request 2
+~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+   curl -X POST \
+        'https://api.kasko.io/quotes' \
+        -H 'Accept: application/vnd.kasko.v3+json' \
+        -H 'Content-Type: application/json' \
+        -d '{
+        "key": "pk_test_e3c5e76e8bee4e0fb241e92e539ac258",
+        "integration_id": "in_f6e5410024f0484461bcc550e58a5",
+        "subscription_plan_id": "pp_64ea33bae89ec7c6a651c94142211",
+        "item_id": "ins_d329f5cf788fe195841b95205866",
+        "live_integration": "false",
+        "live_product": "false",
+        "data": {
+            "pem_exclusion": 1,
+            "sports_inclusion": 0,
+            "max_ticket_price": {
+                "1": {
+                    "single_banded": 5000
+                }
+            },
+            "policy_start_date": "2022-11-31"
+        }
+}'
+
+.. _QuoteResponse:
+
+Example response 2
 ~~~~~~~~~~~~~~~~
 
 .. code:: bash
