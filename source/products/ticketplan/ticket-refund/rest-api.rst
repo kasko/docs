@@ -59,19 +59,18 @@ Example Request banded
         -H 'Content-Type: application/json' \
         -d '{
             "key": "pk_test_e3c5e76e8bee4e0fb241e92e539ac258",
-            "integration_id": "in_10ed87330bfabac47938858feeb85",
-            "subscription_plan_id": "pp_575c17bb5bb298bdef8e5ca49f0ca",
-            "item_id": "ins_7ce99aa9ffe9d26b627cf7735f74",
-            "integration_version_id": "inv_25a563c290aa1de79cf2a2bcd943",
-            "product_version_id": "prv_a61d1f1e3fe59e7510315c28ccef",
+            "integration_id": "in_41c2f22d51612f04ee2c48eca3dc0",
+            "subscription_plan_id": "pp_64ea33bae89ec7c6a651c94142211",
+            "item_id": "ins_b85b40f99ecd5f52defba5a44b06",
+            "live_integration": "false",
+            "live_product": "false",
             "data": {
-                "pem_exclusion": 1,
-                "sports_inclusion": 0,
                 "protected_element": {
-                    "0": {
-                        "price": 3000
+                    "1": {
+                        "price": 5000
                     }
-                }
+                },
+                "policy_start_date": "2022-11-31"
             }
         }'
 
@@ -110,8 +109,6 @@ Example Request single
             "live_integration": "false",
             "live_product": "false",
             "data": {
-                "pem_exclusion": 1,
-                "sports_inclusion": 0,
                 "max_ticket_price": {
                     "1": {
                         "single_banded": 5000
