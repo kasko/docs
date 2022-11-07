@@ -41,15 +41,15 @@ Following factors are considered while calculating policy price:
    :header: "Name", "Type", "Description", "Example Value"
    :widths: 20, 20, 80, 20
 
-   "protected_element.*.price",         "integer",      "If module is ``banded``",               "3000"
-   "max_ticket_price.*.single_banded",  "integer",      "If module is ``single``",               "45000"
-   "pem_exclusion",                     "bool",  "",                                             "true|false"
-   "sports_inclusion",                  "bool", "",                                              "true|false"
+   "live_integration",                  "string",       "Use live or test integration (root path)", "true|false"
+   "live_product",                      "string",       "Use live or test product (root path)",     "true|false"
+   "protected_element.*.price",         "integer",      "If module is ``banded``",                  "3000"
+   "max_ticket_price.*.single_banded",  "integer",      "If module is ``single``",                  "45000"
 
 
 
-Example Request
-~~~~~~~~~~~~~~~
+Example Request banded
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -58,27 +58,70 @@ Example Request
         -H 'Accept: application/vnd.kasko.v3+json' \
         -H 'Content-Type: application/json' \
         -d '{
-        "key": "pk_test_e3c5e76e8bee4e0fb241e92e539ac258",
-        "integration_id": "in_10ed87330bfabac47938858feeb85",
-        "subscription_plan_id": "pp_575c17bb5bb298bdef8e5ca49f0ca",
-        "item_id": "ins_7ce99aa9ffe9d26b627cf7735f74",
-        "integration_version_id": "inv_25a563c290aa1de79cf2a2bcd943",
-        "product_version_id": "prv_a61d1f1e3fe59e7510315c28ccef",
-        "data": {
-            "pem_exclusion": 1,
-            "sports_inclusion": 0,
-            "protected_element": {
-                "0": {
-                    "price": 3000
-                }
-            },
+            "key": "pk_test_e3c5e76e8bee4e0fb241e92e539ac258",
+            "integration_id": "in_41c2f22d51612f04ee2c48eca3dc0",
+            "subscription_plan_id": "pp_64ea33bae89ec7c6a651c94142211",
+            "item_id": "ins_b85b40f99ecd5f52defba5a44b06",
+            "live_integration": "false",
+            "live_product": "false",
+            "data": {
+                "protected_element": {
+                    "1": {
+                        "price": 5000
+                    }
+                },
+                "policy_start_date": "2022-11-31"
+            }
+        }'
+
+.. _QuoteResponse1:
+
+Example response banded
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: bash
+
+    {
+        "token": "<QUOTE TOKEN>",
+        "gross_payment_amount": 2056,
+        "extra_data": {
+            "gross_premium": 2056,
+            "premium_tax": 328,
+            "net_premium": 1728,
+            "tax_rate": 0.19
         }
-}'
+    }
 
-.. _QuoteResponse:
+Example Request single
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Example response
-~~~~~~~~~~~~~~~~
+.. code:: bash
+
+   curl -X POST \
+        'https://api.kasko.io/quotes' \
+        -H 'Accept: application/vnd.kasko.v3+json' \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "key": "pk_test_e3c5e76e8bee4e0fb241e92e539ac258",
+            "integration_id": "in_f6e5410024f0484461bcc550e58a5",
+            "subscription_plan_id": "pp_64ea33bae89ec7c6a651c94142211",
+            "item_id": "ins_d329f5cf788fe195841b95205866",
+            "live_integration": "false",
+            "live_product": "false",
+            "data": {
+                "max_ticket_price": {
+                    "1": {
+                        "single_banded": 5000
+                    }
+                },
+                "policy_start_date": "2022-11-31"
+            }
+        }'
+
+.. _QuoteResponse2:
+
+Example response single
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -109,7 +152,8 @@ This request stores policy holder information that is related to offer. Followin
    "ticket_quantity",                 "yes",                                                "integer",  "Ticket quantity."
    "order_number",                    "yes",                                                "integer",  "Order number."
    "event_name",                      "yes",                                                "string",  "Event name."
-   "event_date",                      "yes",                                                "string",  "Event date string."
+   "event_start_date",                "yes",                                                "string",  "Event start date string."
+   "event_end_date",                  "yes",                                                "string",  "Event end date string."
    "venue_name",                      "yes",                                                "string",  "Venue name."
    "venue_location",                  "yes",                                                "string", "Venue location"
    "venue_country",                   "yes",                                                "string", "Venue country."
@@ -144,7 +188,8 @@ Example Request
                 "order_value": 100000,
                 "order_currency": "str",
                 "event_name": "Test Name",
-                "event_date": "2022-02-02",
+                "event_start_date": "2022-02-02",
+                "event_end_date": "2022-02-03",
                 "venue_name": "Venue Name",
                 "venue_location": "Venue Location",
                 "venue_country": "UK",
@@ -166,7 +211,7 @@ Example Request
             "email": "test@kasko.io",
         }'
 
-NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse_.
+NOTE. You should use ``<QUOTE TOKEN>`` value from QuoteResponse1_ or QuoteResponse2_.
 
 .. _OfferResponse:
 

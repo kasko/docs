@@ -40,7 +40,7 @@ The value of this column must be ``UUID4 (universally unique identifier)``. It i
 You can generate UUID4 here https://www.uuidgenerator.net/version4
 
 Example CSV content
---------------
+--------------------
 .. csv-table::
    :header: "idempotency_key", "quote.data.policy_start_date", "quote.data.pem_exclusion", "quote.data.sports_inclusion", "quote.data.protected_element.1.price", "policy.first_name", "policy.last_name", "policy.email", "policy.language", "policy.data.booking_date", "policy.data.payment_date", "policy.data.ticket_quantity", "policy.data.order_number", "policy.data.order_value", "policy.data.order_currency", "policy.data.event_name", "policy.data.event_date", "policy.data.venue_name", "policy.data.venue_location", "policy.data.venue_country", "policy.data.ticket_distributor", "policy.data.customer_email", "policy.data.customer_first_name", "policy.data.customer_last_name", "policy.data.customer_house_number", "policy.data.customer_street", "policy.data.customer_city", "policy.data.customer_postcode", "policy.data.protected_elements_value", "policy.data.unprotected_elements_value", "policy.data.insurance_quantity"
 
