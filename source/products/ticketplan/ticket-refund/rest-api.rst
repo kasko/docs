@@ -150,7 +150,7 @@ This request stores policy holder information that is related to offer. Followin
    "booking_date",                    "yes",                                                "string",  "Booking date string."
    "payment_date",                    "yes",                                                "string",  "Payment date string."
    "ticket_quantity",                 "yes",                                                "integer",  "Ticket quantity."
-   "order_number",                    "yes",                                                "integer",  "Order number."
+   "order_number",                    "yes",                                                "string",  "Alphanumeric order number string (can contain - or /)."
    "event_name",                      "yes",                                                "string",  "Event name."
    "event_start_date",                "yes",                                                "string",  "Event start date string."
    "event_end_date",                  "yes",                                                "string",  "Event end date string."
@@ -184,7 +184,7 @@ Example Request
                 "booking_date": "2022-02-02",
                 "payment_date": "2022-02-02",
                 "ticket_quantity": 3,
-                "order_number": 4,
+                "order_number": "TEST-123",
                 "order_value": 100000,
                 "order_currency": "str",
                 "event_name": "Test Name",
@@ -315,7 +315,7 @@ Data object parameters if included in the policy update request.
    "booking_date",                    "yes",                                                "string",  "Booking date string."
    "payment_date",                    "yes",                                                "string",  "Payment date string."
    "ticket_quantity",                 "yes",                                                "integer",  "Ticket quantity."
-   "order_number",                    "yes",                                                "integer",  "Order number."
+   "order_number",                    "yes",                                                "string",  "Alphanumeric order number string (can contain - or /)."
    "event_name",                      "yes",                                                "string",  "Event name."
    "event_start_date",                "yes",                                                "string",  "Event start date string."
    "event_end_date",                  "yes",                                                "string",  "Event end date string."
@@ -348,7 +348,7 @@ Example Request
                 "booking_date": "2022-02-02",
                 "payment_date": "2022-02-02",
                 "ticket_quantity": 3,
-                "order_number": 4,
+                "order_number": "TEST-123",
                 "order_value": 100000,
                 "order_currency": "str",
                 "event_name": "Test Name",
