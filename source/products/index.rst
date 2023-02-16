@@ -16,7 +16,6 @@ List of KASKO insurance products with required data to quote and purchase a poli
    xtra_fahrer_schutz
    allianz/index
    baloise/index
-   barmenia/index
    basler/index
    bavaria-direkt/index
    foyer/index
