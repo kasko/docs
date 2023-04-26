@@ -19,13 +19,9 @@ List of KASKO insurance products with required data to quote and purchase a poli
    bavaria-direkt/index
    friday/index
    hansemerkur/index
-   itzehoer/index
    oab/index
    occ/index
    pnv/index
    renault/index
-   roland/index
    signal-iduna/index
-   ticketplan/index
    visana/index
-   zurich/index
