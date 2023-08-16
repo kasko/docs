@@ -8,20 +8,5 @@ List of KASKO insurance products with required data to quote and purchase a poli
 .. toctree::
    :maxdepth: 2
 
-   ATI_travel
-   fury
-   travel_demo
-   travel_erv
-   xtra_fahrer_schutz
-   allianz/index
-   baloise/index
-   basler/index
-   bavaria-direkt/index
-   friday/index
-   hansemerkur/index
-   oab/index
    occ/index
-   pnv/index
-   renault/index
-   signal-iduna/index
    visana/index
